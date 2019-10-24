@@ -12,11 +12,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="loginViewController" customModule="ParkinSense" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAN-uk-K82">
-                                <rect key="frame" x="30" y="499" width="354" height="60"/>
+                                <rect key="frame" x="30" y="526" width="354" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="YE0-J0-Ttx"/>
                                 </constraints>
@@ -25,7 +25,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pg6-qs-MTa">
-                                <rect key="frame" x="295" y="519" width="22" height="22"/>
+                                <rect key="frame" x="295" y="546" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="l37-hw-3ki"/>
                                 </constraints>
@@ -34,13 +34,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFG-ce-JbV">
-                                <rect key="frame" x="30" y="558" width="354" height="21.5"/>
+                                <rect key="frame" x="30" y="585" width="354" height="48.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="W7L-I4-fAe">
-                                <rect key="frame" x="30" y="351" width="354" height="140"/>
+                                <rect key="frame" x="30" y="378" width="354" height="140"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="   Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oR8-qT-AX3">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="60"/>
@@ -61,7 +61,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UnE-am-2Qt">
-                                <rect key="frame" x="40" y="622" width="334" height="180"/>
+                                <rect key="frame" x="40" y="676" width="334" height="180"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oa5-yQ-Y1a">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="60"/>
@@ -94,7 +94,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hnr-RH-HaI">
-                                <rect key="frame" x="30" y="106" width="354" height="231"/>
+                                <rect key="frame" x="30" y="138" width="354" height="231"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personalimage" translatesAutoresizingMaskIntoConstraints="NO" id="G5R-Xz-Uyz">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="134"/>
@@ -161,11 +161,11 @@
             <objects>
                 <viewController id="y9O-MW-t5g" customClass="signupViewController" customModule="ParkinSense" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iQh-19-VeB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VVe-N4-TFS">
-                                <rect key="frame" x="40" y="578" width="334" height="190"/>
+                                <rect key="frame" x="40" y="632" width="334" height="190"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P9u-b2-DvT">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -199,7 +199,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mQS-oq-fjK">
-                                <rect key="frame" x="40" y="96" width="334" height="280"/>
+                                <rect key="frame" x="40" y="128" width="334" height="280"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parkinsense" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdx-pG-BQ5">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
@@ -261,10 +261,11 @@
                         <outlet property="PasswordTextField" destination="z1n-YO-ayy" id="XFN-A7-7JK"/>
                         <outlet property="UsernameTextField" destination="9kI-3h-4gK" id="rUW-CA-Z5K"/>
                         <segue destination="eVj-ik-Udv" kind="show" identifier="signUpToHomeID" id="xa4-L2-QV7"/>
-                        <segue destination="WjX-lK-DyZ" kind="show" identifier="backToSignIn" id="OlN-ZF-nNj"/>
+                        <segue destination="lr0-9s-vBc" kind="unwind" identifier="unwindTologin" unwindAction="unwindTologinWithSegue:" id="Vry-7R-fva"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmq-U0-mxv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="lr0-9s-vBc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2960.8695652173915" y="280.58035714285711"/>
         </scene>
@@ -273,11 +274,11 @@
             <objects>
                 <viewController id="9aV-Wv-vxg" customClass="MedicationDetailViewController" customModule="ParkinSense" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OwO-Rm-emg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Upk-7h-p1s">
-                                <rect key="frame" x="30" y="30" width="354" height="160"/>
+                                <rect key="frame" x="30" y="118" width="354" height="160"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medication Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORO-fA-abf">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="40"/>
@@ -306,7 +307,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1c7-Pl-vd4">
-                                <rect key="frame" x="0.0" y="198" width="414" height="51.5"/>
+                                <rect key="frame" x="0.0" y="286" width="414" height="51.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ps-1i-olm">
                                         <rect key="frame" x="0.0" y="0.0" width="63" height="51.5"/>
@@ -383,21 +384,43 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="deT-tB-iEy">
+                                <rect key="frame" x="0.0" y="353" width="414" height="216"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rH-ES-A2e">
+                                <rect key="frame" x="40" y="772" width="334" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="N93-Br-DgZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Add New Medication"/>
+                                <connections>
+                                    <action selector="AddNewMedicationButton:" destination="9aV-Wv-vxg" eventType="touchUpInside" id="KXC-LB-eJl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.9380127788" green="0.94641774889999997" blue="0.97916191819999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="deT-tB-iEy" firstAttribute="top" secondItem="1c7-Pl-vd4" secondAttribute="bottom" constant="15.5" id="7Nl-RK-Ha2"/>
+                            <constraint firstItem="deT-tB-iEy" firstAttribute="leading" secondItem="37n-HV-vhR" secondAttribute="leading" id="DoX-UN-cXV"/>
+                            <constraint firstItem="37n-HV-vhR" firstAttribute="trailing" secondItem="6rH-ES-A2e" secondAttribute="trailing" constant="40" id="LRB-ga-gxl"/>
                             <constraint firstItem="Upk-7h-p1s" firstAttribute="top" secondItem="37n-HV-vhR" secondAttribute="top" constant="30" id="LsT-3F-xuO"/>
                             <constraint firstItem="37n-HV-vhR" firstAttribute="trailing" secondItem="Upk-7h-p1s" secondAttribute="trailing" constant="30" id="R1i-XF-hdf"/>
                             <constraint firstItem="1c7-Pl-vd4" firstAttribute="leading" secondItem="37n-HV-vhR" secondAttribute="leading" id="WO4-t3-nkA"/>
+                            <constraint firstItem="37n-HV-vhR" firstAttribute="bottom" secondItem="6rH-ES-A2e" secondAttribute="bottom" constant="40" id="cQc-LC-Y7w"/>
                             <constraint firstItem="Upk-7h-p1s" firstAttribute="leading" secondItem="37n-HV-vhR" secondAttribute="leading" constant="30" id="eEI-d9-eQb"/>
+                            <constraint firstItem="deT-tB-iEy" firstAttribute="trailing" secondItem="37n-HV-vhR" secondAttribute="trailing" id="fj4-zo-96y"/>
                             <constraint firstItem="37n-HV-vhR" firstAttribute="trailing" secondItem="1c7-Pl-vd4" secondAttribute="trailing" id="lJV-rr-K6e"/>
+                            <constraint firstItem="6rH-ES-A2e" firstAttribute="leading" secondItem="37n-HV-vhR" secondAttribute="leading" constant="40" id="mWA-ty-cRy"/>
                             <constraint firstItem="1c7-Pl-vd4" firstAttribute="top" secondItem="Upk-7h-p1s" secondAttribute="bottom" constant="8" id="mqT-lH-nbh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="37n-HV-vhR"/>
                     </view>
                     <navigationItem key="navigationItem" id="Go9-08-Mr6"/>
                     <connections>
+                        <outlet property="AddNewMedicationButton" destination="6rH-ES-A2e" id="ctg-J1-SuV"/>
                         <outlet property="MedicationTextField" destination="4Eu-lI-qQ0" id="cfj-vB-a2p"/>
+                        <outlet property="timePicker" destination="deT-tB-iEy" id="oTv-fW-87M"/>
                         <outletCollection property="DateSelectionButtons" destination="8Ps-1i-olm" collectionClass="NSMutableArray" id="a2T-2T-XAy"/>
                         <outletCollection property="DateSelectionButtons" destination="f5x-7t-RHi" collectionClass="NSMutableArray" id="ncD-qw-mu6"/>
                         <outletCollection property="DateSelectionButtons" destination="ruK-da-F1M" collectionClass="NSMutableArray" id="oN8-6h-R9o"/>
@@ -405,9 +428,11 @@
                         <outletCollection property="DateSelectionButtons" destination="G23-e7-NL7" collectionClass="NSMutableArray" id="IvH-dV-HZA"/>
                         <outletCollection property="DateSelectionButtons" destination="56d-5x-jwS" collectionClass="NSMutableArray" id="Yf2-S2-mVV"/>
                         <outletCollection property="DateSelectionButtons" destination="7S2-xP-MlT" collectionClass="NSMutableArray" id="ptR-Zu-b8M"/>
+                        <segue destination="vlh-hu-mWd" kind="unwind" identifier="unwindTosignup" unwindAction="unwindTosignupWithSegue:" id="YIs-Oh-8fi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ae8-Fz-LKx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="vlh-hu-mWd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3870" y="280"/>
         </scene>
@@ -416,11 +441,11 @@
             <objects>
                 <viewController id="eVj-ik-Udv" customClass="HomeViewController" customModule="ParkinSense" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="HomeVC" id="b5g-Mf-2hH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ym5-fU-teU">
-                                <rect key="frame" x="100" y="403" width="214" height="36"/>
+                                <rect key="frame" x="100" y="430" width="214" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -463,7 +488,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="egt-x5-Htl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gwk-VM-eOg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -485,7 +510,6 @@
         <image name="w.circle" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OlN-ZF-nNj"/>
         <segue reference="xa4-L2-QV7"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,17 +14,28 @@ class MedicationDetailViewController: UIViewController {
     
     @IBOutlet var DateSelectionButtons: [UIButton]!
     
+    @IBOutlet weak var timePicker: UIDatePicker!
+    
+    @IBOutlet weak var AddNewMedicationButton: UIButton!
+    
+    var isDateSelect: Bool = false;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        timePicker?.datePickerMode = .time
         
-        
+        setUpElements()
         
         
     }
     
 
+    func setUpElements(){
+        
+        Utilities.styleFilledButton(AddNewMedicationButton)
+    }
     /*
     // MARK: - Navigation
 
@@ -39,10 +50,22 @@ class MedicationDetailViewController: UIViewController {
         
         
         //DateSelectionButtons.forEach({ $0.tintColor =  UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)})
+        isDateSelect.toggle()
         
-        sender.tintColor = UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
+        if isDateSelect{
+            sender.tintColor = UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
+        }
+        else{
+            sender.tintColor = UIColor.init(red: 169/255, green: 170/255, blue: 171/255, alpha: 1)
+        }
         
         
+    }
+    
+    
+    @IBAction func AddNewMedicationButton(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "unwindTosignup", sender: self)
     }
     
 

@@ -136,7 +136,11 @@ class signupViewController: UIViewController {
     
     @IBAction func Alreadyhaveanaccounttapped(_ sender: Any) {
         
-        self.performSegue(withIdentifier: "backToSignIn", sender: nil)
+        self.performSegue(withIdentifier: "unwindTologin", sender: nil)
+    }
+    
+    @IBAction func unwindTosignup(segue: UIStoryboardSegue){
+        
     }
     
     func showError(_ message:String){

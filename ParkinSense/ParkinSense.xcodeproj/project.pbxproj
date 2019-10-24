@@ -22,6 +22,7 @@
 		03807F562360F23E00B4DE9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03807F552360F23E00B4DE9F /* GoogleService-Info.plist */; };
 		03807F5A2360F4F500B4DE9F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03807F582360F4F500B4DE9F /* Constants.swift */; };
 		03807F5B2360F4F500B4DE9F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03807F592360F4F500B4DE9F /* Utilities.swift */; };
+		03807F6123616BDF00B4DE9F /* TimeandExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03807F6023616BDF00B4DE9F /* TimeandExtension.swift */; };
 		3158D676C7C91159E46BEF8D /* Pods_ParkinSense.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82ADB089E8F11A20BA9C1013 /* Pods_ParkinSense.framework */; };
 		88C0543480C31A4E028FFF61 /* Pods_ParkinSense_ParkinSenseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FE5260F950FC510DBC5018 /* Pods_ParkinSense_ParkinSenseUITests.framework */; };
 		B413500F98BA0738D41EC8BF /* Pods_ParkinSenseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83D41390378058E7B05A10BE /* Pods_ParkinSenseTests.framework */; };
@@ -66,6 +67,7 @@
 		03807F552360F23E00B4DE9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		03807F582360F4F500B4DE9F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		03807F592360F4F500B4DE9F /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		03807F6023616BDF00B4DE9F /* TimeandExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeandExtension.swift; sourceTree = "<group>"; };
 		136766DAB047459D8E38DF7B /* Pods-ParkinSense-ParkinSenseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkinSense-ParkinSenseUITests.release.xcconfig"; path = "Target Support Files/Pods-ParkinSense-ParkinSenseUITests/Pods-ParkinSense-ParkinSenseUITests.release.xcconfig"; sourceTree = "<group>"; };
 		492EAB51EF15644D89829951 /* Pods-ParkinSense.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkinSense.debug.xcconfig"; path = "Target Support Files/Pods-ParkinSense/Pods-ParkinSense.debug.xcconfig"; sourceTree = "<group>"; };
 		809F3F115A16049488B72478 /* Pods-ParkinSense-ParkinSenseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkinSense-ParkinSenseUITests.debug.xcconfig"; path = "Target Support Files/Pods-ParkinSense-ParkinSenseUITests/Pods-ParkinSense-ParkinSenseUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			children = (
 				03807F582360F4F500B4DE9F /* Constants.swift */,
 				03807F592360F4F500B4DE9F /* Utilities.swift */,
+				03807F6023616BDF00B4DE9F /* TimeandExtension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				03807F512360F12000B4DE9F /* MedicationDetailViewController.swift in Sources */,
 				03807F192360EEC100B4DE9F /* ViewController.swift in Sources */,
 				03807F152360EEC100B4DE9F /* AppDelegate.swift in Sources */,
+				03807F6123616BDF00B4DE9F /* TimeandExtension.swift in Sources */,
 				03807F502360F12000B4DE9F /* signupViewController.swift in Sources */,
 				03807F172360EEC100B4DE9F /* SceneDelegate.swift in Sources */,
 				03807F5B2360F4F500B4DE9F /* Utilities.swift in Sources */,
