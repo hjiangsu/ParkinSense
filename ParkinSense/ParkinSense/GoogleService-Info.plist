@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1034090546905-eieodrtv73e05s8bfoo9i1mh451k6hql.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1034090546905-eieodrtv73e05s8bfoo9i1mh451k6hql</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC0XFhLz6NmBNR1Ud-maOhmM_MNEE4WqWo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1034090546905</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>PDD-Inc.ParkinSense</string>
+	<key>PROJECT_ID</key>
+	<string>parkinsense-297f3</string>
+	<key>STORAGE_BUCKET</key>
+	<string>parkinsense-297f3.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1034090546905:ios:4817a5c1ae2b1d024820c8</string>
+	<key>DATABASE_URL</key>
+	<string>https://parkinsense-297f3.firebaseio.com</string>
+</dict>
+</plist>
