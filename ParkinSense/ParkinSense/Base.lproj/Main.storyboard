@@ -139,7 +139,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="c7c-RR-v82"/>
+                    <navigationItem key="navigationItem" id="c7c-RR-v82">
+                        <barButtonItem key="backBarButtonItem" title=" " id="IUn-Uu-xyc"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="CreateanAccountButton" destination="Muk-xY-MuV" id="bJD-nI-1Ja"/>
                         <outlet property="ErrorLabel" destination="FFG-ce-JbV" id="IU1-i7-Bxe"/>
@@ -156,7 +158,7 @@
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="115.84821428571428"/>
         </scene>
-        <!--Signup View Controller-->
+        <!--Create an Account-->
         <scene sceneID="ZeU-gp-chd">
             <objects>
                 <viewController id="y9O-MW-t5g" customClass="signupViewController" customModule="ParkinSense" customModuleProvider="target" sceneMemberID="viewController">
@@ -207,7 +209,7 @@
                                             <constraint firstAttribute="height" constant="40" id="xON-md-JP2"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="   Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9kI-3h-4gK">
@@ -251,7 +253,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="H0A-9o-Dgy"/>
                     </view>
-                    <navigationItem key="navigationItem" id="RhG-ev-22M"/>
+                    <navigationItem key="navigationItem" title="Create an Account" id="RhG-ev-22M">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Twe-4y-g4U"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="AddNewMedicationDetailButton" destination="P9u-b2-DvT" id="LrH-0R-WIb"/>
                         <outlet property="AlreadyhaveanaccountButton" destination="jbk-DG-NIb" id="bEl-gs-UCV"/>
@@ -269,7 +273,7 @@
             </objects>
             <point key="canvasLocation" x="2960.8695652173915" y="280.58035714285711"/>
         </scene>
-        <!--Medication Detail View Controller-->
+        <!--Add Medication Detail-->
         <scene sceneID="OWg-XK-NHS">
             <objects>
                 <viewController id="9aV-Wv-vxg" customClass="MedicationDetailViewController" customModule="ParkinSense" customModuleProvider="target" sceneMemberID="viewController">
@@ -416,7 +420,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="37n-HV-vhR"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Go9-08-Mr6"/>
+                    <navigationItem key="navigationItem" title="Add Medication Detail" id="Go9-08-Mr6"/>
                     <connections>
                         <outlet property="AddNewMedicationButton" destination="6rH-ES-A2e" id="ctg-J1-SuV"/>
                         <outlet property="MedicationTextField" destination="4Eu-lI-qQ0" id="cfj-vB-a2p"/>
@@ -458,7 +462,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AXk-lY-u2B"/>
                     </view>
-                    <navigationItem key="navigationItem" id="cV8-x3-u8p"/>
+                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="cV8-x3-u8p"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iFK-T6-vVm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -490,6 +494,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gwk-VM-eOg">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.21905803679999999" green="0.37102156879999998" blue="0.56822639699999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -510,6 +519,7 @@
         <image name="w.circle" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xa4-L2-QV7"/>
+        <segue reference="wmF-fg-5df"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
