@@ -9,7 +9,7 @@
 import UIKit
 
 class MedicationDetailViewController: UIViewController {
-    
+
     @IBOutlet weak var MedicationTextField: UITextField!
     
     @IBOutlet var DateSelectionButtons: [UIButton]!
@@ -18,7 +18,6 @@ class MedicationDetailViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
         
         
         
@@ -40,8 +39,7 @@ class MedicationDetailViewController: UIViewController {
         
         //DateSelectionButtons.forEach({ $0.tintColor =  UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)})
         
-        sender.tintColor = UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
-        
+        sender.tintColor = UIColor.init(red: 255/255, green: 0/255, blue: 0/255, alpha: 1)
         
     }
     
