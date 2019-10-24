@@ -64,12 +64,10 @@ This section describes the steps necessary to get started with the development o
 ### Installation
  
 1. Launch Xcode and select ***Clone an existing project***
-2. Type the ParkinSense Repository into the search bar (`https://github.com/hjiangsu/ParkinSense.git`)
+2. Type the ParkinSense Repository into the search bar (`https://github.com/hjiangsu/ParkinSense`)
 3. Choose the branch most suited for your feature and select ***Clone***
 4. Choose the directory you want to store your local copy
 5. Navigate to the project folder and open ***ParkinSense.xcodeproj***
-6. Start coding your new feature!
-
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -83,12 +81,21 @@ See the [open issues](https://github.com/hjiangsu/ParkinSense/issues) for a list
 
 Any new feature or contribution should perform the following steps
 
+### Using Xcode - Preferred
+1. Follow the steps outlined in the Installation section
+2. Open the *Source Control Nagivator* through ***View -> Navigators -> Show Source Control Navigator***
+3. Right click on the *Branches* folder and select ***Branch from "current_branch"***
+4. Name your new feature branch and start making changes
+5. Commit and Push your branch through ***Source Control*** 
+6. Open a *Pull Request* and await review
+
+### Using Terminal - Alternative
 1. Fork/Clone the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Add your Changes (`git add -all`)
-4. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-5. Push to the Branch (`git push origin feature/AmazingFeature`)
-6. Open a Pull Request to merge it into master
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Add your changes (`git add .`)
+4. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+5. Push to the branch (`git push origin feature/AmazingFeature`)
+6. Open a *Pull Request* and await review
 
 
 
