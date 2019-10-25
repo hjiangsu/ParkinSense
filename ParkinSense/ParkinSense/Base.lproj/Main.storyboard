@@ -68,7 +68,9 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="k5w-Lv-dHv"/>
                                         </constraints>
-                                        <state key="normal" title="Sign in"/>
+                                        <state key="normal" title="Sign in">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="SigninTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fJH-Zs-8tP"/>
                                         </connections>
@@ -81,7 +83,9 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Muk-xY-MuV">
                                         <rect key="frame" x="0.0" y="120" width="334" height="60"/>
-                                        <state key="normal" title="Create an Account"/>
+                                        <state key="normal" title="Create an Account">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="CreateAccountTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1eZ-W6-hZc"/>
                                             <segue destination="y9O-MW-t5g" kind="show" id="5DB-D4-Byf"/>
@@ -182,14 +186,18 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3f-sx-olG">
                                         <rect key="frame" x="0.0" y="70" width="334" height="50"/>
-                                        <state key="normal" title="Create an Account"/>
+                                        <state key="normal" title="Create an Account">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="CreateanAccounttapped:" destination="y9O-MW-t5g" eventType="touchUpInside" id="3ce-uJ-psd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbk-DG-NIb">
                                         <rect key="frame" x="0.0" y="140" width="334" height="50"/>
-                                        <state key="normal" title="Already have an account? Sign in"/>
+                                        <state key="normal" title="Already have an account? Sign in">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="Alreadyhaveanaccounttapped:" destination="y9O-MW-t5g" eventType="touchUpInside" id="qId-6n-1SY"/>
                                         </connections>
@@ -397,7 +405,9 @@
                                     <constraint firstAttribute="height" constant="50" id="N93-Br-DgZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Add New Medication"/>
+                                <state key="normal" title="Add New Medication">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="AddNewMedicationButton:" destination="9aV-Wv-vxg" eventType="touchUpInside" id="KXC-LB-eJl"/>
                                 </connections>
@@ -519,7 +529,7 @@
         <image name="w.circle" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wmF-fg-5df"/>
+        <segue reference="xa4-L2-QV7"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
