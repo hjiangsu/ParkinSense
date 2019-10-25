@@ -483,6 +483,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYM-Zq-uiC">
+                                <rect key="frame" x="32" y="809" width="69" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="GameOne">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="GameOneButtnPressed:" destination="eVj-ik-Udv" eventType="touchUpInside" id="1eW-eC-iQZ"/>
+                                    <segue destination="eX0-hP-ud1" kind="show" id="Td7-SG-TAf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKQ-CA-vhP">
+                                <rect key="frame" x="117" y="798" width="113" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Game Two">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="GameTwoButtonPressed:" destination="eVj-ik-Udv" eventType="touchUpInside" id="KJm-zh-DKU"/>
+                                    <segue destination="CtK-FA-4RQ" kind="show" id="nD8-Xq-y76"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.9380127788" green="0.94641774889999997" blue="0.97916191819999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -492,10 +514,39 @@
                         <viewLayoutGuide key="safeArea" id="AXk-lY-u2B"/>
                     </view>
                     <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="cV8-x3-u8p"/>
+                    <connections>
+                        <outlet property="GameOneButton" destination="FYM-Zq-uiC" id="8P0-QV-MIP"/>
+                        <outlet property="GameTwoButton" destination="hKQ-CA-vhP" id="b3W-9H-gIi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iFK-T6-vVm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2960.8695652173915" y="-421.20535714285711"/>
+        </scene>
+        <!--Game Two View Controller-->
+        <scene sceneID="NHz-fM-EVo">
+            <objects>
+                <viewController id="CtK-FA-4RQ" customClass="GameTwoViewController" customModule="ParkinSense_12_4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h43-Wb-EMq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Game Two" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ywu-ih-OgU">
+                                <rect key="frame" x="119" y="438" width="176" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="XRo-1g-DXU"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uoq-rt-AFF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vYz-LF-yja" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3830" y="-410"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pRT-aI-ByE">
@@ -537,6 +588,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EfA-ID-5vc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="115.84821428571428"/>
+        </scene>
+        <!--Game One View Controller-->
+        <scene sceneID="UHb-kr-Hp6">
+            <objects>
+                <viewController id="eX0-hP-ud1" customClass="GameOneViewController" customModule="ParkinSense_12_4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lTW-8c-lRU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Game One" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFt-mQ-Mod">
+                                <rect key="frame" x="119" y="438" width="177" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Ifh-Ci-8jg"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="u7a-b6-KEr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0CH-np-jrD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3828.985507246377" y="-1065.4017857142858"/>
         </scene>
     </scenes>
     <resources>

@@ -10,6 +10,10 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var GameOneButton: UIButton!
+    
+    @IBOutlet weak var GameTwoButton: UIButton!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -34,5 +38,13 @@ class HomeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    
+    @IBAction func GameOneButtnPressed(_ sender: Any) {
+    }
+    
+    
+    @IBAction func GameTwoButtonPressed(_ sender: Any) {
+    }
+    
 }

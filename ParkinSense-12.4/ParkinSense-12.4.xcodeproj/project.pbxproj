@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		038D56C12362C6AD00FFB3DD /* GameOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038D56C02362C6AD00FFB3DD /* GameOneViewController.swift */; };
+		038D56C32362C6BC00FFB3DD /* GameTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038D56C22362C6BC00FFB3DD /* GameTwoViewController.swift */; };
 		03AB56A423627D22000A3475 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03AB56A323627D22000A3475 /* GoogleService-Info.plist */; };
 		094FA8545FBF0289C12D48BC /* Pods_ParkinSense_12_4Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F27FD6A4359384A48BECB24 /* Pods_ParkinSense_12_4Tests.framework */; };
 		22E1492C880352C2A515D36A /* Pods_ParkinSense_12_4_ParkinSense_12_4UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F82DEDD8C442E3BB7EE452BC /* Pods_ParkinSense_12_4_ParkinSense_12_4UITests.framework */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		038D56C02362C6AD00FFB3DD /* GameOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOneViewController.swift; sourceTree = "<group>"; };
+		038D56C22362C6BC00FFB3DD /* GameTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTwoViewController.swift; sourceTree = "<group>"; };
 		03AB56A323627D22000A3475 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1646AE119FC7C3A20EF6D045 /* Pods-ParkinSense-12.4-ParkinSense-12.4UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkinSense-12.4-ParkinSense-12.4UITests.debug.xcconfig"; path = "Target Support Files/Pods-ParkinSense-12.4-ParkinSense-12.4UITests/Pods-ParkinSense-12.4-ParkinSense-12.4UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4A37EE9F9EE2DEC48033F828 /* Pods-ParkinSense-12.4-ParkinSense-12.4UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkinSense-12.4-ParkinSense-12.4UITests.release.xcconfig"; path = "Target Support Files/Pods-ParkinSense-12.4-ParkinSense-12.4UITests/Pods-ParkinSense-12.4-ParkinSense-12.4UITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,7 +129,6 @@
 				E3CB4F5B9B1ABDCEDE756677 /* Pods-ParkinSense-12.4Tests.debug.xcconfig */,
 				AAD23FB66C401B7D00ADA381 /* Pods-ParkinSense-12.4Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -202,6 +205,8 @@
 				A61328F623627A6900C7066C /* MedicationDetailViewController.swift */,
 				A61328F723627A6900C7066C /* HomeViewController.swift */,
 				A61328F823627A6900C7066C /* loginViewController.swift */,
+				038D56C02362C6AD00FFB3DD /* GameOneViewController.swift */,
+				038D56C22362C6BC00FFB3DD /* GameTwoViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -451,10 +456,12 @@
 				A61328FA23627A6A00C7066C /* MedicationDetailViewController.swift in Sources */,
 				A61328FB23627A6A00C7066C /* HomeViewController.swift in Sources */,
 				A61328BE23627A0700C7066C /* AppDelegate.swift in Sources */,
+				038D56C12362C6AD00FFB3DD /* GameOneViewController.swift in Sources */,
 				A61328F023627A5F00C7066C /* Constants.swift in Sources */,
 				A61328F923627A6A00C7066C /* signupViewController.swift in Sources */,
 				A61328F323627A5F00C7066C /* WeeklyCalendar.swift in Sources */,
 				A61328FC23627A6A00C7066C /* loginViewController.swift in Sources */,
+				038D56C32362C6BC00FFB3DD /* GameTwoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
