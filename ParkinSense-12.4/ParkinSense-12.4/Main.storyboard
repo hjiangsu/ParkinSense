@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P2j-cw-oFa">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="loginViewController" customModule="ParkinSense" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="loginViewController" customModule="ParkinSense_12_4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -165,7 +166,7 @@
         <!--Create an Account-->
         <scene sceneID="ZeU-gp-chd">
             <objects>
-                <viewController id="y9O-MW-t5g" customClass="signupViewController" customModule="ParkinSense" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="y9O-MW-t5g" customClass="signupViewController" customModule="ParkinSense_12_4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iQh-19-VeB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -284,7 +285,7 @@
         <!--Add Medication Detail-->
         <scene sceneID="OWg-XK-NHS">
             <objects>
-                <viewController id="9aV-Wv-vxg" customClass="MedicationDetailViewController" customModule="ParkinSense" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9aV-Wv-vxg" customClass="MedicationDetailViewController" customModule="ParkinSense_12_4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OwO-Rm-emg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -318,15 +319,18 @@
                                     <constraint firstItem="4Eu-lI-qQ0" firstAttribute="height" secondItem="ORO-fA-abf" secondAttribute="height" id="h2v-Ao-Lu9"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1c7-Pl-vd4">
-                                <rect key="frame" x="0.0" y="286" width="414" height="51.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1c7-Pl-vd4">
+                                <rect key="frame" x="0.0" y="286" width="415" height="55"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ps-1i-olm">
-                                        <rect key="frame" x="0.0" y="0.0" width="63" height="51.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="55" id="3R3-xa-AsF"/>
+                                            <constraint firstAttribute="height" constant="55" id="SCL-oz-O06"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="s.circle" catalog="system">
-                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="Scircle">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="47" weight="thin"/>
                                         </state>
                                         <connections>
@@ -334,9 +338,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5x-7t-RHi">
-                                        <rect key="frame" x="68" y="0.0" width="53.5" height="51.5"/>
+                                        <rect key="frame" x="60" y="0.0" width="55" height="55"/>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="m.circle" catalog="system">
+                                        <state key="normal" image="Mcircle">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="47" weight="thin"/>
                                         </state>
                                         <connections>
@@ -344,9 +348,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruK-da-F1M">
-                                        <rect key="frame" x="126.5" y="0.0" width="53.5" height="51.5"/>
+                                        <rect key="frame" x="120" y="0.0" width="55" height="55"/>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="t.circle" catalog="system">
+                                        <state key="normal" image="Tcircle">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="47" weight="thin"/>
                                         </state>
                                         <connections>
@@ -354,9 +358,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMd-5y-Z9f">
-                                        <rect key="frame" x="185" y="0.0" width="53.5" height="51.5"/>
+                                        <rect key="frame" x="180" y="0.0" width="55" height="55"/>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="w.circle" catalog="system">
+                                        <state key="normal" image="Wcircle">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="47" weight="thin"/>
                                         </state>
                                         <connections>
@@ -364,9 +368,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G23-e7-NL7">
-                                        <rect key="frame" x="243.5" y="0.0" width="53.5" height="51.5"/>
+                                        <rect key="frame" x="240" y="0.0" width="55" height="55"/>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="t.circle" catalog="system">
+                                        <state key="normal" image="Tcircle">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="47" weight="thin"/>
                                         </state>
                                         <connections>
@@ -374,9 +378,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56d-5x-jwS">
-                                        <rect key="frame" x="302" y="0.0" width="53.5" height="51.5"/>
+                                        <rect key="frame" x="300" y="0.0" width="55" height="55"/>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="f.circle" catalog="system">
+                                        <state key="normal" image="Fcircle">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="47" weight="thin"/>
                                         </state>
                                         <connections>
@@ -384,10 +388,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7S2-xP-MlT">
-                                        <rect key="frame" x="360.5" y="0.0" width="53.5" height="51.5"/>
+                                        <rect key="frame" x="360" y="0.0" width="55" height="55"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="s.circle" catalog="system">
+                                        <state key="normal" image="Scircle">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="47" weight="thin"/>
                                         </state>
                                         <connections>
@@ -395,9 +399,24 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="29l-1a-IQD"/>
+                                    <constraint firstItem="7S2-xP-MlT" firstAttribute="width" secondItem="8Ps-1i-olm" secondAttribute="width" id="2GZ-e8-vyp"/>
+                                    <constraint firstItem="MMd-5y-Z9f" firstAttribute="width" secondItem="8Ps-1i-olm" secondAttribute="width" id="31Z-FI-5fo"/>
+                                    <constraint firstItem="f5x-7t-RHi" firstAttribute="height" secondItem="8Ps-1i-olm" secondAttribute="height" id="5q1-le-wPZ"/>
+                                    <constraint firstItem="ruK-da-F1M" firstAttribute="height" secondItem="8Ps-1i-olm" secondAttribute="height" id="8qQ-2d-1in"/>
+                                    <constraint firstItem="7S2-xP-MlT" firstAttribute="height" secondItem="8Ps-1i-olm" secondAttribute="height" id="9KR-cK-YQ1"/>
+                                    <constraint firstItem="MMd-5y-Z9f" firstAttribute="height" secondItem="8Ps-1i-olm" secondAttribute="height" id="Eag-I3-NmV"/>
+                                    <constraint firstItem="G23-e7-NL7" firstAttribute="height" secondItem="8Ps-1i-olm" secondAttribute="height" id="M8D-sm-0w2"/>
+                                    <constraint firstItem="56d-5x-jwS" firstAttribute="height" secondItem="8Ps-1i-olm" secondAttribute="height" id="NkW-qx-omp"/>
+                                    <constraint firstItem="G23-e7-NL7" firstAttribute="width" secondItem="8Ps-1i-olm" secondAttribute="width" id="Wpe-Nt-o9u"/>
+                                    <constraint firstItem="f5x-7t-RHi" firstAttribute="width" secondItem="8Ps-1i-olm" secondAttribute="width" id="cm9-yn-ngL"/>
+                                    <constraint firstItem="56d-5x-jwS" firstAttribute="width" secondItem="8Ps-1i-olm" secondAttribute="width" id="mbj-6U-jHm"/>
+                                    <constraint firstItem="ruK-da-F1M" firstAttribute="width" secondItem="8Ps-1i-olm" secondAttribute="width" id="zb8-4k-KWL"/>
+                                </constraints>
                             </stackView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="deT-tB-iEy">
-                                <rect key="frame" x="0.0" y="353" width="414" height="216"/>
+                                <rect key="frame" x="0.0" y="356.5" width="414" height="216"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rH-ES-A2e">
                                 <rect key="frame" x="40" y="772" width="334" height="50"/>
@@ -416,17 +435,17 @@
                         <color key="backgroundColor" red="0.9380127788" green="0.94641774889999997" blue="0.97916191819999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="deT-tB-iEy" firstAttribute="top" secondItem="1c7-Pl-vd4" secondAttribute="bottom" constant="15.5" id="7Nl-RK-Ha2"/>
+                            <constraint firstItem="1c7-Pl-vd4" firstAttribute="top" secondItem="Upk-7h-p1s" secondAttribute="bottom" constant="8" id="AC2-ZS-GD8"/>
                             <constraint firstItem="deT-tB-iEy" firstAttribute="leading" secondItem="37n-HV-vhR" secondAttribute="leading" id="DoX-UN-cXV"/>
                             <constraint firstItem="37n-HV-vhR" firstAttribute="trailing" secondItem="6rH-ES-A2e" secondAttribute="trailing" constant="40" id="LRB-ga-gxl"/>
                             <constraint firstItem="Upk-7h-p1s" firstAttribute="top" secondItem="37n-HV-vhR" secondAttribute="top" constant="30" id="LsT-3F-xuO"/>
                             <constraint firstItem="37n-HV-vhR" firstAttribute="trailing" secondItem="Upk-7h-p1s" secondAttribute="trailing" constant="30" id="R1i-XF-hdf"/>
-                            <constraint firstItem="1c7-Pl-vd4" firstAttribute="leading" secondItem="37n-HV-vhR" secondAttribute="leading" id="WO4-t3-nkA"/>
                             <constraint firstItem="37n-HV-vhR" firstAttribute="bottom" secondItem="6rH-ES-A2e" secondAttribute="bottom" constant="40" id="cQc-LC-Y7w"/>
                             <constraint firstItem="Upk-7h-p1s" firstAttribute="leading" secondItem="37n-HV-vhR" secondAttribute="leading" constant="30" id="eEI-d9-eQb"/>
                             <constraint firstItem="deT-tB-iEy" firstAttribute="trailing" secondItem="37n-HV-vhR" secondAttribute="trailing" id="fj4-zo-96y"/>
-                            <constraint firstItem="37n-HV-vhR" firstAttribute="trailing" secondItem="1c7-Pl-vd4" secondAttribute="trailing" id="lJV-rr-K6e"/>
                             <constraint firstItem="6rH-ES-A2e" firstAttribute="leading" secondItem="37n-HV-vhR" secondAttribute="leading" constant="40" id="mWA-ty-cRy"/>
                             <constraint firstItem="1c7-Pl-vd4" firstAttribute="top" secondItem="Upk-7h-p1s" secondAttribute="bottom" constant="8" id="mqT-lH-nbh"/>
+                            <constraint firstItem="1c7-Pl-vd4" firstAttribute="leading" secondItem="deT-tB-iEy" secondAttribute="leading" id="nal-MJ-Ojq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="37n-HV-vhR"/>
                     </view>
@@ -453,7 +472,7 @@
         <!--Home View Controller-->
         <scene sceneID="Jwi-Ri-jN0">
             <objects>
-                <viewController id="eVj-ik-Udv" customClass="HomeViewController" customModule="ParkinSense" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eVj-ik-Udv" customClass="HomeViewController" customModule="ParkinSense_12_4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="HomeVC" id="b5g-Mf-2hH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -521,12 +540,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="f.circle" catalog="system" width="64" height="60"/>
-        <image name="m.circle" catalog="system" width="64" height="60"/>
+        <image name="Fcircle" width="173" height="171"/>
+        <image name="Mcircle" width="171" height="173"/>
+        <image name="Scircle" width="169" height="172"/>
+        <image name="Tcircle" width="171" height="172"/>
+        <image name="Wcircle" width="175" height="173"/>
         <image name="personalimage" width="148" height="134"/>
-        <image name="s.circle" catalog="system" width="64" height="60"/>
-        <image name="t.circle" catalog="system" width="64" height="60"/>
-        <image name="w.circle" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xa4-L2-QV7"/>
