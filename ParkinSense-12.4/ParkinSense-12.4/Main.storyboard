@@ -477,43 +477,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ym5-fU-teU">
-                                <rect key="frame" x="100" y="430" width="214" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYM-Zq-uiC">
-                                <rect key="frame" x="32" y="809" width="69" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="GameOne">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="GameOneButtnPressed:" destination="eVj-ik-Udv" eventType="touchUpInside" id="1eW-eC-iQZ"/>
-                                    <segue destination="eX0-hP-ud1" kind="show" id="Td7-SG-TAf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKQ-CA-vhP">
-                                <rect key="frame" x="117" y="798" width="113" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Game Two">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="GameTwoButtonPressed:" destination="eVj-ik-Udv" eventType="touchUpInside" id="KJm-zh-DKU"/>
-                                    <segue destination="CtK-FA-4RQ" kind="show" id="nD8-Xq-y76"/>
-                                </connections>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sYC-SU-eHD">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VC9-Zp-ttA">
+                                        <rect key="frame" x="0.0" y="-315" width="414" height="1300"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYM-Zq-uiC">
+                                                <rect key="frame" x="33" y="1220" width="69" height="30"/>
+                                                <state key="normal" title="GameOne">
+                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="GameOneButtnPressed:" destination="eVj-ik-Udv" eventType="touchUpInside" id="1eW-eC-iQZ"/>
+                                                    <segue destination="eX0-hP-ud1" kind="show" id="Td7-SG-TAf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKQ-CA-vhP">
+                                                <rect key="frame" x="132" y="1220" width="73" height="30"/>
+                                                <state key="normal" title="Game Two">
+                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="GameTwoButtonPressed:" destination="eVj-ik-Udv" eventType="touchUpInside" id="KJm-zh-DKU"/>
+                                                    <segue destination="CtK-FA-4RQ" kind="show" id="nD8-Xq-y76"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="FYM-Zq-uiC" firstAttribute="leading" secondItem="VC9-Zp-ttA" secondAttribute="leading" constant="33" id="4wK-3l-vxE"/>
+                                            <constraint firstAttribute="bottom" secondItem="hKQ-CA-vhP" secondAttribute="bottom" constant="50" id="8zb-N5-XfX"/>
+                                            <constraint firstAttribute="bottom" secondItem="FYM-Zq-uiC" secondAttribute="bottom" constant="50" id="WuX-vR-o7H"/>
+                                            <constraint firstAttribute="height" constant="1300" id="aNq-3X-nb0"/>
+                                            <constraint firstItem="hKQ-CA-vhP" firstAttribute="leading" secondItem="FYM-Zq-uiC" secondAttribute="trailing" constant="30" id="cDq-Xi-AjO"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ym5-fU-teU">
+                                        <rect key="frame" x="100" y="317" width="214" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="VC9-Zp-ttA" firstAttribute="centerX" secondItem="sYC-SU-eHD" secondAttribute="centerX" id="6wS-Qd-93I"/>
+                                    <constraint firstItem="VC9-Zp-ttA" firstAttribute="leading" secondItem="sYC-SU-eHD" secondAttribute="leading" id="8xH-JF-s35"/>
+                                    <constraint firstAttribute="trailing" secondItem="VC9-Zp-ttA" secondAttribute="trailing" id="GaI-Lg-rMu"/>
+                                    <constraint firstItem="VC9-Zp-ttA" firstAttribute="centerY" secondItem="sYC-SU-eHD" secondAttribute="centerY" constant="-69" id="MaP-5U-IO2"/>
+                                    <constraint firstAttribute="bottom" secondItem="VC9-Zp-ttA" secondAttribute="bottom" id="WWD-U7-NRk"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="fuR-o4-HcQ"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="9pW-MI-2cc"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.9380127788" green="0.94641774889999997" blue="0.97916191819999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="Ym5-fU-teU" firstAttribute="centerX" secondItem="b5g-Mf-2hH" secondAttribute="centerX" id="AJ9-vc-yam"/>
-                            <constraint firstItem="Ym5-fU-teU" firstAttribute="centerY" secondItem="b5g-Mf-2hH" secondAttribute="centerY" id="jl4-50-I3z"/>
+                            <constraint firstItem="sYC-SU-eHD" firstAttribute="leading" secondItem="AXk-lY-u2B" secondAttribute="leading" id="67w-4o-hsq"/>
+                            <constraint firstItem="AXk-lY-u2B" firstAttribute="trailing" secondItem="sYC-SU-eHD" secondAttribute="trailing" id="7qf-fe-M4H"/>
+                            <constraint firstAttribute="bottom" secondItem="sYC-SU-eHD" secondAttribute="bottom" id="Xun-pP-CZZ"/>
+                            <constraint firstItem="sYC-SU-eHD" firstAttribute="top" secondItem="AXk-lY-u2B" secondAttribute="top" id="iuM-G3-sZh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AXk-lY-u2B"/>
                     </view>
                     <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="cV8-x3-u8p"/>
+                    <size key="freeformSize" width="414" height="896"/>
                     <connections>
                         <outlet property="GameOneButton" destination="FYM-Zq-uiC" id="8P0-QV-MIP"/>
                         <outlet property="GameTwoButton" destination="hKQ-CA-vhP" id="b3W-9H-gIi"/>
@@ -521,7 +550,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iFK-T6-vVm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2960.8695652173915" y="-421.20535714285711"/>
+            <point key="canvasLocation" x="2850.7246376811595" y="-662.27678571428567"/>
         </scene>
         <!--Game Two View Controller-->
         <scene sceneID="NHz-fM-EVo">
