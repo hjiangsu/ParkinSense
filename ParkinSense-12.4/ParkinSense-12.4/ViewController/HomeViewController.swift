@@ -54,6 +54,7 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         setUp(newformattedtartcurrentweek: formattedstartcurrentweek, newformattedendcurrentweek: formattedendcurrentweek)
         sevendaydate(currentdate: rightNow)
+        popover()
         
     }
 
@@ -66,6 +67,14 @@ class HomeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func popover(){
+        let alert = UIAlertController(title: "Reminder", message: "Did you take your medicine today?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        self.present(alert,animated: true)
+    }
+    
     @IBAction func NextWeekButton(_ sender: Any) {
             let nextweek = rightNow + 3600*24*7
             rightNow = nextweek
@@ -103,6 +112,17 @@ class HomeViewController: UIViewController {
         func setUp(newformattedtartcurrentweek: String, newformattedendcurrentweek: String)
         {
             weekdateLabel.text = "\(newformattedtartcurrentweek)" + " ~ " + "\(newformattedendcurrentweek)"
+            
+            Utilities.styleFilledDateButton(SundayButton)
+            Utilities.styleFilledDateButton(MondayButton)
+            Utilities.styleFilledDateButton(TuesdayButton)
+            Utilities.styleFilledDateButton(WednesdayButton)
+            Utilities.styleFilledDateButton(ThursdayButton)
+            Utilities.styleFilledDateButton(FridayButton)
+            Utilities.styleFilledDateButton(SaturdayButton)
+            //Utilities.styleFilledButton(NextWeek)
+            //Utilities.styleFilledButton(PrevWeek)
+            
         }
         
         func sevendaydate(currentdate: Date){

@@ -36,6 +36,16 @@ class Utilities {
         button.tintColor = UIColor.white
     }
     
+    static func styleFilledDateButton(_ button:UIButton) {
+        
+        // Filled rounded corner style
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor.gray.cgColor
+        button.backgroundColor = UIColor.white
+        button.layer.cornerRadius = 25.0
+        button.tintColor = UIColor.gray
+    }
+    
     static func styleHollowButton(_ button:UIButton) {
         
         // Hollow rounded corner style
