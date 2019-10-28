@@ -8,12 +8,10 @@
 
 import Foundation
 
-struct Constants{
-    
-    struct  Storyboard {
-        
-        static let homeViewController = "HomeVC"
-        
-    }
-    
-}
+var MedicationName = "None"
+
+var medicationLabelalpha = 0
+
+var Username = ""
+
+var Password = ""

@@ -65,7 +65,13 @@ class MedicationDetailViewController: UIViewController {
     
     @IBAction func AddNewMedicationButton(_ sender: Any) {
         
-        self.performSegue(withIdentifier: "unwindTosignup", sender: self)
+        MedicationName = MedicationTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        print(MedicationName)
+        
+        medicationLabelalpha = 1
+        
+        //self.performSegue(withIdentifier: "unwindTosignup", sender: self)
     }
     
 

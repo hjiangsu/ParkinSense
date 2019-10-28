@@ -21,6 +21,8 @@ class signupViewController: UIViewController {
     
     @IBOutlet weak var ErrorLabel: UILabel!
     
+    @IBOutlet weak var MedicationLabel: UILabel!
+    
     @IBOutlet weak var CreateanAccountButton: UIButton!
     
     @IBOutlet weak var AddNewMedicationDetailButton: UIButton!
@@ -40,6 +42,14 @@ class signupViewController: UIViewController {
         
         //Hide the error label
         ErrorLabel.alpha = 0
+        
+        MedicationLabel.alpha = CGFloat(medicationLabelalpha)
+        
+        MedicationLabel.text = MedicationName
+        
+        UsernameTextField.text = Username
+        
+        PasswordTextField.text = Password
         
         //Style the elements
         Utilities.styleTextField(UsernameTextField)
@@ -95,8 +105,8 @@ class signupViewController: UIViewController {
         }
         else{
             //Create cleaned versions of the data
-            let Username = UsernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let Password = PasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            Username = UsernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            Password = PasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
             //Create the user
             Auth.auth().createUser(withEmail: Username, password: Password) { (result, err) in
@@ -112,7 +122,7 @@ class signupViewController: UIViewController {
                     //User was created successfully, now store the username
                     let db = Firestore.firestore()
                     
-                    db.collection("users").addDocument(data: ["Username": Username, "uid": result!.user.uid]) { (error) in
+                    db.collection("users").addDocument(data: ["Username": Username, "uid": result!.user.uid, "MedicationName": MedicationName]) { (error) in
                         
                         if error != nil {
                             //Show error message
@@ -132,6 +142,8 @@ class signupViewController: UIViewController {
     }
     
     @IBAction func AddNewMedicationDetailTapped(_ sender: Any) {
+        Username = UsernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        Password = PasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     @IBAction func Alreadyhaveanaccounttapped(_ sender: Any) {
