@@ -15,3 +15,5 @@ var medicationLabelalpha = 0
 var Username = ""
 
 var Password = ""
+
+var timepickertime = ""

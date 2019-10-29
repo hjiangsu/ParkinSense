@@ -136,9 +136,13 @@ class signupViewController: UIViewController {
                 
                 //Check for errors
                 if err != nil {
-                    
+                    if Password.count < 6{
+                        self.showError("password must be at least 6 characters")
+                    }
                     //There was an error creating the user
-                    self.showError("Error creating user")
+                    else{
+                        self.showError("Error creating user")
+                    }
                 }
                 else
                 {

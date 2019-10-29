@@ -26,6 +26,8 @@ class MedicationDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         timePicker?.datePickerMode = .time
         
+        timePicker.timeZone = NSTimeZone.local
+        
         setUpElements()
         
         
@@ -93,7 +95,13 @@ class MedicationDetailViewController: UIViewController {
         
         MedicationName = MedicationTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        print(MedicationName)
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.timeStyle = DateFormatter.Style.short
+        
+        timepickertime = dateFormatter.string(from: timePicker.date)
+        
+        print(timepickertime)
         
         medicationLabelalpha = 1
         
