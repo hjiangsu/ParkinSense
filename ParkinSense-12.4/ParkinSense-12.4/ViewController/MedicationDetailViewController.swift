@@ -32,6 +32,15 @@ class MedicationDetailViewController: UIViewController {
     }
     
 
+    /**
+        Function for set up the appearance of the medication detail page
+     
+         - Parameters: No
+     
+         - Returns: No
+            
+    **/
+    
     func setUpElements(){
         
         Utilities.styleFilledButton(AddNewMedicationButton)
@@ -45,6 +54,15 @@ class MedicationDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    /**
+        Function about change the day button appearene clicking or not clicking
+     
+         - Parameter sender: Button itself
+     
+         - Returns: No
+            
+    **/
     
     @IBAction func DateSelectionTapped(_ sender: UIButton) {
         
@@ -62,6 +80,14 @@ class MedicationDetailViewController: UIViewController {
         
     }
     
+    /**
+        Function about the add new medication Button, will direct you back to the sign up page and medication will be displayed on the screen
+     
+         - Parameter sender: Button itself
+     
+         - Returns: No
+            
+    **/
     
     @IBAction func AddNewMedicationButton(_ sender: Any) {
         

@@ -40,6 +40,14 @@ class loginViewController: UIViewController {
         btnCheckBox.setImage(UIImage(named:"checkbox"), for: .selected)
     }
     
+    /**
+        Function to set up the default ErrorLabel invisiable and set up the button and text appearance
+     
+         - Parameters: No
+         - Returns: No
+            
+    **/
+    
     func setUpElements(){
         
         //Hide the error label
@@ -65,6 +73,14 @@ class loginViewController: UIViewController {
     }
     */
 
+    /**
+        Function about the Remember Password Button check or uncheck
+     
+         - Parameter sender: Button itself
+     
+         - Returns: No
+            
+    **/
     
     @IBAction func checkMarkTapped(_ sender: UIButton) {
         
@@ -79,6 +95,15 @@ class loginViewController: UIViewController {
         }
         
     }
+    
+    /**
+        Function about the Sign in Button, will direct you to the home page if success. If not, the error will be displayed
+     
+         - Parameter sender: Button itself
+     
+         - Returns: No
+            
+    **/
     
     @IBAction func SigninTapped(_ sender: Any) {
         
@@ -103,8 +128,26 @@ class loginViewController: UIViewController {
         
     }
     
+    /**
+        Function about the Create Account Button, will direct you to the Sign up page
+     
+         - Parameter sender: Button itself
+     
+         - Returns: No
+            
+    **/
+    
     @IBAction func CreateAccountTapped(_ sender: Any) {
     }
+    
+    /**
+        Function about the Back to the current  page Button,  
+     
+         - Parameter sender: Button itself
+     
+         - Returns: No
+            
+    **/
     
     @IBAction func unwindTologin(segue: UIStoryboardSegue){
         

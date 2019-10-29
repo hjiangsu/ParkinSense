@@ -38,6 +38,14 @@ class signupViewController: UIViewController {
         
     }
     
+    /**
+        Function to set up the default ErrorLabel invisiable and set up the button and text appearance
+     
+         - Parameters: No
+         - Returns: No
+            
+    **/
+    
     func setUpElement(){
         
         //Hide the error label
@@ -74,6 +82,13 @@ class signupViewController: UIViewController {
     }
     */
     
+    /**
+        Function to get the error message from text field for username and password
+     
+         - Parameters: No
+         - Returns: String
+            
+    **/
     
     func validateFilds() -> String? {
         
@@ -92,6 +107,14 @@ class signupViewController: UIViewController {
         return nil
         
     }
+    
+    /**
+        Function about Create Account Button, will make you access to the main page if sign up successfull. If not will give you the error message
+     
+         - Parameter sender: Button itself
+         - Returns: No
+            
+    **/
     
     @IBAction func CreateanAccounttapped(_ sender: Any) {
         
@@ -141,15 +164,40 @@ class signupViewController: UIViewController {
         
     }
     
+    /**
+        Function about Add New Medication Button, will direct you to Medication Detail Page, and save the username and password into constant which later on when you back to the page, the username and password still remaining in the sign up page
+     
+         - Parameter sender: Button itself
+         - Returns: No
+            
+    **/
+    
     @IBAction func AddNewMedicationDetailTapped(_ sender: Any) {
         Username = UsernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         Password = PasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
+    /**
+        Function about Already Have Account  Button, will direct you back to signup page
+     
+         - Parameter sender: Self Button
+         - Returns: No
+            
+    **/
+    
     @IBAction func Alreadyhaveanaccounttapped(_ sender: Any) {
         
         self.performSegue(withIdentifier: "unwindTologin", sender: nil)
     }
+    
+    /**
+        Function about the Back to the current  page Button,
+     
+         - Parameter sender: Button itself
+     
+         - Returns: No
+            
+    **/
     
     @IBAction func unwindTosignup(segue: UIStoryboardSegue){
         
