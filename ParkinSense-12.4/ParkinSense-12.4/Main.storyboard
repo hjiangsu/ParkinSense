@@ -99,19 +99,19 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hnr-RH-HaI">
-                                <rect key="frame" x="30" y="138" width="354" height="231"/>
+                                <rect key="frame" x="30" y="138" width="354" height="365"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="personalimage" translatesAutoresizingMaskIntoConstraints="NO" id="G5R-Xz-Uyz">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="134"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="268"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ParkinSense" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42X-dl-ENJ">
-                                        <rect key="frame" x="0.0" y="144" width="354" height="51.5"/>
+                                        <rect key="frame" x="0.0" y="278" width="354" height="51.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spark Your Sense" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4z-sO-sY3">
-                                        <rect key="frame" x="0.0" y="205.5" width="354" height="25.5"/>
+                                        <rect key="frame" x="0.0" y="339.5" width="354" height="25.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -809,15 +809,98 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qyv-Wk-afE">
+                                <rect key="frame" x="150" y="248" width="146" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.4136710167" green="0.43626976010000001" blue="0.52536845210000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="55"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="Startthegame:" destination="eX0-hP-ud1" eventType="touchUpInside" id="Apu-Yz-su3"/>
+                                    <segue destination="urS-pL-72g" kind="show" id="cEa-SR-Mx9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Ifh-Ci-8jg"/>
                     </view>
                     <navigationItem key="navigationItem" id="u7a-b6-KEr"/>
+                    <connections>
+                        <outlet property="StartGame" destination="Qyv-Wk-afE" id="LFP-E1-UWh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0CH-np-jrD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3828.985507246377" y="-1065.4017857142858"/>
+        </scene>
+        <!--Tilt View Controller-->
+        <scene sceneID="v7m-mx-iug">
+            <objects>
+                <viewController id="urS-pL-72g" customClass="TiltViewController" customModule="ParkinSense" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oCt-Ev-UUP" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="198" translatesAutoresizingMaskIntoConstraints="NO" id="ih8-4Z-GDH">
+                                <rect key="frame" x="37.5" y="108" width="339.5" height="63.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Trn-2Q-P8U">
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="63.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSH-hj-afr">
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="33.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TsC-Qw-fMA" userLabel="Time Label">
+                                                <rect key="frame" x="0.0" y="33.5" width="65" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VoR-XX-cSj">
+                                        <rect key="frame" x="263" y="0.0" width="76.5" height="63.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibi-eF-j7n">
+                                                <rect key="frame" x="0.0" y="0.0" width="76.5" height="33.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpD-Qv-ALY" userLabel="Score Label">
+                                                <rect key="frame" x="0.0" y="33.5" width="76.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ih8-4Z-GDH" firstAttribute="centerX" secondItem="oCt-Ev-UUP" secondAttribute="centerX" id="c2H-JI-4Pe"/>
+                            <constraint firstItem="ih8-4Z-GDH" firstAttribute="top" secondItem="vWd-Ae-3OE" secondAttribute="top" constant="20" id="xyJ-eN-5JB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vWd-Ae-3OE"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="S2W-ho-in7"/>
+                    <connections>
+                        <outlet property="scoreLabel" destination="qpD-Qv-ALY" id="lro-yr-ua0"/>
+                        <outlet property="timeLabel" destination="TsC-Qw-fMA" id="TPl-ul-Zpe"/>
+                        <outlet property="timeScoreUI" destination="ih8-4Z-GDH" id="ksf-29-0VT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="35T-K8-xAo" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4923" y="-1065"/>
         </scene>
     </scenes>
     <resources>
@@ -829,7 +912,7 @@
         <image name="personalimage" width="148" height="134"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xa4-L2-QV7"/>
+        <segue reference="wmF-fg-5df"/>
         <segue reference="5DB-D4-Byf"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -11,6 +11,9 @@
 		038D56C12362C6AD00FFB3DD /* GameOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038D56C02362C6AD00FFB3DD /* GameOneViewController.swift */; };
 		038D56C32362C6BC00FFB3DD /* GameTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038D56C22362C6BC00FFB3DD /* GameTwoViewController.swift */; };
 		03AB56A423627D22000A3475 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03AB56A323627D22000A3475 /* GoogleService-Info.plist */; };
+		03DB2F0623693FA000EE9EF4 /* TiltGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB2F0323693FA000EE9EF4 /* TiltGameScene.swift */; };
+		03DB2F0723693FA000EE9EF4 /* CountdownGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB2F0423693FA000EE9EF4 /* CountdownGameScene.swift */; };
+		03DB2F0823693FA000EE9EF4 /* TiltViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB2F0523693FA000EE9EF4 /* TiltViewController.swift */; };
 		094FA8545FBF0289C12D48BC /* Pods_ParkinSense_12_4Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F27FD6A4359384A48BECB24 /* Pods_ParkinSense_12_4Tests.framework */; };
 		22E1492C880352C2A515D36A /* Pods_ParkinSense_12_4_ParkinSense_12_4UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F82DEDD8C442E3BB7EE452BC /* Pods_ParkinSense_12_4_ParkinSense_12_4UITests.framework */; };
 		9E55761FBCE6FB2CCBF32EE6 /* Pods_ParkinSense_12_4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB894B302585B06785FECC7 /* Pods_ParkinSense_12_4.framework */; };
@@ -51,6 +54,9 @@
 		038D56C02362C6AD00FFB3DD /* GameOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOneViewController.swift; sourceTree = "<group>"; };
 		038D56C22362C6BC00FFB3DD /* GameTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTwoViewController.swift; sourceTree = "<group>"; };
 		03AB56A323627D22000A3475 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		03DB2F0323693FA000EE9EF4 /* TiltGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TiltGameScene.swift; sourceTree = "<group>"; };
+		03DB2F0423693FA000EE9EF4 /* CountdownGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownGameScene.swift; sourceTree = "<group>"; };
+		03DB2F0523693FA000EE9EF4 /* TiltViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TiltViewController.swift; sourceTree = "<group>"; };
 		1646AE119FC7C3A20EF6D045 /* Pods-ParkinSense-12.4-ParkinSense-12.4UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkinSense-12.4-ParkinSense-12.4UITests.debug.xcconfig"; path = "Target Support Files/Pods-ParkinSense-12.4-ParkinSense-12.4UITests/Pods-ParkinSense-12.4-ParkinSense-12.4UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4A37EE9F9EE2DEC48033F828 /* Pods-ParkinSense-12.4-ParkinSense-12.4UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkinSense-12.4-ParkinSense-12.4UITests.release.xcconfig"; path = "Target Support Files/Pods-ParkinSense-12.4-ParkinSense-12.4UITests/Pods-ParkinSense-12.4-ParkinSense-12.4UITests.release.xcconfig"; sourceTree = "<group>"; };
 		4F27FD6A4359384A48BECB24 /* Pods_ParkinSense_12_4Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkinSense_12_4Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +213,9 @@
 				A61328F823627A6900C7066C /* loginViewController.swift */,
 				038D56C02362C6AD00FFB3DD /* GameOneViewController.swift */,
 				038D56C22362C6BC00FFB3DD /* GameTwoViewController.swift */,
+				03DB2F0423693FA000EE9EF4 /* CountdownGameScene.swift */,
+				03DB2F0323693FA000EE9EF4 /* TiltGameScene.swift */,
+				03DB2F0523693FA000EE9EF4 /* TiltViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -452,9 +461,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A61328F223627A5F00C7066C /* TimeandExtension.swift in Sources */,
+				03DB2F0823693FA000EE9EF4 /* TiltViewController.swift in Sources */,
 				A61328F123627A5F00C7066C /* Utilities.swift in Sources */,
 				0333C3CC23656A5700031C26 /* weeklycalendar.swift in Sources */,
+				03DB2F0623693FA000EE9EF4 /* TiltGameScene.swift in Sources */,
 				A61328FA23627A6A00C7066C /* MedicationDetailViewController.swift in Sources */,
+				03DB2F0723693FA000EE9EF4 /* CountdownGameScene.swift in Sources */,
 				A61328FB23627A6A00C7066C /* HomeViewController.swift in Sources */,
 				A61328BE23627A0700C7066C /* AppDelegate.swift in Sources */,
 				038D56C12362C6AD00FFB3DD /* GameOneViewController.swift in Sources */,

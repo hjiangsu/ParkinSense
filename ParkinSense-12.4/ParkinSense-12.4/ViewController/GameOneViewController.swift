@@ -10,6 +10,8 @@ import UIKit
 
 class GameOneViewController: UIViewController {
 
+    @IBOutlet weak var StartGame: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,4 +29,7 @@ class GameOneViewController: UIViewController {
     }
     */
 
+    @IBAction func Startthegame(_ sender: Any) {
+    }
+    
 }
