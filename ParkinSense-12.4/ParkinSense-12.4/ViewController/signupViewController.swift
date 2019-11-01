@@ -149,7 +149,7 @@ class signupViewController: UIViewController {
                     //User was created successfully, now store the username
                     let db = Firestore.firestore()
                     
-                    db.collection("users").document(result!.user.uid).setData(["Username": Username, "uid": result!.user.uid, "MedicationName": MedicationName, "login_time": rightNow]) { (error) in
+                    db.collection("users").document(result!.user.uid).setData(["Username": Username, "uid": result!.user.uid, "MedicationName": MedicationName, "login_time":rightNow - 3600*24]) { (error) in
                         
                         if error != nil {
                             //Show error message

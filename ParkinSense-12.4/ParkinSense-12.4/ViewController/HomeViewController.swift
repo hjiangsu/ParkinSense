@@ -52,6 +52,7 @@ class HomeViewController: UIViewController {
         @IBOutlet weak var FridayButton: UIButton!
         @IBOutlet weak var SaturdayButton: UIButton!
         
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,17 +84,19 @@ class HomeViewController: UIViewController {
                     //print(lasttimeLogindatestr)
                     thistimeLogindatestr = dateformatter.string(from: Date())
                     //print(thistimeLogindatestr)
+                    if lasttimeLogindatestr != thistimeLogindatestr{
+                         //print("in popover")
+                        self.popover()
+                     }
                 }
             }
 
         }
         
         //print(userid)
-        db.collection("users").document(userid).setData(["login_time": rightNow, "Username": Username, "MedicationName": MedicationName, "uid":userid])
+//        db.collection("users").document(userid).setData(["login_time": rightNow, "Username": Username, "MedicationName": MedicationName, "uid":userid])
         
-        if lasttimeLogindatestr != thistimeLogindatestr{
-            popover()
-        }
+ 
         
         
     }
@@ -121,6 +124,7 @@ class HomeViewController: UIViewController {
     func popover(){
         let alert = UIAlertController(title: "Reminder", message: "Did you take your medicine today?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        db.collection("users").document(userid).setData(["login_time": rightNow, "Username": Username, "MedicationName": MedicationName, "uid":userid])
         
         self.present(alert,animated: true)
     }
