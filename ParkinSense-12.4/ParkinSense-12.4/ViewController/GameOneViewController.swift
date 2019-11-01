@@ -12,8 +12,14 @@ class GameOneViewController: UIViewController {
 
     @IBOutlet weak var StartGame: UIButton!
     
+    @IBOutlet weak var QuitGame: UIButton!
+    //@IBOutlet weak var myRoundedButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.StartGame.layer.cornerRadius = 25
+        self.QuitGame.layer.cornerRadius = 25
 
         // Do any additional setup after loading the view.
     }
