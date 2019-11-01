@@ -8,11 +8,11 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 
 class loginViewController: UIViewController {
 
-    
     
     @IBOutlet weak var UsernameTextField: UITextField!
     
@@ -110,8 +110,8 @@ class loginViewController: UIViewController {
         //validate Text Fields
         
         //Create cleaned versions of the text field
-        let Username = UsernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        let Password = PasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        Username = UsernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        Password = PasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
         
         Auth.auth().signIn(withEmail: Username, password: Password) { (result, error) in
@@ -122,7 +122,9 @@ class loginViewController: UIViewController {
                 self.ErrorLabel.alpha = 1
             }
             else{
+
                 self.performSegue(withIdentifier: "loginToHomeID", sender: nil)
+                
             }
         }
         

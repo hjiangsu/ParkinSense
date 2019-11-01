@@ -17,3 +17,5 @@ var Username = ""
 var Password = ""
 
 var timepickertime = ""
+
+var userid = ""

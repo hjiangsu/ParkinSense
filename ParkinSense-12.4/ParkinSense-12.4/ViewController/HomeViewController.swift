@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
+import Firebase
 
 class HomeViewController: UIViewController {
 
@@ -14,8 +17,14 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var GameTwoButton: UIButton!
     
+    var ref: DatabaseReference?
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        //userid = Auth.auth().currentUser!.uid
+        
         
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
@@ -47,13 +56,34 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+ 
         
         // Do any additional setup after loading the view.
         setUp(newformattedtartcurrentweek: formattedstartcurrentweek, newformattedendcurrentweek: formattedendcurrentweek)
         sevendaydate(currentdate: rightNow)
+        //getlogintime()
         popover()
         
+        ref = Database.database().reference()
+        userid = Auth.auth().currentUser!.uid
+        
+        let db = Firestore.firestore()
+        db.collection("users").document(userid).getDocument { (document, error) in
+            if error == nil{
+                if document != nil && document!.exists{
+                    let DocumentData = document!.data()
+                    print (DocumentData!)
+                    Username = DocumentData!["Username"] as! String
+                    MedicationName = DocumentData!["MedicationName"] as! String
+                    print(Username)
+                    print(MedicationName)
+                }
+            }
+
+        }
+        
+        print(userid)
+        db.collection("users").document(userid).setData(["login_time": rightNow, "Username": Username, "MedicationName": MedicationName, "uid":userid])
     }
 
     /*
@@ -180,6 +210,14 @@ class HomeViewController: UIViewController {
             FridayButton.setTitle(FridayDate, for: .normal)
             SaturdayButton.setTitle(SaturdayDate, for: .normal)
         }
+    
+//    func getlogintime(){
+//
+//        ref?.updateChildValues(["login_time": [rightNow]])
+//
+//        print(rightNow)
+//    }
+
     
     /**
         Function about the Game One Button, will direct you to the Game One page
