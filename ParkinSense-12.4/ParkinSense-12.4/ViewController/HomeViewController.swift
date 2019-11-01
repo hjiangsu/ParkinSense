@@ -62,7 +62,7 @@ class HomeViewController: UIViewController {
         setUp(newformattedtartcurrentweek: formattedstartcurrentweek, newformattedendcurrentweek: formattedendcurrentweek)
         sevendaydate(currentdate: rightNow)
         //getlogintime()
-        popover()
+
         
         ref = Database.database().reference()
         userid = Auth.auth().currentUser!.uid
@@ -72,18 +72,30 @@ class HomeViewController: UIViewController {
             if error == nil{
                 if document != nil && document!.exists{
                     let DocumentData = document!.data()
-                    print (DocumentData!)
+                    //print (DocumentData!)
                     Username = DocumentData!["Username"] as! String
                     MedicationName = DocumentData!["MedicationName"] as! String
-                    print(Username)
-                    print(MedicationName)
+                    let lasttimeLogin = DocumentData!["login_time"] as! Timestamp
+                    //print(lasttimeLogin.dateValue())
+                    let lasttimeLogindate = lasttimeLogin.dateValue()
+                    dateformatter.dateFormat = "yyyy/MM/dd"
+                    lasttimeLogindatestr = dateformatter.string(from: lasttimeLogindate)
+                    //print(lasttimeLogindatestr)
+                    thistimeLogindatestr = dateformatter.string(from: Date())
+                    //print(thistimeLogindatestr)
                 }
             }
 
         }
         
-        print(userid)
+        //print(userid)
         db.collection("users").document(userid).setData(["login_time": rightNow, "Username": Username, "MedicationName": MedicationName, "uid":userid])
+        
+        if lasttimeLogindatestr != thistimeLogindatestr{
+            popover()
+        }
+        
+        
     }
 
     /*

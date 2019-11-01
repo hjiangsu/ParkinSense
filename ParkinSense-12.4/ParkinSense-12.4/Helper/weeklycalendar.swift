@@ -14,6 +14,10 @@ var newcalendar = Calendar.current
 var rightNow = Date()
 var formatter = DateFormatter()
 var dayformatter = DateFormatter()
+var dateformatter = DateFormatter()
+var lasttimeLogindatestr = ""
+var thistimeLogindatestr = ""
+//var lasttimeLogin = CVTimeStamp()
 
 
 var daterange: DateInterval{
