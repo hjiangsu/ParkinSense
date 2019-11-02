@@ -638,7 +638,7 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MXJ-iD-VNn">
+                                            <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MXJ-iD-VNn">
                                                 <rect key="frame" x="0.0" y="394" width="414" height="307"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <viewLayoutGuide key="contentLayoutGuide" id="K7x-k3-Ons"/>

@@ -72,7 +72,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
             imageView.image = UIImage(named: imagesArray[0])
             let x1Pos = CGFloat(0)*self.view.bounds.size.width
             imageView.frame = CGRect(x: x1Pos, y: 0, width: view.frame.size.width, height: DataScrollView.frame.size.height)
-            DataScrollView.contentSize.width = view.frame.size.width*CGFloat(0+1)
+            //DataScrollView.contentSize.width = view.frame.size.width*CGFloat(0+1)
 
             DataScrollView.addSubview(imageView)
         //}
@@ -94,6 +94,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         DataScrollView.contentSize.width = view.frame.size.width*CGFloat(1+1)
         //self.view.addSubview(Datalabeltext)
         DataScrollView.addSubview(Datalabeltext)
+        DataScrollView.delegate = self
         //DataScrollView.addSubview(imageView2)
         
 //        let Datalabeltext = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
@@ -304,8 +305,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
     @IBAction func GameTwoButtonPressed(_ sender: Any) {
     }
     
-    func scrollViewDidScroll(_ DataScrollView: UIScrollView) {
-        let page = DataScrollView.contentOffset.x/DataScrollView.frame.width
+    func scrollViewDidEndDecelerating(_ DataScrollView: UIScrollView) {
+                let page = DataScrollView.contentOffset.x/DataScrollView.frame.width
         
         PageControl.currentPage = Int(page)
     }
