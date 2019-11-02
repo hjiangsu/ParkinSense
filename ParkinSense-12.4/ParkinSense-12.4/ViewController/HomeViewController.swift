@@ -11,8 +11,13 @@ import FirebaseDatabase
 import FirebaseAuth
 import Firebase
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UIScrollViewDelegate{
 
+    
+    @IBOutlet weak var DataScrollView: UIScrollView!
+    
+    @IBOutlet weak var PageControl: UIPageControl!
+    
     @IBOutlet weak var GameOneButton: UIButton!
     
     @IBOutlet weak var GameTwoButton: UIButton!
@@ -54,10 +59,49 @@ class HomeViewController: UIViewController {
         
     let db = Firestore.firestore()
     
+    let imagesArray = ["AppIcon", "personalimage"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        PageControl.numberOfPages = imagesArray.count
+        
+        //for i in 0..<imagesArray.count{
+            let imageView = UIImageView()
+            imageView.contentMode = .scaleToFill
+            imageView.image = UIImage(named: imagesArray[0])
+            let x1Pos = CGFloat(0)*self.view.bounds.size.width
+            imageView.frame = CGRect(x: x1Pos, y: 0, width: view.frame.size.width, height: DataScrollView.frame.size.height)
+            DataScrollView.contentSize.width = view.frame.size.width*CGFloat(0+1)
+
+            DataScrollView.addSubview(imageView)
+        //}
  
+//        let imageView2 = UIImageView()
+//        imageView2.contentMode = .scaleToFill
+//        imageView2.image = UIImage(named: imagesArray[1])
+//        let x2Pos = CGFloat(1)*self.view.bounds.size.width
+//        imageView2.frame = CGRect(x: x2Pos, y: 0, width: view.frame.size.width, height: DataScrollView.frame.size.height)
+//        DataScrollView.contentSize.width = view.frame.size.width*CGFloat(1+1)
+        
+        let x2Pos = CGFloat(1)*self.view.bounds.size.width
+        let Datalabeltext = UILabel(frame: CGRect(x: x2Pos, y: 0, width: view.frame.size.width, height: DataScrollView.frame.size.height))
+        //Datalabeltext.center = CGPoint(x: 160, y: 285)
+        Datalabeltext.textAlignment = .center
+        Datalabeltext.text = "I'm a test label"
+        //imageView2.contentMode = .scaleToFill
+        //imageView2.image = UIImage(named: imagesArray[1])
+        DataScrollView.contentSize.width = view.frame.size.width*CGFloat(1+1)
+        //self.view.addSubview(Datalabeltext)
+        DataScrollView.addSubview(Datalabeltext)
+        //DataScrollView.addSubview(imageView2)
+        
+//        let Datalabeltext = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+//        Datalabeltext.center = CGPoint(x: 160, y: 285)
+//        Datalabeltext.textAlignment = .center
+//        Datalabeltext.text = "I'm a test label"
+//        self.view.addSubview(Datalabeltext)
+//        DataScrollView.addSubview(Datalabeltext)
         
         // Do any additional setup after loading the view.
         setUp(newformattedtartcurrentweek: formattedstartcurrentweek, newformattedendcurrentweek: formattedendcurrentweek)
@@ -93,9 +137,10 @@ class HomeViewController: UIViewController {
 
         }
         
+        
         //print(userid)
 //        db.collection("users").document(userid).setData(["login_time": rightNow, "Username": Username, "MedicationName": MedicationName, "uid":userid])
-        
+
  
         
         
@@ -259,4 +304,9 @@ class HomeViewController: UIViewController {
     @IBAction func GameTwoButtonPressed(_ sender: Any) {
     }
     
+    func scrollViewDidScroll(_ DataScrollView: UIScrollView) {
+        let page = DataScrollView.contentOffset.x/DataScrollView.frame.width
+        
+        PageControl.currentPage = Int(page)
+    }
 }

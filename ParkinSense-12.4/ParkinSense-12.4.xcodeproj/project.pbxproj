@@ -16,6 +16,7 @@
 		03DB2F0823693FA000EE9EF4 /* TiltViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB2F0523693FA000EE9EF4 /* TiltViewController.swift */; };
 		094FA8545FBF0289C12D48BC /* Pods_ParkinSense_12_4Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F27FD6A4359384A48BECB24 /* Pods_ParkinSense_12_4Tests.framework */; };
 		22E1492C880352C2A515D36A /* Pods_ParkinSense_12_4_ParkinSense_12_4UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F82DEDD8C442E3BB7EE452BC /* Pods_ParkinSense_12_4_ParkinSense_12_4UITests.framework */; };
+		8DF7732C236D16940080B392 /* Roots.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8DF7732B236D16930080B392 /* Roots.mp3 */; };
 		9E55761FBCE6FB2CCBF32EE6 /* Pods_ParkinSense_12_4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB894B302585B06785FECC7 /* Pods_ParkinSense_12_4.framework */; };
 		A61328BE23627A0700C7066C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61328BD23627A0700C7066C /* AppDelegate.swift */; };
 		A61328C823627A0800C7066C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A61328C623627A0800C7066C /* LaunchScreen.storyboard */; };
@@ -61,6 +62,7 @@
 		4A37EE9F9EE2DEC48033F828 /* Pods-ParkinSense-12.4-ParkinSense-12.4UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkinSense-12.4-ParkinSense-12.4UITests.release.xcconfig"; path = "Target Support Files/Pods-ParkinSense-12.4-ParkinSense-12.4UITests/Pods-ParkinSense-12.4-ParkinSense-12.4UITests.release.xcconfig"; sourceTree = "<group>"; };
 		4F27FD6A4359384A48BECB24 /* Pods_ParkinSense_12_4Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkinSense_12_4Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80488E395B128294ECE36291 /* Pods-ParkinSense-12.4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkinSense-12.4.release.xcconfig"; path = "Target Support Files/Pods-ParkinSense-12.4/Pods-ParkinSense-12.4.release.xcconfig"; sourceTree = "<group>"; };
+		8DF7732B236D16930080B392 /* Roots.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Roots.mp3; sourceTree = "<group>"; };
 		A61328BA23627A0700C7066C /* ParkinSense-12.4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ParkinSense-12.4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A61328BD23627A0700C7066C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A61328C723627A0800C7066C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		A61328B123627A0700C7066C = {
 			isa = PBXGroup;
 			children = (
+				8DF7732B236D16930080B392 /* Roots.mp3 */,
 				A61328BC23627A0700C7066C /* ParkinSense-12.4 */,
 				A61328D123627A0800C7066C /* ParkinSense-12.4Tests */,
 				A61328DC23627A0800C7066C /* ParkinSense-12.4UITests */,
@@ -333,6 +336,7 @@
 				03AB56A423627D22000A3475 /* GoogleService-Info.plist in Resources */,
 				A613290023627AAB00C7066C /* Assets.xcassets in Resources */,
 				A61328C823627A0800C7066C /* LaunchScreen.storyboard in Resources */,
+				8DF7732C236D16940080B392 /* Roots.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,6 +646,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U2YC2ZQQUX;
 				INFOPLIST_FILE = "ParkinSense-12.4/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -661,6 +666,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U2YC2ZQQUX;
 				INFOPLIST_FILE = "ParkinSense-12.4/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (

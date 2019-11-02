@@ -5,6 +5,9 @@
       location = "group:ParkinSense-12.4.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:ParkinSense-12.4">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

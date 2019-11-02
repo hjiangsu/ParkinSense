@@ -7,20 +7,39 @@
 //
 
 import UIKit
+import AVFoundation
 
 class GameOneViewController: UIViewController {
 
     @IBOutlet weak var StartGame: UIButton!
     
     @IBOutlet weak var QuitGame: UIButton!
-    //@IBOutlet weak var myRoundedButton: UIButton!
+    
+    var soundEffect: AVAudioPlayer = AVAudioPlayer()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.StartGame.layer.cornerRadius = 25
-        self.QuitGame.layer.cornerRadius = 25
-
+        
+        self.StartGame.layer.cornerRadius = 25 // Rounded Start Button
+        self.QuitGame.layer.cornerRadius = 25 // Rounded Quit Button
+        
+        guard let musicFile = Bundle.main.path(forResource: "Roots", ofType: ".mp3") else {
+            print("File Not Found")
+            return
+        }
+        
+        do {
+            try soundEffect = AVAudioPlayer(contentsOf: URL(fileURLWithPath: musicFile))
+            soundEffect.numberOfLoops = -1
+        }
+        
+        catch {
+            print(error)
+        }
+        
+        soundEffect.play()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -34,7 +53,23 @@ class GameOneViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    @IBAction func SoundToggle(_ sender: UISwitch) {
+        
+        if (sender.isOn == false)
+        {
+            soundEffect.pause()
+        }
+        else{
+            soundEffect.play()
+        }
+        
+    }
+    
+    @IBAction func StopSound(_ sender: Any) {
+        soundEffect.stop()
+    }
+    
     @IBAction func Startthegame(_ sender: Any) {
     }
     
