@@ -1022,7 +1022,6 @@
         <image name="personalimage" width="148" height="134"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Td7-SG-TAf"/>
         <segue reference="JP1-Bp-Iez"/>
         <segue reference="5DB-D4-Byf"/>
     </inferredMetricsTieBreakers>
