@@ -25,6 +25,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
     var ref: DatabaseReference?
     
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -108,7 +109,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         setUp(newformattedtartcurrentweek: formattedstartcurrentweek, newformattedendcurrentweek: formattedendcurrentweek)
         sevendaydate(currentdate: rightNow)
         //getlogintime()
-
+        
+       
         
         ref = Database.database().reference()
         userid = Auth.auth().currentUser!.uid
@@ -243,6 +245,9 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
             Utilities.styleFilledDateButton(ThursdayButton)
             Utilities.styleFilledDateButton(FridayButton)
             Utilities.styleFilledDateButton(SaturdayButton)
+            Utilities.styleFilledDateButton(GameOneButton)
+            Utilities.styleFilledDateButton(GameTwoButton)
+            
             //Utilities.styleFilledButton(NextWeek)
             //Utilities.styleFilledButton(PrevWeek)
             
