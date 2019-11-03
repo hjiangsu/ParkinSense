@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension Date {
-    
+    //get the formatted time for later use
     static func calculateTime(hour:Int, minute: Int) -> Date {
         let formatter = DateFormatter()
         formatter.timeStyle = .short

@@ -48,7 +48,7 @@ class signupViewController: UIViewController {
     
     func setUpElement(){
         
-        //Hide the error label
+        //Hide the error label, medication label and save the Username and Password
         ErrorLabel.alpha = 0
         
         MedicationLabel.alpha = CGFloat(medicationLabelalpha)
@@ -98,7 +98,7 @@ class signupViewController: UIViewController {
             return "Please fill in all fields."
             
         }
-        
+        //check the password match the confirm password
         if PasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines) != ConfirmPasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines){
             
             return "Pleace make sure the password is matched"
@@ -141,7 +141,7 @@ class signupViewController: UIViewController {
                     }
                     //There was an error creating the user
                     else{
-                        self.showError("Error creating user")
+                        self.showError("User Account should be valid email address")
                     }
                 }
                 else
@@ -207,6 +207,14 @@ class signupViewController: UIViewController {
         
     }
     
+    /**
+         If the Error occur, the error will show in the screen 
+      
+          - Parameter sender: Button itself
+      
+          - Returns: No
+             
+     **/
     func showError(_ message:String){
         ErrorLabel.text = message
         ErrorLabel.alpha = 1

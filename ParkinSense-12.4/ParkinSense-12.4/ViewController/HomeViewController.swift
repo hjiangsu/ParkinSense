@@ -35,12 +35,11 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
         
-        var currentYear = Calendar.current.component(.year, from: Date())
-    //    var currentMonth = Calendar.current.component(.month, from: Date())
-        var currentWeek = Calendar.current.component(.weekOfYear, from: Date())
-    //    var currentDate = Calendar.current.component(.day, from: Date())
-    //    var currentWeekday = Calendar.current.component(.weekday, from: Date())
-        var rightNow = Date()
+        var currentYear = Calendar.current.component(.year, from: Date()) //get the current Year
+
+        var currentWeek = Calendar.current.component(.weekOfYear, from: Date()) //get the current week of the year
+
+        var rightNow = Date() //get the current date and time
         
         
         @IBOutlet weak var weekdateLabel: UILabel!
@@ -58,79 +57,68 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         @IBOutlet weak var FridayButton: UIButton!
         @IBOutlet weak var SaturdayButton: UIButton!
         
-    let db = Firestore.firestore()
+    let db = Firestore.firestore() //use for data read and write in database for later function
     
-    let imagesArray = ["AppIcon", "personalimage"]
+    let imagesArray = ["AppIcon", "personalimage"] //load the image for page control view setup
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //============================================================
+        //Create the scroll view of the user's daily data
+        //The first page will be the trendline of the last seven days (image for now)
+        //the second page will be the daily data read from Firebase (text for now)
+        
+        // create the page for the page control
         PageControl.numberOfPages = imagesArray.count
         
-        //for i in 0..<imagesArray.count{
-            let imageView = UIImageView()
-            imageView.contentMode = .scaleToFill
-            imageView.image = UIImage(named: imagesArray[0])
-            let x1Pos = CGFloat(0)*self.view.bounds.size.width
-            imageView.frame = CGRect(x: x1Pos, y: 0, width: view.frame.size.width, height: DataScrollView.frame.size.height)
-            //DataScrollView.contentSize.width = view.frame.size.width*CGFloat(0+1)
+        //First page modified by create imageView
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleToFill //set the imageViec's contentMode
+        imageView.image = UIImage(named: imagesArray[0]) //read the image from the imageArray and
+        let x1Pos = CGFloat(0)*self.view.bounds.size.width //get the x position of the view that for the first page content
+        imageView.frame = CGRect(x: x1Pos, y: 0, width: view.frame.size.width, height: DataScrollView.frame.size.height) //set up the imageView's frame
 
-            DataScrollView.addSubview(imageView)
-        //}
- 
-//        let imageView2 = UIImageView()
-//        imageView2.contentMode = .scaleToFill
-//        imageView2.image = UIImage(named: imagesArray[1])
-//        let x2Pos = CGFloat(1)*self.view.bounds.size.width
-//        imageView2.frame = CGRect(x: x2Pos, y: 0, width: view.frame.size.width, height: DataScrollView.frame.size.height)
-//        DataScrollView.contentSize.width = view.frame.size.width*CGFloat(1+1)
+        DataScrollView.addSubview(imageView) //put the imageView into scrollView
         
-        let x2Pos = CGFloat(1)*self.view.bounds.size.width
-        let Datalabeltext = UILabel(frame: CGRect(x: x2Pos, y: 0, width: view.frame.size.width, height: DataScrollView.frame.size.height))
-        //Datalabeltext.center = CGPoint(x: 160, y: 285)
-        Datalabeltext.textAlignment = .center
+        let x2Pos = CGFloat(1)*self.view.bounds.size.width //get the x position of the view that for the second page content
+        let Datalabeltext = UILabel(frame: CGRect(x: x2Pos, y: 0, width: view.frame.size.width, height: DataScrollView.frame.size.height)) //set up the label frame
+        Datalabeltext.textAlignment = .center //place the label text in the center of the second page
         Datalabeltext.text = "I'm a test label"
-        //imageView2.contentMode = .scaleToFill
-        //imageView2.image = UIImage(named: imagesArray[1])
-        DataScrollView.contentSize.width = view.frame.size.width*CGFloat(1+1)
-        //self.view.addSubview(Datalabeltext)
-        DataScrollView.addSubview(Datalabeltext)
+        DataScrollView.contentSize.width = view.frame.size.width*CGFloat(1+1) //set up the Scroll view content size
+        DataScrollView.addSubview(Datalabeltext) //put the label text into scrollView
         DataScrollView.delegate = self
-        //DataScrollView.addSubview(imageView2)
         
-//        let Datalabeltext = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-//        Datalabeltext.center = CGPoint(x: 160, y: 285)
-//        Datalabeltext.textAlignment = .center
-//        Datalabeltext.text = "I'm a test label"
-//        self.view.addSubview(Datalabeltext)
-//        DataScrollView.addSubview(Datalabeltext)
+        //===========================================================
+        // Do the main page setup for buttons and label appearance after loading the view.
+        setUp(newformattedtartcurrentweek: formattedstartcurrentweek, newformattedendcurrentweek: formattedendcurrentweek) // call setUp function to setup the button view
+        sevendaydate(currentdate: rightNow) // call sevendaydate function to get the Sunday to Saturday date, and set up the button title for every date button
         
-        // Do any additional setup after loading the view.
-        setUp(newformattedtartcurrentweek: formattedstartcurrentweek, newformattedendcurrentweek: formattedendcurrentweek)
-        sevendaydate(currentdate: rightNow)
-        //getlogintime()
+        //=============================================================
+        //Get the current user information from Firebase and check the condition to update the login time and the popup
         
-       
+        //ref = Database.database().reference()
+        userid = Auth.auth().currentUser!.uid //get the current user id from Firebase
         
-        ref = Database.database().reference()
-        userid = Auth.auth().currentUser!.uid
-        
-        let db = Firestore.firestore()
+        //Update the login time for the current user
+        //need to check the user account exist before access the data
         db.collection("users").document(userid).getDocument { (document, error) in
             if error == nil{
                 if document != nil && document!.exists{
-                    let DocumentData = document!.data()
+                    let DocumentData = document!.data() //get all the corresponding data in Firebase and store it in DocumentData
                     //print (DocumentData!)
-                    Username = DocumentData!["Username"] as! String
+                    Username = DocumentData!["Username"] as! String 
                     MedicationName = DocumentData!["MedicationName"] as! String
-                    let lasttimeLogin = DocumentData!["login_time"] as! Timestamp
+                    let lasttimeLogin = DocumentData!["login_time"] as! Timestamp // get the last time login time for temp in Timestamp type
                     //print(lasttimeLogin.dateValue())
-                    let lasttimeLogindate = lasttimeLogin.dateValue()
+                    let lasttimeLogindate = lasttimeLogin.dateValue() // get the current login time
                     dateformatter.dateFormat = "yyyy/MM/dd"
-                    lasttimeLogindatestr = dateformatter.string(from: lasttimeLogindate)
+                    lasttimeLogindatestr = dateformatter.string(from: lasttimeLogindate) // format the timestamp type to string
                     //print(lasttimeLogindatestr)
-                    thistimeLogindatestr = dateformatter.string(from: Date())
+                    thistimeLogindatestr = dateformatter.string(from: Date()) // format the timestamp type to string
                     //print(thistimeLogindatestr)
+                    
+                    //Check if the user is the first time login, if so, the pops up will be activated
                     if lasttimeLogindatestr != thistimeLogindatestr{
                          //print("in popover")
                         self.popover()
@@ -139,14 +127,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
             }
 
         }
-        
-        
-        //print(userid)
-//        db.collection("users").document(userid).setData(["login_time": rightNow, "Username": Username, "MedicationName": MedicationName, "uid":userid])
-
- 
-        
-        
     }
 
     /*
@@ -170,11 +150,10 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
     **/
     
     func popover(){
-        let alert = UIAlertController(title: "Reminder", message: "Did you take your medicine today?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        db.collection("users").document(userid).setData(["login_time": rightNow, "Username": Username, "MedicationName": MedicationName, "uid":userid])
-        
-        self.present(alert,animated: true)
+        let alert = UIAlertController(title: "Reminder", message: "Did you take your medicine today?", preferredStyle: .alert) //set up the alert information
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil)) //set up the OK button to exist
+        db.collection("users").document(userid).setData(["login_time": rightNow, "Username": Username, "MedicationName": MedicationName, "uid":userid]) //Update the user last login time in Firebase for next time login checking
+        self.present(alert,animated: true) //active the present of pop up
     }
     
     /**
@@ -186,18 +165,18 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
     **/
     
     @IBAction func NextWeekButton(_ sender: Any) {
-            let nextweek = rightNow + 3600*24*7
+            let nextweek = rightNow + 3600*24*7 // get one of the date in next week
             rightNow = nextweek
-            sevendaydate(currentdate: rightNow)
+            sevendaydate(currentdate: rightNow) //update the new seven days' date
             
-            let newformattedtartcurrentweek = newstartcurrentweek(updateNow: rightNow)
-            let newformattedendcurrentweek = newendcurrentweek(updateNow: rightNow)
-            currentWeek += 1
+            let newformattedtartcurrentweek = newstartcurrentweek(updateNow: rightNow) //get the first date of the choosen week
+            let newformattedendcurrentweek = newendcurrentweek(updateNow: rightNow) //get the end date of the choosen week
+            currentWeek += 1 //record the current week of the year
             if currentWeek == 53 {
                 currentWeek = 1
                 currentYear += 1
             }
-            setUp(newformattedtartcurrentweek: newformattedtartcurrentweek, newformattedendcurrentweek: newformattedendcurrentweek)
+            setUp(newformattedtartcurrentweek: newformattedtartcurrentweek, newformattedendcurrentweek: newformattedendcurrentweek) // redraw the current week's appearance buttons
         }
         
     /**
@@ -209,19 +188,19 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
     **/
         
         @IBAction func PrevWeekButton(_ sender: Any) {
-            let nextweek = rightNow - 3600*24*7
+            let nextweek = rightNow - 3600*24*7 // get one of the date in next week
             rightNow = nextweek
-            sevendaydate(currentdate: rightNow)
+            sevendaydate(currentdate: rightNow) //update the new seven days' date
             
-            let newformattedtartcurrentweek = newstartcurrentweek(updateNow: rightNow)
-            let newformattedendcurrentweek = newendcurrentweek(updateNow: rightNow)
+            let newformattedtartcurrentweek = newstartcurrentweek(updateNow: rightNow) //get the first date of the choosen week
+            let newformattedendcurrentweek = newendcurrentweek(updateNow: rightNow) //get the end date of the choosen week
             
-            currentWeek -= 1
+            currentWeek -= 1 //record the current week of the year
             if currentWeek == 0 {
                 currentWeek = 52
                 currentYear -= 1
             }
-            setUp(newformattedtartcurrentweek: newformattedtartcurrentweek, newformattedendcurrentweek: newformattedendcurrentweek)
+            setUp(newformattedtartcurrentweek: newformattedtartcurrentweek, newformattedendcurrentweek: newformattedendcurrentweek) // redraw the current week's appearance buttons
         }
         
     /**
@@ -238,6 +217,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         {
             weekdateLabel.text = "\(newformattedtartcurrentweek)" + " ~ " + "\(newformattedendcurrentweek)"
             
+            
+            //set up the button appearance for the following buttons
             Utilities.styleFilledDateButton(SundayButton)
             Utilities.styleFilledDateButton(MondayButton)
             Utilities.styleFilledDateButton(TuesdayButton)
@@ -262,6 +243,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         
         func sevendaydate(currentdate: Date){
             
+            //get the corresponding date of the days
             let SundayDate = Sundaydate(startcurrentweek: currentdate)
             let MondayDate = Mondaydate(startcurrentweek: currentdate)
             let TuesdayDate = Tuesdaydate(startcurrentweek: currentdate)
@@ -269,6 +251,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
             let ThursdayDate = Thursdaydate(startcurrentweek: currentdate)
             let FridayDate = Fridaydate(startcurrentweek: currentdate)
             let SaturdayDate = Saturdaydate(startcurrentweek: currentdate)
+            //set title of the buttons text
             SundayButton.setTitle(SundayDate, for: .normal)
             MondayButton.setTitle(MondayDate, for: .normal)
             TuesdayButton.setTitle(TuesdayDate, for: .normal)
@@ -277,13 +260,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
             FridayButton.setTitle(FridayDate, for: .normal)
             SaturdayButton.setTitle(SaturdayDate, for: .normal)
         }
-    
-//    func getlogintime(){
-//
-//        ref?.updateChildValues(["login_time": [rightNow]])
-//
-//        print(rightNow)
-//    }
 
     
     /**
@@ -310,8 +286,16 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
     @IBAction func GameTwoButtonPressed(_ sender: Any) {
     }
     
+    /**
+        Function to  change the scroll view to page control view
+     
+         - Parameter : Button itself
+         - Returns: No
+            
+    **/
+    
     func scrollViewDidEndDecelerating(_ DataScrollView: UIScrollView) {
-                let page = DataScrollView.contentOffset.x/DataScrollView.frame.width
+        let page = DataScrollView.contentOffset.x/DataScrollView.frame.width
         
         PageControl.currentPage = Int(page)
     }

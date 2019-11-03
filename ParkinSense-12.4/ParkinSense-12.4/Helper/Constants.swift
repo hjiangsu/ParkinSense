@@ -8,6 +8,8 @@
 
 import Foundation
 
+//Save the global constant for all documents use
+
 var MedicationName = "None"
 
 var medicationLabelalpha = 0

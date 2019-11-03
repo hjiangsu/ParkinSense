@@ -68,8 +68,6 @@ class MedicationDetailViewController: UIViewController {
     
     @IBAction func DateSelectionTapped(_ sender: UIButton) {
         
-        
-        //DateSelectionButtons.forEach({ $0.tintColor =  UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)})
         isDateSelect.toggle()
         
         if isDateSelect{
@@ -93,17 +91,17 @@ class MedicationDetailViewController: UIViewController {
     
     @IBAction func AddNewMedicationButton(_ sender: Any) {
         
-        MedicationName = MedicationTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        MedicationName = MedicationTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines) //read the Medication Name from text field
         
         let dateFormatter = DateFormatter()
         
         dateFormatter.timeStyle = DateFormatter.Style.short
         
-        timepickertime = dateFormatter.string(from: timePicker.date)
+        timepickertime = dateFormatter.string(from: timePicker.date) //read the timepicker value for later use
         
         print(timepickertime)
         
-        medicationLabelalpha = 1
+        medicationLabelalpha = 1 //change the medicationLabel's alpha from 0 to 1 that display the medication information in sign up page
         
         //self.performSegue(withIdentifier: "unwindTosignup", sender: self)
     }
