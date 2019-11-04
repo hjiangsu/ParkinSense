@@ -137,27 +137,25 @@ class loginViewController: UIViewController {
         
     }
     
+    
     /**
-        Function about the Create Account Button, will direct you to the Sign up page
+        Function that directs you to Create an Account
      
          - Parameter sender: Button itself
-     
-         - Returns: No
+         - Returns: None
             
     **/
-    
     @IBAction func CreateAccountTapped(_ sender: Any) {
     }
     
+    
     /**
-        Function about the Back to the current  page Button,  
+        Function to go back to Login
      
          - Parameter sender: Button itself
-     
-         - Returns: No
+         - Returns: None
             
     **/
-    
     @IBAction func unwindTologin(segue: UIStoryboardSegue){
         
     }

@@ -5,11 +5,13 @@
 //
 //  Programmer(s): Higgins Weng
 //
+//  Description: Main view of the medication page - allows registration of new medication
+//
 //  Changes:
 //      - list change here
 //
 //  Known Bugs:
-//      - list known bugs here
+//      - None
 //
 //-----------------------------------------------------------------
 
@@ -17,64 +19,44 @@ import UIKit
 
 class MedicationDetailViewController: UIViewController {
     
-    @IBOutlet weak var MedicationTextField: UITextField!
+    @IBOutlet weak var medicationTextField: UITextField!
     
-    @IBOutlet var DateSelectionButtons: [UIButton]!
+    @IBOutlet var dateSelectionButtons: [UIButton]!
     
     @IBOutlet weak var timePicker: UIDatePicker!
     
-    @IBOutlet weak var AddNewMedicationButton: UIButton!
+    @IBOutlet weak var addNewMedicationButton: UIButton!
     
     var isDateSelect: Bool = false;
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         timePicker?.datePickerMode = .time
         
         timePicker.timeZone = NSTimeZone.local
         
         setUpElements()
-        
-        
     }
     
 
     /**
         Function for set up the appearance of the medication detail page
      
-         - Parameters: No
-     
-         - Returns: No
-            
+         - Returns: None
     **/
-    
     func setUpElements(){
-        
-        Utilities.styleFilledButton(AddNewMedicationButton)
+        Utilities.styleFilledButton(addNewMedicationButton)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
     
     /**
-        Function about change the day button appearene clicking or not clicking
+        Function to change the appearance of the day buttons when tapped
      
          - Parameter sender: Button itself
-     
-         - Returns: No
-            
+         - Returns: None
     **/
-    
-    @IBAction func DateSelectionTapped(_ sender: UIButton) {
-        
+    @IBAction func dateSelectionTapped(_ sender: UIButton) {
         isDateSelect.toggle()
         
         if isDateSelect{
@@ -83,9 +65,8 @@ class MedicationDetailViewController: UIViewController {
         else{
             sender.tintColor = UIColor.init(red: 169/255, green: 170/255, blue: 171/255, alpha: 1)
         }
-        
-        
     }
+    
     
     /**
         Function about the add new medication Button, will direct you back to the sign up page and medication will be displayed on the screen
@@ -95,10 +76,8 @@ class MedicationDetailViewController: UIViewController {
          - Returns: No
             
     **/
-    
-    @IBAction func AddNewMedicationButton(_ sender: Any) {
-        
-        medicationName = MedicationTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines) //read the Medication Name from text field
+    @IBAction func addNewMedicationButton(_ sender: Any) {
+        medicationName = medicationTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines) //read the Medication Name from text field
         
         let dateFormatter = DateFormatter()
         
@@ -109,9 +88,5 @@ class MedicationDetailViewController: UIViewController {
         print(timePickerTime)
         
         medicationLabelAlpha = 1 //change the medicationLabel's alpha from 0 to 1 that display the medication information in sign up page
-        
-        //self.performSegue(withIdentifier: "unwindTosignup", sender: self)
     }
-    
-
 }

@@ -807,7 +807,7 @@
                                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="Scircle"/>
                                                 <connections>
-                                                    <action selector="DateSelectionTapped:" destination="9aV-Wv-vxg" eventType="touchUpInside" id="Thq-ln-RvK"/>
+                                                    <action selector="dateSelectionTapped:" destination="9aV-Wv-vxg" eventType="touchUpInside" id="J8C-KE-0Xe"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5x-7t-RHi">
@@ -815,7 +815,7 @@
                                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="Mcircle"/>
                                                 <connections>
-                                                    <action selector="DateSelectionTapped:" destination="9aV-Wv-vxg" eventType="touchUpInside" id="gv2-Wv-6v1"/>
+                                                    <action selector="dateSelectionTapped:" destination="9aV-Wv-vxg" eventType="touchUpInside" id="qdI-yS-a1T"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruK-da-F1M">
@@ -823,7 +823,7 @@
                                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="Tcircle"/>
                                                 <connections>
-                                                    <action selector="DateSelectionTapped:" destination="9aV-Wv-vxg" eventType="touchUpInside" id="59o-WJ-LE0"/>
+                                                    <action selector="dateSelectionTapped:" destination="9aV-Wv-vxg" eventType="touchUpInside" id="keH-np-LcH"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMd-5y-Z9f">
@@ -831,7 +831,7 @@
                                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="Wcircle"/>
                                                 <connections>
-                                                    <action selector="DateSelectionTapped:" destination="9aV-Wv-vxg" eventType="touchUpInside" id="2UA-li-jCU"/>
+                                                    <action selector="dateSelectionTapped:" destination="9aV-Wv-vxg" eventType="touchUpInside" id="H0l-nn-CmR"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G23-e7-NL7">
@@ -839,7 +839,7 @@
                                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="Tcircle"/>
                                                 <connections>
-                                                    <action selector="DateSelectionTapped:" destination="9aV-Wv-vxg" eventType="touchUpInside" id="OsP-av-1jb"/>
+                                                    <action selector="dateSelectionTapped:" destination="9aV-Wv-vxg" eventType="touchUpInside" id="YL2-ol-tGE"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56d-5x-jwS">
@@ -847,7 +847,7 @@
                                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="Fcircle"/>
                                                 <connections>
-                                                    <action selector="DateSelectionTapped:" destination="9aV-Wv-vxg" eventType="touchUpInside" id="Mob-ir-VT9"/>
+                                                    <action selector="dateSelectionTapped:" destination="9aV-Wv-vxg" eventType="touchUpInside" id="jw7-rJ-7JT"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7S2-xP-MlT">
@@ -856,7 +856,7 @@
                                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="Scircle"/>
                                                 <connections>
-                                                    <action selector="DateSelectionTapped:" destination="9aV-Wv-vxg" eventType="touchUpInside" id="nYp-XG-zrj"/>
+                                                    <action selector="dateSelectionTapped:" destination="9aV-Wv-vxg" eventType="touchUpInside" id="KJd-Cg-sZS"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -919,7 +919,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="AddNewMedicationButton:" destination="9aV-Wv-vxg" eventType="touchUpInside" id="KXC-LB-eJl"/>
+                                            <action selector="addNewMedicationButton:" destination="9aV-Wv-vxg" eventType="touchUpInside" id="bnV-wy-Tt5"/>
                                             <segue destination="y9O-MW-t5g" kind="presentation" modalPresentationStyle="fullScreen" id="W1N-RM-9eB"/>
                                         </connections>
                                     </button>
@@ -996,16 +996,16 @@
                     <navigationItem key="navigationItem" title="Add Medication Detail" id="Go9-08-Mr6"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
-                        <outlet property="AddNewMedicationButton" destination="6rH-ES-A2e" id="ctg-J1-SuV"/>
-                        <outlet property="MedicationTextField" destination="4Eu-lI-qQ0" id="cfj-vB-a2p"/>
+                        <outlet property="addNewMedicationButton" destination="6rH-ES-A2e" id="xzo-gF-Gff"/>
+                        <outlet property="medicationTextField" destination="4Eu-lI-qQ0" id="jxX-KG-jvH"/>
                         <outlet property="timePicker" destination="deT-tB-iEy" id="oTv-fW-87M"/>
-                        <outletCollection property="DateSelectionButtons" destination="MMd-5y-Z9f" collectionClass="NSMutableArray" id="kbj-ed-7fO"/>
-                        <outletCollection property="DateSelectionButtons" destination="ruK-da-F1M" collectionClass="NSMutableArray" id="oN8-6h-R9o"/>
-                        <outletCollection property="DateSelectionButtons" destination="f5x-7t-RHi" collectionClass="NSMutableArray" id="ncD-qw-mu6"/>
-                        <outletCollection property="DateSelectionButtons" destination="56d-5x-jwS" collectionClass="NSMutableArray" id="Yf2-S2-mVV"/>
-                        <outletCollection property="DateSelectionButtons" destination="7S2-xP-MlT" collectionClass="NSMutableArray" id="ptR-Zu-b8M"/>
-                        <outletCollection property="DateSelectionButtons" destination="G23-e7-NL7" collectionClass="NSMutableArray" id="IvH-dV-HZA"/>
-                        <outletCollection property="DateSelectionButtons" destination="8Ps-1i-olm" collectionClass="NSMutableArray" id="a2T-2T-XAy"/>
+                        <outletCollection property="dateSelectionButtons" destination="8Ps-1i-olm" collectionClass="NSMutableArray" id="U7J-DL-ZW5"/>
+                        <outletCollection property="dateSelectionButtons" destination="f5x-7t-RHi" collectionClass="NSMutableArray" id="BhA-Hl-tJZ"/>
+                        <outletCollection property="dateSelectionButtons" destination="ruK-da-F1M" collectionClass="NSMutableArray" id="NSK-bw-CZF"/>
+                        <outletCollection property="dateSelectionButtons" destination="MMd-5y-Z9f" collectionClass="NSMutableArray" id="K2K-jo-c4M"/>
+                        <outletCollection property="dateSelectionButtons" destination="G23-e7-NL7" collectionClass="NSMutableArray" id="e0D-5I-2NL"/>
+                        <outletCollection property="dateSelectionButtons" destination="56d-5x-jwS" collectionClass="NSMutableArray" id="mw7-Om-Rc2"/>
+                        <outletCollection property="dateSelectionButtons" destination="7S2-xP-MlT" collectionClass="NSMutableArray" id="QPh-HY-yEA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ae8-Fz-LKx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
