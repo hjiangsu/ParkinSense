@@ -13,12 +13,10 @@
 		03AB56A423627D22000A3475 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03AB56A323627D22000A3475 /* GoogleService-Info.plist */; };
 		060A222E236FD2CA00A9324E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A222D236FD2CA00A9324E /* CustomTextField.swift */; };
 		063FC2342370C05200FDFB45 /* ParkinSenseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FC2332370C05200FDFB45 /* ParkinSenseTests.swift */; };
-		063FC23C2370C06400FDFB45 /* ParkinSenseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FC2362370C06300FDFB45 /* ParkinSenseUITests.swift */; };
 		063FC23D2370C06400FDFB45 /* CreateAccountPageUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FC2372370C06300FDFB45 /* CreateAccountPageUITest.swift */; };
 		063FC23E2370C06400FDFB45 /* HomePageUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FC2382370C06300FDFB45 /* HomePageUITest.swift */; };
 		063FC23F2370C06400FDFB45 /* GameTiltUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FC2392370C06300FDFB45 /* GameTiltUITest.swift */; };
 		063FC2402370C06400FDFB45 /* LoginPageUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FC23A2370C06400FDFB45 /* LoginPageUITest.swift */; };
-		063FC2412370C06400FDFB45 /* ParkinSense_12_4UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FC23B2370C06400FDFB45 /* ParkinSense_12_4UITests.swift */; };
 		06973D8B236F5B7200C4EDEA /* TiltViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06973D87236F5B7100C4EDEA /* TiltViewController.swift */; };
 		06973D8C236F5B7200C4EDEA /* CountdownGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06973D88236F5B7100C4EDEA /* CountdownGameScene.swift */; };
 		06973D8D236F5B7200C4EDEA /* TiltScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06973D89236F5B7100C4EDEA /* TiltScoreViewController.swift */; };
@@ -67,12 +65,10 @@
 		063FC2322370C05200FDFB45 /* ParkinSenseTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ParkinSenseTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		063FC2332370C05200FDFB45 /* ParkinSenseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkinSenseTests.swift; sourceTree = "<group>"; };
 		063FC2352370C06300FDFB45 /* ParkinSenseUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ParkinSenseUITests-Bridging-Header.h"; sourceTree = "<group>"; };
-		063FC2362370C06300FDFB45 /* ParkinSenseUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkinSenseUITests.swift; sourceTree = "<group>"; };
 		063FC2372370C06300FDFB45 /* CreateAccountPageUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountPageUITest.swift; sourceTree = "<group>"; };
 		063FC2382370C06300FDFB45 /* HomePageUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageUITest.swift; sourceTree = "<group>"; };
 		063FC2392370C06300FDFB45 /* GameTiltUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTiltUITest.swift; sourceTree = "<group>"; };
 		063FC23A2370C06400FDFB45 /* LoginPageUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageUITest.swift; sourceTree = "<group>"; };
-		063FC23B2370C06400FDFB45 /* ParkinSense_12_4UITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkinSense_12_4UITests.swift; sourceTree = "<group>"; };
 		06973D87236F5B7100C4EDEA /* TiltViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TiltViewController.swift; path = "../../../../../Downloads/ParkinSense-Tilt/ParkinSense/TiltViewController.swift"; sourceTree = "<group>"; };
 		06973D88236F5B7100C4EDEA /* CountdownGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountdownGameScene.swift; path = "../../../../../Downloads/ParkinSense-Tilt/ParkinSense/CountdownGameScene.swift"; sourceTree = "<group>"; };
 		06973D89236F5B7100C4EDEA /* TiltScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TiltScoreViewController.swift; path = "../../../../../Downloads/ParkinSense-Tilt/ParkinSense/TiltScoreViewController.swift"; sourceTree = "<group>"; };
@@ -211,8 +207,6 @@
 				063FC2392370C06300FDFB45 /* GameTiltUITest.swift */,
 				063FC2382370C06300FDFB45 /* HomePageUITest.swift */,
 				063FC23A2370C06400FDFB45 /* LoginPageUITest.swift */,
-				063FC23B2370C06400FDFB45 /* ParkinSense_12_4UITests.swift */,
-				063FC2362370C06300FDFB45 /* ParkinSenseUITests.swift */,
 				A61328DF23627A0800C7066C /* Info.plist */,
 				063FC2352370C06300FDFB45 /* ParkinSenseUITests-Bridging-Header.h */,
 			);
@@ -525,9 +519,7 @@
 				063FC23F2370C06400FDFB45 /* GameTiltUITest.swift in Sources */,
 				063FC23D2370C06400FDFB45 /* CreateAccountPageUITest.swift in Sources */,
 				063FC2402370C06400FDFB45 /* LoginPageUITest.swift in Sources */,
-				063FC2412370C06400FDFB45 /* ParkinSense_12_4UITests.swift in Sources */,
 				063FC23E2370C06400FDFB45 /* HomePageUITest.swift in Sources */,
-				063FC23C2370C06400FDFB45 /* ParkinSenseUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
