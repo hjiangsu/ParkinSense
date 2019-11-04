@@ -8,10 +8,11 @@
 //  Description: Main view of the medication page - allows registration of new medication
 //
 //  Changes:
-//      - list change here
+//      - Check the time picker time zone
+//      - Add the Medicaiton name to Firebase
 //
 //  Known Bugs:
-//      - None
+//      - Need to put the time picker time to Signup page
 //
 //-----------------------------------------------------------------
 

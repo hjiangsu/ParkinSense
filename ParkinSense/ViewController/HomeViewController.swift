@@ -5,11 +5,15 @@
 //
 //  Programmer(s): Higgins Weng
 //
+//  Description:
+//
 //  Changes:
-//      - list change here
+//      - Added the swipe and page control
+//      - Modified the gaming icon
 //
 //  Known Bugs:
-//      - list known bugs here
+//      - need to put the trendline and data text label
+//      - constraints need to fix to flexiable
 //
 //-----------------------------------------------------------------
 

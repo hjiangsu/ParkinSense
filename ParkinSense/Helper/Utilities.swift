@@ -1,10 +1,19 @@
+//-----------------------------------------------------------------
+//  File: Utilities.swift
 //
-//  Utilities.swift
-//  customauth
+//  Team: ParkinSense - PDD Inc.
 //
-//  Created by Christopher Ching on 2019-05-09.
-//  Copyright © 2019 Christopher Ching. All rights reserved.
+//  Programmer(s): Higgins Weng
 //
+//  Description: Setup the style/appearance of the button of Text 
+//
+//  Changes:
+//      - None
+//
+//  Known Bugs:
+//      - None
+//
+//-----------------------------------------------------------------
 
 import Foundation
 import UIKit

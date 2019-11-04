@@ -8,7 +8,8 @@
 //  Description: Main menu of Tilt - controls sounds, start and exit of game
 //
 //  Changes:
-//      - list change here
+//      - Added IBOutlets to buttons
+//      - Added View Controller
 //
 //  Known Bugs:
 //      - Sound only works in iPhoneXR and does not stop after the Tilt Game

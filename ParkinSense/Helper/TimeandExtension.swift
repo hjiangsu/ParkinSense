@@ -8,7 +8,7 @@
 //  Description: Formats the time to be used later**
 //
 //  Changes:
-//      - Added some comments to the function
+//      - None
 //
 //  Known Bugs:
 //      - None

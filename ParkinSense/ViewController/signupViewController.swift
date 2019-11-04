@@ -8,10 +8,10 @@
 //  Description: Main view of the signup page - allows registration of new users
 //
 //  Changes:
-//      - list change here
+//      - Save and update the login time in Firebase
 //
 //  Known Bugs:
-//      - None
+//      - Need to read the medication time to display in the screen 
 //
 //-----------------------------------------------------------------
 

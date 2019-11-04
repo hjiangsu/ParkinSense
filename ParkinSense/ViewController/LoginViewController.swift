@@ -8,7 +8,9 @@
 //  Description: Main login view of ParkinSense
 //
 //  Changes:
-//      - list change here
+//      - Added authentication to firebase
+//      - Added IBOutlets to buttons and checkboxes
+//      - Added View Controller
 //
 //  Known Bugs:
 //      - None

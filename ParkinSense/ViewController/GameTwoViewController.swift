@@ -6,10 +6,10 @@
 //  Programmer(s): Higgins Weng
 //
 //  Changes:
-//      - list change here
+//      - Added View
 //
 //  Known Bugs:
-//      - list known bugs here
+//      - None
 //
 //-----------------------------------------------------------------
 
