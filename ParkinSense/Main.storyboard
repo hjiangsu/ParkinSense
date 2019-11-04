@@ -116,7 +116,7 @@
                                         </state>
                                         <connections>
                                             <action selector="CreateAccountTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1eZ-W6-hZc"/>
-                                            <segue destination="y9O-MW-t5g" kind="presentation" modalPresentationStyle="fullScreen" id="5DB-D4-Byf"/>
+                                            <segue destination="y9O-MW-t5g" kind="presentation" modalPresentationStyle="fullScreen" id="7iB-hr-9I6"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -518,7 +518,7 @@
                                         </constraints>
                                         <state key="normal" title="Add New Medication Detail"/>
                                         <connections>
-                                            <action selector="AddNewMedicationDetailTapped:" destination="y9O-MW-t5g" eventType="touchUpInside" id="UJH-Mu-X88"/>
+                                            <action selector="addNewMedicationDetailTapped:" destination="y9O-MW-t5g" eventType="touchUpInside" id="rQ3-iG-37T"/>
                                             <segue destination="9aV-Wv-vxg" kind="presentation" modalPresentationStyle="automatic" id="181-2q-4Mm"/>
                                         </connections>
                                     </button>
@@ -541,7 +541,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="CreateanAccounttapped:" destination="y9O-MW-t5g" eventType="touchUpInside" id="3ce-uJ-psd"/>
+                                            <action selector="createAnAccountTapped:" destination="y9O-MW-t5g" eventType="touchUpInside" id="tCK-Ih-goG"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbk-DG-NIb">
@@ -563,7 +563,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="Alreadyhaveanaccounttapped:" destination="y9O-MW-t5g" eventType="touchUpInside" id="qId-6n-1SY"/>
+                                            <action selector="alreadyHaveAnAccountTapped:" destination="y9O-MW-t5g" eventType="touchUpInside" id="wvv-Mq-fFH"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -700,14 +700,14 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="Twe-4y-g4U"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="AddNewMedicationDetailButton" destination="P9u-b2-DvT" id="LrH-0R-WIb"/>
-                        <outlet property="AlreadyhaveanaccountButton" destination="jbk-DG-NIb" id="bEl-gs-UCV"/>
-                        <outlet property="ConfirmPasswordTextField" destination="UXg-uL-qCR" id="Fc1-7n-hRM"/>
-                        <outlet property="CreateanAccountButton" destination="F3f-sx-olG" id="2Me-yS-dhZ"/>
-                        <outlet property="ErrorLabel" destination="jIG-5e-sn7" id="c2O-PJ-Fup"/>
-                        <outlet property="MedicationLabel" destination="g9q-HA-4Ft" id="ZDs-nk-RcV"/>
-                        <outlet property="PasswordTextField" destination="z1n-YO-ayy" id="XFN-A7-7JK"/>
-                        <outlet property="UsernameTextField" destination="9kI-3h-4gK" id="rUW-CA-Z5K"/>
+                        <outlet property="addNewMedicationDetailButton" destination="P9u-b2-DvT" id="aH1-PX-1X0"/>
+                        <outlet property="alreadyHaveAnAccountButton" destination="jbk-DG-NIb" id="9Dk-G6-ukm"/>
+                        <outlet property="confirmPasswordTextField" destination="UXg-uL-qCR" id="qFJ-Yp-gjb"/>
+                        <outlet property="createAnAccountButton" destination="F3f-sx-olG" id="Hda-kl-41L"/>
+                        <outlet property="errorLabel" destination="jIG-5e-sn7" id="sm7-U1-Pv6"/>
+                        <outlet property="medicationLabel" destination="g9q-HA-4Ft" id="QKL-z3-OFw"/>
+                        <outlet property="passwordTextField" destination="z1n-YO-ayy" id="n6K-Xm-2Zx"/>
+                        <outlet property="usernameTextField" destination="9kI-3h-4gK" id="CQm-fF-OTw"/>
                         <segue destination="eVj-ik-Udv" kind="presentation" identifier="signUpToHomeID" modalPresentationStyle="fullScreen" id="xa4-L2-QV7"/>
                         <segue destination="lr0-9s-vBc" kind="unwind" identifier="unwindTologin" unwindAction="unwindTologinWithSegue:" id="Vry-7R-fva"/>
                     </connections>
