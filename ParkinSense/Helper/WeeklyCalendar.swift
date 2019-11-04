@@ -129,7 +129,7 @@ func mondayDate (startCurrentWeek: Date) -> String{
 **/
 
 
-func Tuesdaydate (startCurrentWeek: Date) -> String{
+func tuesdayDate (startCurrentWeek: Date) -> String{
     dayFormatter.dateFormat = "dd"
     let weekInterval = newCalendar.dateInterval(of: .weekOfYear, for: startCurrentWeek)
     let tuesdayDate = weekInterval!.end - 3600*24*5
@@ -146,7 +146,7 @@ func Tuesdaydate (startCurrentWeek: Date) -> String{
      - Returns: formattedWednesdayDate
         
 **/
-func Wednesdaydate (startCurrentWeek: Date) -> String{
+func wednesdayDate (startCurrentWeek: Date) -> String{
     dayFormatter.dateFormat = "dd"
     let weekInterval = newCalendar.dateInterval(of: .weekOfYear, for: startCurrentWeek)
     let wednesdayDate = weekInterval!.end - 3600*24*4
@@ -163,7 +163,7 @@ func Wednesdaydate (startCurrentWeek: Date) -> String{
      - Returns: formattedThursdayDate
         
 **/
-func Thursdaydate (startCurrentWeek: Date) -> String{
+func thursdayDate (startCurrentWeek: Date) -> String{
     dayFormatter.dateFormat = "dd"
     let weekInterval = newCalendar.dateInterval(of: .weekOfYear, for: startCurrentWeek)
     let thursdayDate = weekInterval!.end - 3600*24*3
@@ -180,7 +180,7 @@ func Thursdaydate (startCurrentWeek: Date) -> String{
      - Returns: formattedFridayDate
         
 **/
-func Fridaydate (startCurrentWeek: Date) -> String{
+func fridayDate (startCurrentWeek: Date) -> String{
     dayFormatter.dateFormat = "dd"
     let weekInterval = newCalendar.dateInterval(of: .weekOfYear, for: startCurrentWeek)
     let fridayDate = weekInterval!.end - 3600*24*2
@@ -197,7 +197,7 @@ func Fridaydate (startCurrentWeek: Date) -> String{
      - Returns: formattedSaturdayDate
         
 **/
-func Saturdaydate (startCurrentWeek: Date) -> String{
+func saturdayDate (startCurrentWeek: Date) -> String{
     dayFormatter.dateFormat = "dd"
     let weekInterval = newCalendar.dateInterval(of: .weekOfYear, for: startCurrentWeek)
     let saturdayDate = weekInterval!.end - 3600*24

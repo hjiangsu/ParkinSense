@@ -253,11 +253,11 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
             //get the corresponding date of the days
             let SundayDate = sundayDate(startCurrentWeek: currentdate)
             let MondayDate = mondayDate(startCurrentWeek: currentdate)
-            let TuesdayDate = Tuesdaydate(startCurrentWeek: currentdate)
-            let WednesdayDate = Wednesdaydate(startCurrentWeek: currentdate)
-            let ThursdayDate = Thursdaydate(startCurrentWeek: currentdate)
-            let FridayDate = Fridaydate(startCurrentWeek: currentdate)
-            let SaturdayDate = Saturdaydate(startCurrentWeek: currentdate)
+            let TuesdayDate = tuesdayDate(startCurrentWeek: currentdate)
+            let WednesdayDate = wednesdayDate(startCurrentWeek: currentdate)
+            let ThursdayDate = thursdayDate(startCurrentWeek: currentdate)
+            let FridayDate = fridayDate(startCurrentWeek: currentdate)
+            let SaturdayDate = saturdayDate(startCurrentWeek: currentdate)
             //set title of the buttons text
             SundayButton.setTitle(SundayDate, for: .normal)
             MondayButton.setTitle(MondayDate, for: .normal)

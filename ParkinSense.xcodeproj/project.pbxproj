@@ -25,7 +25,7 @@
 		A61328F023627A5F00C7066C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61328EC23627A5F00C7066C /* Constants.swift */; };
 		A61328F123627A5F00C7066C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61328ED23627A5F00C7066C /* Utilities.swift */; };
 		A61328F223627A5F00C7066C /* TimeandExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61328EE23627A5F00C7066C /* TimeandExtension.swift */; };
-		A61328F923627A6A00C7066C /* signupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61328F523627A6900C7066C /* signupViewController.swift */; };
+		A61328F923627A6A00C7066C /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61328F523627A6900C7066C /* SignupViewController.swift */; };
 		A61328FA23627A6A00C7066C /* MedicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61328F623627A6900C7066C /* MedicationDetailViewController.swift */; };
 		A61328FB23627A6A00C7066C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61328F723627A6900C7066C /* HomeViewController.swift */; };
 		A61328FC23627A6A00C7066C /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61328F823627A6900C7066C /* loginViewController.swift */; };
@@ -81,7 +81,7 @@
 		A61328EC23627A5F00C7066C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A61328ED23627A5F00C7066C /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		A61328EE23627A5F00C7066C /* TimeandExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeandExtension.swift; sourceTree = "<group>"; };
-		A61328F523627A6900C7066C /* signupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signupViewController.swift; sourceTree = "<group>"; };
+		A61328F523627A6900C7066C /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		A61328F623627A6900C7066C /* MedicationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationDetailViewController.swift; sourceTree = "<group>"; };
 		A61328F723627A6900C7066C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A61328F823627A6900C7066C /* loginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
@@ -219,7 +219,7 @@
 				06973D8A236F5B7200C4EDEA /* TiltGameScene.swift */,
 				06973D89236F5B7100C4EDEA /* TiltScoreViewController.swift */,
 				06973D87236F5B7100C4EDEA /* TiltViewController.swift */,
-				A61328F523627A6900C7066C /* signupViewController.swift */,
+				A61328F523627A6900C7066C /* SignupViewController.swift */,
 				A61328F623627A6900C7066C /* MedicationDetailViewController.swift */,
 				A61328F723627A6900C7066C /* HomeViewController.swift */,
 				A61328F823627A6900C7066C /* loginViewController.swift */,
@@ -481,7 +481,7 @@
 				A61328BE23627A0700C7066C /* AppDelegate.swift in Sources */,
 				038D56C12362C6AD00FFB3DD /* TiltUIViewController.swift in Sources */,
 				A61328F023627A5F00C7066C /* Constants.swift in Sources */,
-				A61328F923627A6A00C7066C /* signupViewController.swift in Sources */,
+				A61328F923627A6A00C7066C /* SignupViewController.swift in Sources */,
 				A61328FC23627A6A00C7066C /* loginViewController.swift in Sources */,
 				038D56C32362C6BC00FFB3DD /* GameTwoViewController.swift in Sources */,
 				06973D8D236F5B7200C4EDEA /* TiltScoreViewController.swift in Sources */,

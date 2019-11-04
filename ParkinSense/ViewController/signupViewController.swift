@@ -5,11 +5,13 @@
 //
 //  Programmer(s): Higgins Weng
 //
+//  Description: Main view of the signup page - allows registration of new users
+//
 //  Changes:
 //      - list change here
 //
 //  Known Bugs:
-//      - list known bugs here
+//      - None
 //
 //-----------------------------------------------------------------
 
@@ -17,7 +19,7 @@ import UIKit
 import FirebaseAuth
 import Firebase
 
-class signupViewController: UIViewController {
+class SignupViewController: UIViewController {
 
     
     @IBOutlet weak var UsernameTextField: UITextField!
@@ -39,10 +41,8 @@ class signupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        setUpElement()
         
+        setUpElement()
     }
     
     /**
