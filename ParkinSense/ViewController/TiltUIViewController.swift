@@ -5,6 +5,8 @@
 //
 //  Programmer(s): Higgins Weng, Dexter Bigueta, Hamlet Jiang Su
 //
+//  Description: Main menu of Tilt - controls sounds, start and exit of game
+//
 //  Changes:
 //      - list change here
 //
@@ -18,18 +20,23 @@ import AVFoundation
 
 class TiltUIViewController: UIViewController {
 
-    @IBOutlet weak var StartGame: UIButton!
+    @IBOutlet weak var startGame: UIButton!
     
-    @IBOutlet weak var QuitGame: UIButton!
+    @IBOutlet weak var quitGame: UIButton!
     
     var soundEffect: AVAudioPlayer = AVAudioPlayer()
     
     
+    /**
+        Loads the view on the screen - adds buttons and sound toggle
+     
+         - Returns: None
+    **/
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.StartGame.layer.cornerRadius = 25 // Rounded Start Button
-        self.QuitGame.layer.cornerRadius = 25 // Rounded Quit Button
+        self.startGame.layer.cornerRadius = 25 // Rounded Start Button
+        self.quitGame.layer.cornerRadius = 25 // Rounded Quit Button
         
         guard let musicFile = Bundle.main.path(forResource: "Roots", ofType: ".mp3") else {
             print("File Not Found")
@@ -40,18 +47,20 @@ class TiltUIViewController: UIViewController {
             try soundEffect = AVAudioPlayer(contentsOf: URL(fileURLWithPath: musicFile))
             soundEffect.numberOfLoops = -1
         }
-        
         catch {
             print(error)
         }
         
         soundEffect.play()
-        
-        // Do any additional setup after loading the view.
     }
     
-    @IBAction func SoundToggle(_ sender: UISwitch) {
-        
+    
+    /**
+        Sets sound to be on/off based on the toggle
+     
+         - Returns: None
+    **/
+    @IBAction func soundToggle(_ sender: UISwitch) {
         if (sender.isOn == false)
         {
             soundEffect.pause()
@@ -59,14 +68,25 @@ class TiltUIViewController: UIViewController {
         else{
             soundEffect.play()
         }
-        
     }
     
-    @IBAction func StopSound(_ sender: Any) {
+    
+    /**
+        Stops the sound from playing
+     
+         - Returns: None
+    **/
+    @IBAction func stopSound(_ sender: Any) {
         soundEffect.stop()
     }
     
-    @IBAction func Startthegame(_ sender: Any) {
+    
+    /**
+        Starts the game Tilt
+     
+         - Returns: None
+    **/
+    @IBAction func startTheGame(_ sender: Any) {
     }
     
 }
