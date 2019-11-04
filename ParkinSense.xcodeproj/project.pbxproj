@@ -17,10 +17,10 @@
 		063FC23E2370C06400FDFB45 /* HomePageUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FC2382370C06300FDFB45 /* HomePageUITest.swift */; };
 		063FC23F2370C06400FDFB45 /* GameTiltUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FC2392370C06300FDFB45 /* GameTiltUITest.swift */; };
 		063FC2402370C06400FDFB45 /* LoginPageUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FC23A2370C06400FDFB45 /* LoginPageUITest.swift */; };
-		06973D8B236F5B7200C4EDEA /* TiltViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06973D87236F5B7100C4EDEA /* TiltViewController.swift */; };
-		06973D8C236F5B7200C4EDEA /* CountdownGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06973D88236F5B7100C4EDEA /* CountdownGameScene.swift */; };
-		06973D8D236F5B7200C4EDEA /* TiltScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06973D89236F5B7100C4EDEA /* TiltScoreViewController.swift */; };
-		06973D8E236F5B7200C4EDEA /* TiltGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06973D8A236F5B7200C4EDEA /* TiltGameScene.swift */; };
+		063FC2442370E2DD00FDFB45 /* TiltGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FC2422370E2DD00FDFB45 /* TiltGameScene.swift */; };
+		063FC2452370E2DD00FDFB45 /* CountdownGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FC2432370E2DD00FDFB45 /* CountdownGameScene.swift */; };
+		063FC2482370E30500FDFB45 /* TiltScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FC2462370E30500FDFB45 /* TiltScoreViewController.swift */; };
+		063FC2492370E30500FDFB45 /* TiltViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063FC2472370E30500FDFB45 /* TiltViewController.swift */; };
 		29A920A408E6F54C2BE6A195 /* Pods_ParkinSense.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B083E52DCEF6DB9DB20CB12 /* Pods_ParkinSense.framework */; };
 		8DF7732C236D16940080B392 /* Roots.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8DF7732B236D16930080B392 /* Roots.mp3 */; };
 		A61328BE23627A0700C7066C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61328BD23627A0700C7066C /* AppDelegate.swift */; };
@@ -69,10 +69,10 @@
 		063FC2382370C06300FDFB45 /* HomePageUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageUITest.swift; sourceTree = "<group>"; };
 		063FC2392370C06300FDFB45 /* GameTiltUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTiltUITest.swift; sourceTree = "<group>"; };
 		063FC23A2370C06400FDFB45 /* LoginPageUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageUITest.swift; sourceTree = "<group>"; };
-		06973D87236F5B7100C4EDEA /* TiltViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TiltViewController.swift; path = "../../../../../Downloads/ParkinSense-Tilt/ParkinSense/TiltViewController.swift"; sourceTree = "<group>"; };
-		06973D88236F5B7100C4EDEA /* CountdownGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountdownGameScene.swift; path = "../../../../../Downloads/ParkinSense-Tilt/ParkinSense/CountdownGameScene.swift"; sourceTree = "<group>"; };
-		06973D89236F5B7100C4EDEA /* TiltScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TiltScoreViewController.swift; path = "../../../../../Downloads/ParkinSense-Tilt/ParkinSense/TiltScoreViewController.swift"; sourceTree = "<group>"; };
-		06973D8A236F5B7200C4EDEA /* TiltGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TiltGameScene.swift; path = "../../../../../Downloads/ParkinSense-Tilt/ParkinSense/TiltGameScene.swift"; sourceTree = "<group>"; };
+		063FC2422370E2DD00FDFB45 /* TiltGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TiltGameScene.swift; sourceTree = "<group>"; };
+		063FC2432370E2DD00FDFB45 /* CountdownGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownGameScene.swift; sourceTree = "<group>"; };
+		063FC2462370E30500FDFB45 /* TiltScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TiltScoreViewController.swift; sourceTree = "<group>"; };
+		063FC2472370E30500FDFB45 /* TiltViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TiltViewController.swift; sourceTree = "<group>"; };
 		0B083E52DCEF6DB9DB20CB12 /* Pods_ParkinSense.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkinSense.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1646AE119FC7C3A20EF6D045 /* Pods-ParkinSense-ParkinSenseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkinSense-ParkinSenseUITests.debug.xcconfig"; path = "Target Support Files/Pods-ParkinSense-ParkinSenseUITests/Pods-ParkinSense-ParkinSenseUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4A37EE9F9EE2DEC48033F828 /* Pods-ParkinSense-ParkinSenseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkinSense-ParkinSenseUITests.release.xcconfig"; path = "Target Support Files/Pods-ParkinSense-ParkinSenseUITests/Pods-ParkinSense-ParkinSenseUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -228,10 +228,10 @@
 		A61328F423627A6900C7066C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				06973D88236F5B7100C4EDEA /* CountdownGameScene.swift */,
-				06973D8A236F5B7200C4EDEA /* TiltGameScene.swift */,
-				06973D89236F5B7100C4EDEA /* TiltScoreViewController.swift */,
-				06973D87236F5B7100C4EDEA /* TiltViewController.swift */,
+				063FC2432370E2DD00FDFB45 /* CountdownGameScene.swift */,
+				063FC2422370E2DD00FDFB45 /* TiltGameScene.swift */,
+				063FC2462370E30500FDFB45 /* TiltScoreViewController.swift */,
+				063FC2472370E30500FDFB45 /* TiltViewController.swift */,
 				A61328F523627A6900C7066C /* SignupViewController.swift */,
 				A61328F623627A6900C7066C /* MedicationDetailViewController.swift */,
 				A61328F723627A6900C7066C /* HomeViewController.swift */,
@@ -485,22 +485,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				063FC2482370E30500FDFB45 /* TiltScoreViewController.swift in Sources */,
 				A61328F223627A5F00C7066C /* TimeandExtension.swift in Sources */,
+				063FC2442370E2DD00FDFB45 /* TiltGameScene.swift in Sources */,
 				A61328F123627A5F00C7066C /* Utilities.swift in Sources */,
 				0333C3CC23656A5700031C26 /* WeeklyCalendar.swift in Sources */,
 				A61328FA23627A6A00C7066C /* MedicationDetailViewController.swift in Sources */,
 				060A222E236FD2CA00A9324E /* CustomTextField.swift in Sources */,
 				A61328FB23627A6A00C7066C /* HomeViewController.swift in Sources */,
-				06973D8C236F5B7200C4EDEA /* CountdownGameScene.swift in Sources */,
-				06973D8E236F5B7200C4EDEA /* TiltGameScene.swift in Sources */,
 				A61328BE23627A0700C7066C /* AppDelegate.swift in Sources */,
 				038D56C12362C6AD00FFB3DD /* TiltUIViewController.swift in Sources */,
 				A61328F023627A5F00C7066C /* Constants.swift in Sources */,
+				063FC2452370E2DD00FDFB45 /* CountdownGameScene.swift in Sources */,
 				A61328F923627A6A00C7066C /* SignupViewController.swift in Sources */,
 				A61328FC23627A6A00C7066C /* LoginViewController.swift in Sources */,
 				038D56C32362C6BC00FFB3DD /* GameTwoViewController.swift in Sources */,
-				06973D8D236F5B7200C4EDEA /* TiltScoreViewController.swift in Sources */,
-				06973D8B236F5B7200C4EDEA /* TiltViewController.swift in Sources */,
+				063FC2492370E30500FDFB45 /* TiltViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
