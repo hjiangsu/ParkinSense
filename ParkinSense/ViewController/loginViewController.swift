@@ -1,10 +1,17 @@
+//-----------------------------------------------------------------
+//  File: LoginViewController.swift
 //
-//  loginViewController.swift
-//  CustomerLoginDemo
+//  Team: ParkinSense - PDD Inc.
 //
-//  Created by weng Higgins on 2019-10-22.
-//  Copyright © 2019 weng Higgins. All rights reserved.
+//  Programmer(s): Higgins Weng
 //
+//  Changes:
+//      - list change here
+//
+//  Known Bugs:
+//      - list known bugs here
+//
+//-----------------------------------------------------------------
 
 import UIKit
 import FirebaseAuth

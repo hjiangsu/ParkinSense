@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0333C3CC23656A5700031C26 /* WeeklyCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0333C3CB23656A5700031C26 /* WeeklyCalendar.swift */; };
-		038D56C12362C6AD00FFB3DD /* GameOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038D56C02362C6AD00FFB3DD /* GameOneViewController.swift */; };
+		038D56C12362C6AD00FFB3DD /* TiltUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038D56C02362C6AD00FFB3DD /* TiltUIViewController.swift */; };
 		038D56C32362C6BC00FFB3DD /* GameTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038D56C22362C6BC00FFB3DD /* GameTwoViewController.swift */; };
 		03AB56A423627D22000A3475 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03AB56A323627D22000A3475 /* GoogleService-Info.plist */; };
 		060A222E236FD2CA00A9324E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A222D236FD2CA00A9324E /* CustomTextField.swift */; };
@@ -55,7 +55,7 @@
 /* Begin PBXFileReference section */
 		00B5474BFBD87956D8128115 /* Pods_ParkinSenseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkinSenseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0333C3CB23656A5700031C26 /* WeeklyCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyCalendar.swift; sourceTree = "<group>"; };
-		038D56C02362C6AD00FFB3DD /* GameOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOneViewController.swift; sourceTree = "<group>"; };
+		038D56C02362C6AD00FFB3DD /* TiltUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiltUIViewController.swift; sourceTree = "<group>"; };
 		038D56C22362C6BC00FFB3DD /* GameTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTwoViewController.swift; sourceTree = "<group>"; };
 		03AB56A323627D22000A3475 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		060A222D236FD2CA00A9324E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -223,7 +223,7 @@
 				A61328F623627A6900C7066C /* MedicationDetailViewController.swift */,
 				A61328F723627A6900C7066C /* HomeViewController.swift */,
 				A61328F823627A6900C7066C /* loginViewController.swift */,
-				038D56C02362C6AD00FFB3DD /* GameOneViewController.swift */,
+				038D56C02362C6AD00FFB3DD /* TiltUIViewController.swift */,
 				038D56C22362C6BC00FFB3DD /* GameTwoViewController.swift */,
 			);
 			path = ViewController;
@@ -479,7 +479,7 @@
 				06973D8C236F5B7200C4EDEA /* CountdownGameScene.swift in Sources */,
 				06973D8E236F5B7200C4EDEA /* TiltGameScene.swift in Sources */,
 				A61328BE23627A0700C7066C /* AppDelegate.swift in Sources */,
-				038D56C12362C6AD00FFB3DD /* GameOneViewController.swift in Sources */,
+				038D56C12362C6AD00FFB3DD /* TiltUIViewController.swift in Sources */,
 				A61328F023627A5F00C7066C /* Constants.swift in Sources */,
 				A61328F923627A6A00C7066C /* signupViewController.swift in Sources */,
 				A61328FC23627A6A00C7066C /* loginViewController.swift in Sources */,

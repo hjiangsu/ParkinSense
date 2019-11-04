@@ -1,10 +1,17 @@
+//-----------------------------------------------------------------
+//  File: AppDelegate.swift
 //
-//  AppDelegate.swift
-//  ParkinSense
+//  Team: ParkinSense - PDD Inc.
 //
-//  Created by Higgins Weng on 2019-10-24.
-//  Copyright © 2019 PDD Inc. All rights reserved.
+//  Programmer(s): Higgins Weng
 //
+//  Changes:
+//      - list change here
+//
+//  Known Bugs:
+//      - list known bugs here
+//
+//-----------------------------------------------------------------
 
 import UIKit
 import Firebase

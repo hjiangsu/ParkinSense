@@ -1,15 +1,22 @@
+//-----------------------------------------------------------------
+//  File: TiltUIViewController.swift
 //
-//  GameOneViewController.swift
-//  ParkinSense
+//  Team: ParkinSense - PDD Inc.
 //
-//  Created by weng Higgins on 2019-10-24.
-//  Copyright © 2019 PDD Inc. All rights reserved.
+//  Programmer(s): Higgins Weng, Dexter Bigueta, Hamlet Jiang Su
 //
+//  Changes:
+//      - list change here
+//
+//  Known Bugs:
+//      - list known bugs here
+//
+//-----------------------------------------------------------------
 
 import UIKit
 import AVFoundation
 
-class GameOneViewController: UIViewController {
+class TiltUIViewController: UIViewController {
 
     @IBOutlet weak var StartGame: UIButton!
     

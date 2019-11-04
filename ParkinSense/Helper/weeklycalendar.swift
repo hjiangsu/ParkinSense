@@ -1,10 +1,17 @@
+//-----------------------------------------------------------------
+//  File: WeeklyCalendar.swift
 //
-//  weeklycalendar.swift
-//  Weekly Calendar
+//  Team: ParkinSense - PDD Inc.
 //
-//  Created by weng Higgins on 2019-10-26.
-//  Copyright © 2019 higginsweng. All rights reserved.
+//  Programmer(s): Higgins Weng
 //
+//  Changes:
+//      - list change here
+//
+//  Known Bugs:
+//      - list known bugs here
+//
+//-----------------------------------------------------------------
 
 import Foundation
 import UIKit
