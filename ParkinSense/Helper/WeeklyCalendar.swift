@@ -1,185 +1,206 @@
+//-----------------------------------------------------------------
+//  File: WeeklyCalendar.swift
 //
-//  weeklycalendar.swift
-//  Weekly Calendar
+//  Team: ParkinSense - PDD Inc.
 //
-//  Created by weng Higgins on 2019-10-26.
-//  Copyright © 2019 higginsweng. All rights reserved.
+//  Programmer(s): Higgins Weng, Hamlet Jiang Su
 //
+//  Description: Retrieves the current week, and the dates associated with each day
+//
+//  Changes:
+//      - Fixed variable names not going according to standard
+//
+//  Known Bugs:
+//      - None
+//
+//-----------------------------------------------------------------
 
 import Foundation
 import UIKit
 
-
-var newcalendar = Calendar.current
+var newCalendar = Calendar.current
 var rightNow = Date()
 var formatter = DateFormatter()
-var dayformatter = DateFormatter()
-var dateformatter = DateFormatter()
-var lasttimeLogindatestr = ""
-var thistimeLogindatestr = ""
-//var lasttimeLogin = CVTimeStamp()
+var dayFormatter = DateFormatter()
+var dateFormatter = DateFormatter()
+var lastTimeLoginDateStr = ""
+var thisTimeLoginDateStr = ""
+
+var weekInterval = dateRange
+let startCurrentWeek = weekInterval.start
+let endCurrentWeek = weekInterval.end - 3600*24
+let formattedEndCurrentWeek = formatter.string(from: endCurrentWeek)
+let formattedStartCurrentWeek = formatter.string(from: startCurrentWeek)
 
 
 /**
-     get th current week date range from Sunday to Saturday
+     Obtains the current week date range from Sunday to Saturday
   
       - Parameter sender: None
   
       - Returns: weekInterval
          
  **/
-var daterange: DateInterval{
+var dateRange: DateInterval{
     formatter.dateFormat = "MM/dd"
-    let weekInterval = newcalendar.dateInterval(of: .weekOfYear, for: rightNow)
+    let weekInterval = newCalendar.dateInterval(of: .weekOfYear, for: rightNow)
     
     return weekInterval!
 }
 
-var weekInterval = daterange
-let startcurrentweek = weekInterval.start
-let endcurrentweek = weekInterval.end - 3600*24
-let formattedendcurrentweek = formatter.string(from: endcurrentweek)
-let formattedstartcurrentweek = formatter.string(from: startcurrentweek)
-
 
 /**
-     Function about the get the end date of the given week's
+     Obtains the end date of a given week
   
       - Parameter updateNow: Date
   
-      - Returns: formattedendcurrentweek
+      - Returns: formattedEndCurrentWeek
          
  **/
-func newendcurrentweek (updateNow: Date) -> String{
+func newEndCurrentWeek (updateNow: Date) -> String{
     formatter.dateFormat = "MM/dd"
-    let weekInterval = newcalendar.dateInterval(of: .weekOfYear, for: updateNow)
-    let endcurrentweek = weekInterval!.end - 3600*24
-    let formattedendcurrentweek = formatter.string(from: endcurrentweek)
+    let weekInterval = newCalendar.dateInterval(of: .weekOfYear, for: updateNow)
+    let endCurrentWeek = weekInterval!.end - 3600*24
+    let formattedEndCurrentWeek = formatter.string(from: endCurrentWeek)
     
-    return formattedendcurrentweek
+    return formattedEndCurrentWeek
 }
 
+
 /**
-    Function about the get the start date of the given week's
+    Obtains the start date of a given week
  
      - Parameter updateNow: Date
  
-     - Returns: formattedstartcurrentweek
+     - Returns: formattedStartCurrentWeek
         
 **/
-
-func newstartcurrentweek (updateNow: Date) -> String{
+func newStartCurrentWeek (updateNow: Date) -> String{
     formatter.dateFormat = "MM/dd"
-    let weekInterval = newcalendar.dateInterval(of: .weekOfYear, for: updateNow)
-    let startcurrentweek = weekInterval!.start
-    let formattedstartcurrentweek = formatter.string(from: startcurrentweek)
+    let weekInterval = newCalendar.dateInterval(of: .weekOfYear, for: updateNow)
+    let startCurrentWeek = weekInterval!.start
+    let formattedStartCurrentWeek = formatter.string(from: startCurrentWeek)
     
-    return formattedstartcurrentweek
+    return formattedStartCurrentWeek
 }
 
 
 /**
-    Function about the get the Sunday date of the given week's
+    Obtains the Sunday date of a given week
  
-     - Parameter startcurrentweek: Date
+     - Parameter startCurrentWeek: Date
  
      - Returns: formattedSundayDate
         
 **/
-func Sundaydate (startcurrentweek: Date) -> String{
-    dayformatter.dateFormat = "dd"
-    let weekInterval = newcalendar.dateInterval(of: .weekOfYear, for: startcurrentweek)
-    let SundayDate = weekInterval!.start
-    let formattedSundayDate = dayformatter.string(from: SundayDate)
+func sundayDate (startCurrentWeek: Date) -> String{
+    dayFormatter.dateFormat = "dd"
+    let weekInterval = newCalendar.dateInterval(of: .weekOfYear, for: startCurrentWeek)
+    let sundayDate = weekInterval!.start
+    let formattedSundayDate = dayFormatter.string(from: sundayDate)
     return formattedSundayDate
 }
+
+
 /**
-    Function about the get the Monday date of the given week's
- 
-     - Parameter startcurrentweek: Date
+    Obtains the Monday date of a given week
+    
+     - Parameter startCurrentWeek: Date
  
      - Returns: formattedMondayDate
         
 **/
-func Mondaydate (startcurrentweek: Date) -> String{
-    dayformatter.dateFormat = "dd"
-    let weekInterval = newcalendar.dateInterval(of: .weekOfYear, for: startcurrentweek)
-    let MondayDate = weekInterval!.end - 3600*24*6
-    let formattedMondayDate = dayformatter.string(from: MondayDate)
+func mondayDate (startCurrentWeek: Date) -> String{
+    dayFormatter.dateFormat = "dd"
+    let weekInterval = newCalendar.dateInterval(of: .weekOfYear, for: startCurrentWeek)
+    let mondayDate = weekInterval!.end - 3600*24*6
+    let formattedMondayDate = dayFormatter.string(from: mondayDate)
     return formattedMondayDate
 }
+
+
 /**
-    Function about the get the Tuesday date of the given week's
- 
-     - Parameter startcurrentweek: Date
+    Obtains the Tuesday date of a given week
+    
+     - Parameter startCurrentWeek: Date
  
      - Returns: formattedTuesdayDate
         
 **/
-func Tuesdaydate (startcurrentweek: Date) -> String{
-    dayformatter.dateFormat = "dd"
-    let weekInterval = newcalendar.dateInterval(of: .weekOfYear, for: startcurrentweek)
-    let TuesdayDate = weekInterval!.end - 3600*24*5
-    let formattedTuesdayDate = dayformatter.string(from: TuesdayDate)
+
+
+func Tuesdaydate (startCurrentWeek: Date) -> String{
+    dayFormatter.dateFormat = "dd"
+    let weekInterval = newCalendar.dateInterval(of: .weekOfYear, for: startCurrentWeek)
+    let tuesdayDate = weekInterval!.end - 3600*24*5
+    let formattedTuesdayDate = dayFormatter.string(from: tuesdayDate)
     return formattedTuesdayDate
 }
+
+
 /**
-    Function about the get the Wednesday date of the given week's
- 
-     - Parameter startcurrentweek: Date
+    Obtains the Wednesday date of a given week
+    
+     - Parameter startCurrentWeek: Date
  
      - Returns: formattedWednesdayDate
         
 **/
-func Wednesdaydate (startcurrentweek: Date) -> String{
-    dayformatter.dateFormat = "dd"
-    let weekInterval = newcalendar.dateInterval(of: .weekOfYear, for: startcurrentweek)
-    let WednesdayDate = weekInterval!.end - 3600*24*4
-    let formattedWednesdayDate = dayformatter.string(from: WednesdayDate)
+func Wednesdaydate (startCurrentWeek: Date) -> String{
+    dayFormatter.dateFormat = "dd"
+    let weekInterval = newCalendar.dateInterval(of: .weekOfYear, for: startCurrentWeek)
+    let wednesdayDate = weekInterval!.end - 3600*24*4
+    let formattedWednesdayDate = dayFormatter.string(from: wednesdayDate)
     return formattedWednesdayDate
 }
+
+
 /**
-    Function about the get the Thursday date of the given week's
- 
-     - Parameter startcurrentweek: Date
+    Obtains the Thursday date of a given week
+    
+     - Parameter startCurrentWeek: Date
  
      - Returns: formattedThursdayDate
         
 **/
-func Thursdaydate (startcurrentweek: Date) -> String{
-    dayformatter.dateFormat = "dd"
-    let weekInterval = newcalendar.dateInterval(of: .weekOfYear, for: startcurrentweek)
-    let ThursdayDate = weekInterval!.end - 3600*24*3
-    let formattedThursdayDate = dayformatter.string(from: ThursdayDate)
+func Thursdaydate (startCurrentWeek: Date) -> String{
+    dayFormatter.dateFormat = "dd"
+    let weekInterval = newCalendar.dateInterval(of: .weekOfYear, for: startCurrentWeek)
+    let thursdayDate = weekInterval!.end - 3600*24*3
+    let formattedThursdayDate = dayFormatter.string(from: thursdayDate)
     return formattedThursdayDate
 }
+
+
 /**
-    Function about the get the Friday date of the given week's
- 
-     - Parameter startcurrentweek: Date
+    Obtains the Friday date of a given week
+    
+     - Parameter startCurrentWeek: Date
  
      - Returns: formattedFridayDate
         
 **/
-func Fridaydate (startcurrentweek: Date) -> String{
-    dayformatter.dateFormat = "dd"
-    let weekInterval = newcalendar.dateInterval(of: .weekOfYear, for: startcurrentweek)
-    let FridayDate = weekInterval!.end - 3600*24*2
-    let formattedFridayDate = dayformatter.string(from: FridayDate)
+func Fridaydate (startCurrentWeek: Date) -> String{
+    dayFormatter.dateFormat = "dd"
+    let weekInterval = newCalendar.dateInterval(of: .weekOfYear, for: startCurrentWeek)
+    let fridayDate = weekInterval!.end - 3600*24*2
+    let formattedFridayDate = dayFormatter.string(from: fridayDate)
     return formattedFridayDate
 }
+
+
 /**
-    Function about the get the Saturday date of the given week's
- 
-     - Parameter startcurrentweek: Date
+    Obtains the Saturday date of a given week
+    
+     - Parameter startCurrentWeek: Date
  
      - Returns: formattedSaturdayDate
         
 **/
-func Saturdaydate (startcurrentweek: Date) -> String{
-    dayformatter.dateFormat = "dd"
-    let weekInterval = newcalendar.dateInterval(of: .weekOfYear, for: startcurrentweek)
-    let SaturdayDate = weekInterval!.end - 3600*24
-    let formattedSaturdayDate = dayformatter.string(from: SaturdayDate)
+func Saturdaydate (startCurrentWeek: Date) -> String{
+    dayFormatter.dateFormat = "dd"
+    let weekInterval = newCalendar.dateInterval(of: .weekOfYear, for: startCurrentWeek)
+    let saturdayDate = weekInterval!.end - 3600*24
+    let formattedSaturdayDate = dayFormatter.string(from: saturdayDate)
     return formattedSaturdayDate
 }
