@@ -1,6 +1,6 @@
 //
 //  ParkinSense_12_4UITests.swift
-//  ParkinSenseUITests
+//  ParkinSense-12.4UITests
 //
 //  Created by Higgins Weng on 2019-10-24.
 //  Copyright © 2019 PDD Inc. All rights reserved.
