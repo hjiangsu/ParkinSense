@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0333C3CC23656A5700031C26 /* weeklycalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0333C3CB23656A5700031C26 /* weeklycalendar.swift */; };
+		0333C3CC23656A5700031C26 /* WeeklyCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0333C3CB23656A5700031C26 /* WeeklyCalendar.swift */; };
 		038D56C12362C6AD00FFB3DD /* GameOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038D56C02362C6AD00FFB3DD /* GameOneViewController.swift */; };
 		038D56C32362C6BC00FFB3DD /* GameTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038D56C22362C6BC00FFB3DD /* GameTwoViewController.swift */; };
 		03AB56A423627D22000A3475 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03AB56A323627D22000A3475 /* GoogleService-Info.plist */; };
+		060A222E236FD2CA00A9324E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A222D236FD2CA00A9324E /* CustomTextField.swift */; };
 		06973D8B236F5B7200C4EDEA /* TiltViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06973D87236F5B7100C4EDEA /* TiltViewController.swift */; };
 		06973D8C236F5B7200C4EDEA /* CountdownGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06973D88236F5B7100C4EDEA /* CountdownGameScene.swift */; };
 		06973D8D236F5B7200C4EDEA /* TiltScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06973D89236F5B7100C4EDEA /* TiltScoreViewController.swift */; };
@@ -53,10 +54,11 @@
 
 /* Begin PBXFileReference section */
 		00B5474BFBD87956D8128115 /* Pods_ParkinSenseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkinSenseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0333C3CB23656A5700031C26 /* weeklycalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = weeklycalendar.swift; sourceTree = "<group>"; };
+		0333C3CB23656A5700031C26 /* WeeklyCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyCalendar.swift; sourceTree = "<group>"; };
 		038D56C02362C6AD00FFB3DD /* GameOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOneViewController.swift; sourceTree = "<group>"; };
 		038D56C22362C6BC00FFB3DD /* GameTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTwoViewController.swift; sourceTree = "<group>"; };
 		03AB56A323627D22000A3475 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		060A222D236FD2CA00A9324E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		06973D87236F5B7100C4EDEA /* TiltViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TiltViewController.swift; path = "../../../../../Downloads/ParkinSense-Tilt/ParkinSense/TiltViewController.swift"; sourceTree = "<group>"; };
 		06973D88236F5B7100C4EDEA /* CountdownGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountdownGameScene.swift; path = "../../../../../Downloads/ParkinSense-Tilt/ParkinSense/CountdownGameScene.swift"; sourceTree = "<group>"; };
 		06973D89236F5B7100C4EDEA /* TiltScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TiltScoreViewController.swift; path = "../../../../../Downloads/ParkinSense-Tilt/ParkinSense/TiltScoreViewController.swift"; sourceTree = "<group>"; };
@@ -204,7 +206,8 @@
 				A61328EC23627A5F00C7066C /* Constants.swift */,
 				A61328ED23627A5F00C7066C /* Utilities.swift */,
 				A61328EE23627A5F00C7066C /* TimeandExtension.swift */,
-				0333C3CB23656A5700031C26 /* weeklycalendar.swift */,
+				0333C3CB23656A5700031C26 /* WeeklyCalendar.swift */,
+				060A222D236FD2CA00A9324E /* CustomTextField.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -469,8 +472,9 @@
 			files = (
 				A61328F223627A5F00C7066C /* TimeandExtension.swift in Sources */,
 				A61328F123627A5F00C7066C /* Utilities.swift in Sources */,
-				0333C3CC23656A5700031C26 /* weeklycalendar.swift in Sources */,
+				0333C3CC23656A5700031C26 /* WeeklyCalendar.swift in Sources */,
 				A61328FA23627A6A00C7066C /* MedicationDetailViewController.swift in Sources */,
+				060A222E236FD2CA00A9324E /* CustomTextField.swift in Sources */,
 				A61328FB23627A6A00C7066C /* HomeViewController.swift in Sources */,
 				06973D8C236F5B7200C4EDEA /* CountdownGameScene.swift in Sources */,
 				06973D8E236F5B7200C4EDEA /* TiltGameScene.swift in Sources */,
@@ -660,7 +664,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = PDD.ParkinSense;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -680,7 +684,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = PDD.ParkinSense;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
