@@ -5,11 +5,13 @@
 //
 //  Programmer(s): Higgins Weng
 //
+//  Description: Main login view of ParkinSense
+//
 //  Changes:
 //      - list change here
 //
 //  Known Bugs:
-//      - list known bugs here
+//      - None
 //
 //-----------------------------------------------------------------
 
@@ -17,25 +19,24 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
+class LoginViewController: UIViewController {
 
-class loginViewController: UIViewController {
-
     
-    @IBOutlet weak var UsernameTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
     
-    @IBOutlet weak var PasswordTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var RememberPasswordLabel: UILabel!
+    @IBOutlet weak var rememberPasswordLabel: UILabel!
     
     @IBOutlet weak var btnCheckBox: UIButton!
     
-    @IBOutlet weak var ErrorLabel: UILabel!
+    @IBOutlet weak var errorLabel: UILabel!
     
-    @IBOutlet weak var SigninButton: UIButton!
+    @IBOutlet weak var signInButton: UIButton!
     
-    @IBOutlet weak var ORlabel: UILabel!
+    @IBOutlet weak var oRlabel: UILabel!
     
-    @IBOutlet weak var CreateanAccountButton: UIButton!
+    @IBOutlet weak var createAnAccountButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,48 +48,34 @@ class loginViewController: UIViewController {
         btnCheckBox.setImage(UIImage(named:"checkbox"), for: .selected)
     }
     
+    
     /**
         Function to set up the default ErrorLabel invisiable and set up the button and text appearance
      
-         - Parameters: No
-         - Returns: No
-            
+         - Returns: None
     **/
-    
     func setUpElements(){
         
         //Hide the error label
-        ErrorLabel.alpha = 0
+        errorLabel.alpha = 0
         
         //Style the elements 
-        Utilities.styleTextField(UsernameTextField)
+        Utilities.styleTextField(usernameTextField)
         
-        Utilities.styleTextField(PasswordTextField)
+        Utilities.styleTextField(passwordTextField)
         
-        Utilities.styleFilledButton(SigninButton)
+        Utilities.styleFilledButton(signInButton)
         
-        Utilities.styleFilledButton(CreateanAccountButton)
+        Utilities.styleFilledButton(createAnAccountButton)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
     /**
         Function about the Remember Password Button check or uncheck
      
          - Parameter sender: Button itself
-     
-         - Returns: No
-            
+         - Returns: None
     **/
-    
     @IBAction func checkMarkTapped(_ sender: UIButton) {
         
         UIView.animate(withDuration: 0, delay: 0, options: .curveLinear, animations: {
@@ -103,30 +90,28 @@ class loginViewController: UIViewController {
         
     }
     
+    
     /**
         Function about the Sign in Button, will direct you to the home page if success. If not, the error will be displayed
      
          - Parameter sender: Button itself
-     
-         - Returns: No
-            
+         - Returns: None
     **/
-    
-    @IBAction func SigninTapped(_ sender: Any) {
+    @IBAction func signInTapped(_ sender: Any) {
         
         //validate Text Fields
         
         //Create cleaned versions of the text field
-        username = UsernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        password = PasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        username = usernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
         
         Auth.auth().signIn(withEmail: username, password: password) { (result, error) in
             
             if error != nil {
                 //could not sign in
-                self.ErrorLabel.text = error!.localizedDescription
-                self.ErrorLabel.alpha = 1
+                self.errorLabel.text = error!.localizedDescription
+                self.errorLabel.alpha = 1
             }
             else{
 
@@ -143,9 +128,8 @@ class loginViewController: UIViewController {
      
          - Parameter sender: Button itself
          - Returns: None
-            
     **/
-    @IBAction func CreateAccountTapped(_ sender: Any) {
+    @IBAction func createAccountTapped(_ sender: Any) {
     }
     
     
@@ -156,7 +140,7 @@ class loginViewController: UIViewController {
          - Returns: None
             
     **/
-    @IBAction func unwindTologin(segue: UIStoryboardSegue){
+    @IBAction func unwindToLogin(segue: UIStoryboardSegue){
         
     }
     

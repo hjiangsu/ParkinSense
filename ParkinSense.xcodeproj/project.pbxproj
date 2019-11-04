@@ -28,7 +28,7 @@
 		A61328F923627A6A00C7066C /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61328F523627A6900C7066C /* SignupViewController.swift */; };
 		A61328FA23627A6A00C7066C /* MedicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61328F623627A6900C7066C /* MedicationDetailViewController.swift */; };
 		A61328FB23627A6A00C7066C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61328F723627A6900C7066C /* HomeViewController.swift */; };
-		A61328FC23627A6A00C7066C /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61328F823627A6900C7066C /* loginViewController.swift */; };
+		A61328FC23627A6A00C7066C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61328F823627A6900C7066C /* LoginViewController.swift */; };
 		A61328FE23627A8C00C7066C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A61328FD23627A8C00C7066C /* Main.storyboard */; };
 		A613290023627AAB00C7066C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A61328FF23627AAB00C7066C /* Assets.xcassets */; };
 		B8009D6EE7EC45401DDED022 /* Pods_ParkinSenseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B5474BFBD87956D8128115 /* Pods_ParkinSenseTests.framework */; };
@@ -84,7 +84,7 @@
 		A61328F523627A6900C7066C /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		A61328F623627A6900C7066C /* MedicationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationDetailViewController.swift; sourceTree = "<group>"; };
 		A61328F723627A6900C7066C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		A61328F823627A6900C7066C /* loginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
+		A61328F823627A6900C7066C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A61328FD23627A8C00C7066C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A61328FF23627AAB00C7066C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAD23FB66C401B7D00ADA381 /* Pods-ParkinSenseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkinSenseTests.release.xcconfig"; path = "Target Support Files/Pods-ParkinSenseTests/Pods-ParkinSenseTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -222,7 +222,7 @@
 				A61328F523627A6900C7066C /* SignupViewController.swift */,
 				A61328F623627A6900C7066C /* MedicationDetailViewController.swift */,
 				A61328F723627A6900C7066C /* HomeViewController.swift */,
-				A61328F823627A6900C7066C /* loginViewController.swift */,
+				A61328F823627A6900C7066C /* LoginViewController.swift */,
 				038D56C02362C6AD00FFB3DD /* TiltUIViewController.swift */,
 				038D56C22362C6BC00FFB3DD /* GameTwoViewController.swift */,
 			);
@@ -482,7 +482,7 @@
 				038D56C12362C6AD00FFB3DD /* TiltUIViewController.swift in Sources */,
 				A61328F023627A5F00C7066C /* Constants.swift in Sources */,
 				A61328F923627A6A00C7066C /* SignupViewController.swift in Sources */,
-				A61328FC23627A6A00C7066C /* loginViewController.swift in Sources */,
+				A61328FC23627A6A00C7066C /* LoginViewController.swift in Sources */,
 				038D56C32362C6BC00FFB3DD /* GameTwoViewController.swift in Sources */,
 				06973D8D236F5B7200C4EDEA /* TiltScoreViewController.swift in Sources */,
 				06973D8B236F5B7200C4EDEA /* TiltViewController.swift in Sources */,

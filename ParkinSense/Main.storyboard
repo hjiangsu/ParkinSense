@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="loginViewController" customModule="ParkinSense" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="ParkinSense" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,7 +85,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="SigninTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fJH-Zs-8tP"/>
+                                            <action selector="signInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="741-0z-Tn1"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2X-rx-fBx">
@@ -115,7 +115,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="CreateAccountTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1eZ-W6-hZc"/>
+                                            <action selector="createAccountTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6aF-nm-9ix"/>
                                             <segue destination="y9O-MW-t5g" kind="presentation" modalPresentationStyle="fullScreen" id="7iB-hr-9I6"/>
                                         </connections>
                                     </button>
@@ -241,7 +241,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="checkMarkTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TAu-JL-nVu"/>
+                                                            <action selector="checkMarkTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OKe-v1-uko"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -397,14 +397,14 @@
                     <navigationItem key="navigationItem" id="c7c-RR-v82"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="CreateanAccountButton" destination="Muk-xY-MuV" id="bJD-nI-1Ja"/>
-                        <outlet property="ErrorLabel" destination="FFG-ce-JbV" id="IU1-i7-Bxe"/>
-                        <outlet property="ORlabel" destination="C2X-rx-fBx" id="9ol-dF-a1z"/>
-                        <outlet property="PasswordTextField" destination="WPp-J7-yNK" id="ZaD-xc-LmA"/>
-                        <outlet property="RememberPasswordLabel" destination="eAN-uk-K82" id="lZL-uH-Qmr"/>
-                        <outlet property="SigninButton" destination="oa5-yQ-Y1a" id="Dbi-JL-elq"/>
-                        <outlet property="UsernameTextField" destination="oR8-qT-AX3" id="QmB-Dm-5YZ"/>
-                        <outlet property="btnCheckBox" destination="pg6-qs-MTa" id="Ebq-Jc-Heg"/>
+                        <outlet property="btnCheckBox" destination="pg6-qs-MTa" id="5oZ-e5-LfO"/>
+                        <outlet property="createAnAccountButton" destination="Muk-xY-MuV" id="Lv9-Tw-H0N"/>
+                        <outlet property="errorLabel" destination="FFG-ce-JbV" id="e9V-SX-jZR"/>
+                        <outlet property="oRlabel" destination="C2X-rx-fBx" id="evZ-5z-Z5n"/>
+                        <outlet property="passwordTextField" destination="WPp-J7-yNK" id="IhO-Hb-kyv"/>
+                        <outlet property="rememberPasswordLabel" destination="eAN-uk-K82" id="2DJ-wK-lX6"/>
+                        <outlet property="signInButton" destination="oa5-yQ-Y1a" id="pW0-du-Ny1"/>
+                        <outlet property="usernameTextField" destination="oR8-qT-AX3" id="fUn-l3-7Op"/>
                         <segue destination="eVj-ik-Udv" kind="presentation" identifier="loginToHomeID" modalPresentationStyle="fullScreen" id="wmF-fg-5df"/>
                     </connections>
                 </viewController>
@@ -564,6 +564,7 @@
                                         </variation>
                                         <connections>
                                             <action selector="alreadyHaveAnAccountTapped:" destination="y9O-MW-t5g" eventType="touchUpInside" id="wvv-Mq-fFH"/>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="qWR-4Y-1aI"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1657,10 +1658,9 @@
         <image name="uncheckbox" width="239" height="246"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="181-2q-4Mm"/>
         <segue reference="Td7-SG-TAf"/>
         <segue reference="xa4-L2-QV7"/>
-        <segue reference="W1N-RM-9eB"/>
+        <segue reference="7iB-hr-9I6"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
