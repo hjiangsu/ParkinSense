@@ -58,13 +58,13 @@ class signupViewController: UIViewController {
         //Hide the error label, medication label and save the Username and Password
         ErrorLabel.alpha = 0
         
-        MedicationLabel.alpha = CGFloat(medicationLabelalpha)
+        MedicationLabel.alpha = CGFloat(medicationLabelAlpha)
         
-        MedicationLabel.text = MedicationName
+        MedicationLabel.text = medicationName
         
-        UsernameTextField.text = Username
+        UsernameTextField.text = username
         
-        PasswordTextField.text = Password
+        PasswordTextField.text = password
         
         //Style the elements
         Utilities.styleTextField(UsernameTextField)
@@ -135,15 +135,15 @@ class signupViewController: UIViewController {
         }
         else{
             //Create cleaned versions of the data
-            Username = UsernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            Password = PasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            username = UsernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            password = PasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
             //Create the user
-            Auth.auth().createUser(withEmail: Username, password: Password) { (result, err) in
+            Auth.auth().createUser(withEmail: username, password: password) { (result, err) in
                 
                 //Check for errors
                 if err != nil {
-                    if Password.count < 6{
+                    if password.count < 6{
                         self.showError("password must be at least 6 characters")
                     }
                     //There was an error creating the user
@@ -156,7 +156,7 @@ class signupViewController: UIViewController {
                     //User was created successfully, now store the username
                     let db = Firestore.firestore()
                     
-                    db.collection("users").document(result!.user.uid).setData(["Username": Username, "uid": result!.user.uid, "MedicationName": MedicationName, "login_time":rightNow - 3600*24]) { (error) in
+                    db.collection("users").document(result!.user.uid).setData(["Username": username, "uid": result!.user.uid, "MedicationName": medicationName, "login_time":rightNow - 3600*24]) { (error) in
                         
                         if error != nil {
                             //Show error message
@@ -184,8 +184,8 @@ class signupViewController: UIViewController {
     **/
     
     @IBAction func AddNewMedicationDetailTapped(_ sender: Any) {
-        Username = UsernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        Password = PasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        username = UsernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        password = PasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     /**

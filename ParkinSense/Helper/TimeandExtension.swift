@@ -5,11 +5,13 @@
 //
 //  Programmer(s): Higgins Weng
 //
+//  Description: Formats the time to be used later**
+//
 //  Changes:
 //      - list change here
 //
 //  Known Bugs:
-//      - list known bugs here
+//      - None
 //
 //-----------------------------------------------------------------
 

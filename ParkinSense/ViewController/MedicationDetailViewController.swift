@@ -98,17 +98,17 @@ class MedicationDetailViewController: UIViewController {
     
     @IBAction func AddNewMedicationButton(_ sender: Any) {
         
-        MedicationName = MedicationTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines) //read the Medication Name from text field
+        medicationName = MedicationTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines) //read the Medication Name from text field
         
         let dateFormatter = DateFormatter()
         
         dateFormatter.timeStyle = DateFormatter.Style.short
         
-        timepickertime = dateFormatter.string(from: timePicker.date) //read the timepicker value for later use
+        timePickerTime = dateFormatter.string(from: timePicker.date) //read the timepicker value for later use
         
-        print(timepickertime)
+        print(timePickerTime)
         
-        medicationLabelalpha = 1 //change the medicationLabel's alpha from 0 to 1 that display the medication information in sign up page
+        medicationLabelAlpha = 1 //change the medicationLabel's alpha from 0 to 1 that display the medication information in sign up page
         
         //self.performSegue(withIdentifier: "unwindTosignup", sender: self)
     }

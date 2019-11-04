@@ -114,8 +114,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
                 if document != nil && document!.exists{
                     let DocumentData = document!.data() //get all the corresponding data in Firebase and store it in DocumentData
                     //print (DocumentData!)
-                    Username = DocumentData!["Username"] as! String 
-                    MedicationName = DocumentData!["MedicationName"] as! String
+                    username = DocumentData!["Username"] as! String
+                    medicationName = DocumentData!["MedicationName"] as! String
                     let lasttimeLogin = DocumentData!["login_time"] as! Timestamp // get the last time login time for temp in Timestamp type
                     //print(lasttimeLogin.dateValue())
                     let lasttimeLogindate = lasttimeLogin.dateValue() // get the current login time
@@ -159,7 +159,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
     func popover(){
         let alert = UIAlertController(title: "Reminder", message: "Did you take your medicine today?", preferredStyle: .alert) //set up the alert information
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil)) //set up the OK button to exist
-        db.collection("users").document(userid).setData(["login_time": rightNow, "Username": Username, "MedicationName": MedicationName, "uid":userid]) //Update the user last login time in Firebase for next time login checking
+        db.collection("users").document(userid).setData(["login_time": rightNow, "Username": username, "MedicationName": medicationName, "uid":userid]) //Update the user last login time in Firebase for next time login checking
         self.present(alert,animated: true) //active the present of pop up
     }
     

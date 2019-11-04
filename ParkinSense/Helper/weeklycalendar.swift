@@ -16,7 +16,6 @@
 import Foundation
 import UIKit
 
-
 var newcalendar = Calendar.current
 var rightNow = Date()
 var formatter = DateFormatter()
@@ -24,8 +23,6 @@ var dayformatter = DateFormatter()
 var dateformatter = DateFormatter()
 var lasttimeLogindatestr = ""
 var thistimeLogindatestr = ""
-//var lasttimeLogin = CVTimeStamp()
-
 
 /**
      get th current week date range from Sunday to Saturday

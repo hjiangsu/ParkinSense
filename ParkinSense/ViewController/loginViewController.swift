@@ -117,11 +117,11 @@ class loginViewController: UIViewController {
         //validate Text Fields
         
         //Create cleaned versions of the text field
-        Username = UsernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        Password = PasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        username = UsernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        password = PasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
         
-        Auth.auth().signIn(withEmail: Username, password: Password) { (result, error) in
+        Auth.auth().signIn(withEmail: username, password: password) { (result, error) in
             
             if error != nil {
                 //could not sign in

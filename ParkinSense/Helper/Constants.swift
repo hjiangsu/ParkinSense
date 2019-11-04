@@ -5,26 +5,26 @@
 //
 //  Programmer(s): Higgins Weng
 //
+//  Description: Stores global variables that need to be accessed between files
+//
 //  Changes:
-//      - list changes here
+//      - Added variables to use globally in all files
 //
 //  Known Bugs:
-//      - list known bugs here
+//      - None
 //
 //-----------------------------------------------------------------
 
 import Foundation
 
-//Save the global constant for all documents use
+var medicationName = "None"
 
-var MedicationName = "None"
+var medicationLabelAlpha = 0
 
-var medicationLabelalpha = 0
+var username = ""
 
-var Username = ""
+var password = ""
 
-var Password = ""
-
-var timepickertime = ""
+var timePickerTime = ""
 
 var userid = ""
