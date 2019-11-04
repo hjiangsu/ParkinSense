@@ -98,7 +98,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         
         //===========================================================
         // Do the main page setup for buttons and label appearance after loading the view.
-        setUp(newformattedtartcurrentweek: formattedstartcurrentweek, newformattedendcurrentweek: formattedendcurrentweek) // call setUp function to setup the button view
+        setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek) // call setUp function to setup the button view
         sevendaydate(currentdate: rightNow) // call sevendaydate function to get the Sunday to Saturday date, and set up the button title for every date button
         
         //=============================================================
@@ -119,14 +119,14 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
                     let lasttimeLogin = DocumentData!["login_time"] as! Timestamp // get the last time login time for temp in Timestamp type
                     //print(lasttimeLogin.dateValue())
                     let lasttimeLogindate = lasttimeLogin.dateValue() // get the current login time
-                    dateformatter.dateFormat = "yyyy/MM/dd"
-                    lasttimeLogindatestr = dateformatter.string(from: lasttimeLogindate) // format the timestamp type to string
+                    dateFormatter.dateFormat = "yyyy/MM/dd"
+                    lastTimeLoginDateStr = dateFormatter.string(from: lasttimeLogindate) // format the timestamp type to string
                     //print(lasttimeLogindatestr)
-                    thistimeLogindatestr = dateformatter.string(from: Date()) // format the timestamp type to string
+                    thisTimeLoginDateStr = dateFormatter.string(from: Date()) // format the timestamp type to string
                     //print(thistimeLogindatestr)
                     
                     //Check if the user is the first time login, if so, the pops up will be activated
-                    if lasttimeLogindatestr != thistimeLogindatestr{
+                    if lastTimeLoginDateStr != thisTimeLoginDateStr{
                          //print("in popover")
                         self.popover()
                      }
@@ -176,8 +176,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
             rightNow = nextweek
             sevendaydate(currentdate: rightNow) //update the new seven days' date
             
-            let newformattedtartcurrentweek = newstartcurrentweek(updateNow: rightNow) //get the first date of the choosen week
-            let newformattedendcurrentweek = newendcurrentweek(updateNow: rightNow) //get the end date of the choosen week
+            let newformattedtartcurrentweek = newStartCurrentWeek(updateNow: rightNow) //get the first date of the choosen week
+            let newformattedendcurrentweek = newEndCurrentWeek(updateNow: rightNow) //get the end date of the choosen week
             currentWeek += 1 //record the current week of the year
             if currentWeek == 53 {
                 currentWeek = 1
@@ -199,8 +199,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
             rightNow = nextweek
             sevendaydate(currentdate: rightNow) //update the new seven days' date
             
-            let newformattedtartcurrentweek = newstartcurrentweek(updateNow: rightNow) //get the first date of the choosen week
-            let newformattedendcurrentweek = newendcurrentweek(updateNow: rightNow) //get the end date of the choosen week
+            let newformattedtartcurrentweek = newStartCurrentWeek(updateNow: rightNow) //get the first date of the choosen week
+            let newformattedendcurrentweek = newEndCurrentWeek(updateNow: rightNow) //get the end date of the choosen week
             
             currentWeek -= 1 //record the current week of the year
             if currentWeek == 0 {
@@ -251,13 +251,13 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         func sevendaydate(currentdate: Date){
             
             //get the corresponding date of the days
-            let SundayDate = Sundaydate(startcurrentweek: currentdate)
-            let MondayDate = Mondaydate(startcurrentweek: currentdate)
-            let TuesdayDate = Tuesdaydate(startcurrentweek: currentdate)
-            let WednesdayDate = Wednesdaydate(startcurrentweek: currentdate)
-            let ThursdayDate = Thursdaydate(startcurrentweek: currentdate)
-            let FridayDate = Fridaydate(startcurrentweek: currentdate)
-            let SaturdayDate = Saturdaydate(startcurrentweek: currentdate)
+            let SundayDate = sundayDate(startCurrentWeek: currentdate)
+            let MondayDate = mondayDate(startCurrentWeek: currentdate)
+            let TuesdayDate = Tuesdaydate(startCurrentWeek: currentdate)
+            let WednesdayDate = Wednesdaydate(startCurrentWeek: currentdate)
+            let ThursdayDate = Thursdaydate(startCurrentWeek: currentdate)
+            let FridayDate = Fridaydate(startCurrentWeek: currentdate)
+            let SaturdayDate = Saturdaydate(startCurrentWeek: currentdate)
             //set title of the buttons text
             SundayButton.setTitle(SundayDate, for: .normal)
             MondayButton.setTitle(MondayDate, for: .normal)
