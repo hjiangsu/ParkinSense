@@ -1,10 +1,23 @@
+//-----------------------------------------------------------------
+//  File: CreateAccountPageUITest.swift
 //
-//  CreateAccountPageUITest.swift
-//  ParkinSense-12.4UITests
+//  Team: ParkinSense - PDD Inc.
 //
-//  Created by 包立诚 on 2019/11/3.
-//  Copyright © 2019 PDD Inc. All rights reserved.
+//  Programmer(s): Licheng Bao (Jerry)
 //
+//  Changes:
+//      - Added test cases of creating account
+//          1. test Create Account Success Without Medication
+//          2. test Create Account Success With Medication
+//          3. test create account with unvaild password (less than 6 characters)
+//          4. test create account with empty infomation (name,password)
+//          5. test create account with empty password
+//          6. test create account with error creating
+//          7. test create account with error matching (password and confirm password)
+//  Known Bugs:
+//      - Due to latest refactor, some test cases will not work as expected, it will be fixed in next version
+//
+//-----------------------------------------------------------------
 
 import XCTest
 

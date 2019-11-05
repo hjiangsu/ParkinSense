@@ -1,10 +1,20 @@
+//-----------------------------------------------------------------
+//  File: HomePageUITest.swift
 //
-//  HomePageUITest.swift
-//  ParkinSense-12.4UITests
+//  Team: ParkinSense - PDD Inc.
 //
-//  Created by 包立诚 on 2019/11/3.
-//  Copyright © 2019 PDD Inc. All rights reserved.
+//  Programmer(s): Licheng Bao (Jerry)
 //
+//  Changes:
+//      - Added test cases of home page
+//          1. Test scrolling up and down of whole home page
+//          2. test swipe trendline and daily data
+//          3. Test week buttons and "prev" "next" button
+//
+//  Known Bugs:
+//      - Due to latest refactor, some test cases will not work as expected, it will be fixed in next version
+//
+//-----------------------------------------------------------------
 
 import XCTest
 
