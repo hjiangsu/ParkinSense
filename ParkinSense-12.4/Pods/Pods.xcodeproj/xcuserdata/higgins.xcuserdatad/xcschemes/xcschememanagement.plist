@@ -118,19 +118,34 @@
 		</dict>
 		<key>Pods-ParkinSense-12.4-ParkinSense-12.4UITests.xcscheme</key>
 		<dict>
+			<key>orderHint</key>
+			<integer>23</integer>
+		</dict>
+		<key>Pods-ParkinSense-12.4.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>22</integer>
+		</dict>
+		<key>Pods-ParkinSense-12.4Tests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>24</integer>
+		</dict>
+		<key>Pods-ParkinSense-ParkinSenseUITests.xcscheme</key>
+		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>22</integer>
 		</dict>
-		<key>Pods-ParkinSense-12.4.xcscheme</key>
+		<key>Pods-ParkinSense.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>21</integer>
 		</dict>
-		<key>Pods-ParkinSense-12.4Tests.xcscheme</key>
+		<key>Pods-ParkinSenseTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -142,7 +157,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>24</integer>
+			<integer>21</integer>
 		</dict>
 		<key>gRPC-C++-gRPCCertificates-Cpp.xcscheme</key>
 		<dict>

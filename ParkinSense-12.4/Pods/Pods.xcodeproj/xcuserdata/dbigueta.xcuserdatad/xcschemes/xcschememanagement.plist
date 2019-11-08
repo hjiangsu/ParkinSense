@@ -84,17 +84,17 @@
 			<key>orderHint</key>
 			<integer>15</integer>
 		</dict>
-		<key>Pods-ParkinSense-12.4-ParkinSense-12.4UITests.xcscheme_^#shared#^_</key>
+		<key>Pods-ParkinSense-ParkinSenseUITests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>23</integer>
 		</dict>
-		<key>Pods-ParkinSense-12.4.xcscheme_^#shared#^_</key>
+		<key>Pods-ParkinSense.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>22</integer>
 		</dict>
-		<key>Pods-ParkinSense-12.4Tests.xcscheme_^#shared#^_</key>
+		<key>Pods-ParkinSenseTests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>24</integer>
