@@ -45,9 +45,11 @@ class TiltScoreViewController: UIViewController {
         
         //print(maxScoreToday)
         if  fScore > maxScoreToday {
-        db.collection("users").document(userid).collection("gaming_score").document(currentTimeDate).setData(["date":thisTimeLoginDateStr, "max_Game_Score":fScore])
+        
             
             maxScoreToday = fScore
+            
+        db.collection("users").document(userid).collection("gaming_score").document(currentTimeDate).setData(["date":thisTimeLoginDateStr, "max_Game_Score":maxScoreToday])
             
             db.collection("users").document(userid).setData(["login_time": rightNow, "Username": username, "MedicationName": medicationName, "uid":userid, "Game_One_lastMaxScore":maxScoreToday])
         
