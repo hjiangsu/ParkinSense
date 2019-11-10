@@ -135,12 +135,13 @@ class SignupViewController: UIViewController {
                     //User was created successfully, now store the username
                     let db = Firestore.firestore()
                     
-                    db.collection("users").document(result!.user.uid).setData(["Username": username, "uid": result!.user.uid, "MedicationName": medicationName, "login_time":rightNow - 3600*24]) { (error) in
+                    db.collection("users").document(result!.user.uid).setData(["Username": username, "uid": result!.user.uid, "MedicationName": medicationName, "login_time":rightNow - 3600*24, "Game_One_lastMaxScore":0]) { (error) in
                         
                         if error != nil {
                             //Show error message
                             self.showError("Error saving user data")
                         }
+               
                     }
                     
                     //Transition to the home screen

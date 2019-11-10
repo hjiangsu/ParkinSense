@@ -19,6 +19,9 @@
 
 import UIKit
 import AVFoundation
+import FirebaseDatabase
+import FirebaseAuth
+import Firebase
 
 class TiltScoreViewController: UIViewController {
     
@@ -34,6 +37,22 @@ class TiltScoreViewController: UIViewController {
         super.viewDidLoad()
         
         finalScore.text = String(fScore)
+        let db = Firestore.firestore()
+        //db.collection("users").document(userid).setData(["login_time": rightNow, "Username": username, "MedicationName": medicationName, "uid":userid, "gaming_score": fScore])
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let currentTimeDate = dateFormatter.string(from: Date())
+        
+        //print(maxScoreToday)
+        if  fScore > maxScoreToday {
+        db.collection("users").document(userid).collection("gaming_score").document(currentTimeDate).setData(["date":thisTimeLoginDateStr, "max_Game_Score":fScore])
+            
+            maxScoreToday = fScore
+            
+            db.collection("users").document(userid).setData(["login_time": rightNow, "Username": username, "MedicationName": medicationName, "uid":userid, "Game_One_lastMaxScore":maxScoreToday])
+        
+            
+        }
     }
     
 }

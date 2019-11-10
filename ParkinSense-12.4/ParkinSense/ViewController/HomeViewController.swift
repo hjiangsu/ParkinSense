@@ -33,6 +33,10 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
     
     @IBOutlet weak var GameTwoButton: UIButton!
     
+    var Datalabeltext1: UILabel!
+    
+    var Datalabeltext2: UILabel!
+    
     var ref: DatabaseReference?
     
     
@@ -70,37 +74,10 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         
     let db = Firestore.firestore() //use for data read and write in database for later function
     
-    let imagesArray = ["AppIcon", "personalimage"] //load the image for page control view setup
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //============================================================
-        //Create the scroll view of the user's daily data
-        //The first page will be the trendline of the last seven days (image for now)
-        //the second page will be the daily data read from Firebase (text for now)
-        
-        // create the page for the page control
-        PageControl.numberOfPages = imagesArray.count
-        
-        //First page modified by create imageView
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill //set the imageViec's contentMode
-        imageView.image = UIImage(named: imagesArray[0]) //read the image from the imageArray and
-        let x1Pos = CGFloat(0)*self.view.bounds.size.width //get the x position of the view that for the first page content
-        imageView.frame = CGRect(x: x1Pos, y: 0, width: view.frame.size.width, height: DataScrollView.frame.size.height) //set up the imageView's frame
-
-        DataScrollView.addSubview(imageView) //put the imageView into scrollView
-        
-        let x2Pos = CGFloat(1)*self.view.bounds.size.width //get the x position of the view that for the second page content
-        let Datalabeltext = UILabel(frame: CGRect(x: x2Pos, y: 0, width: view.frame.size.width, height: DataScrollView.frame.size.height)) //set up the label frame
-        Datalabeltext.textAlignment = .center //place the label text in the center of the second page
-        Datalabeltext.text = "I'm a test label"
-        DataScrollView.contentSize.width = view.frame.size.width*CGFloat(1+1) //set up the Scroll view content size
-        DataScrollView.addSubview(Datalabeltext) //put the label text into scrollView
-        DataScrollView.delegate = self
-        
-        //===========================================================
         // Do the main page setup for buttons and label appearance after loading the view.
         setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek) // call setUp function to setup the button view
         sevendaydate(currentdate: rightNow) // call sevendaydate function to get the Sunday to Saturday date, and set up the button title for every date button
@@ -111,7 +88,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         
         //ref = Database.database().reference()
         userid = Auth.auth().currentUser!.uid //get the current user id from Firebase
-        
         //Update the login time for the current user
         //need to check the user account exist before access the data
         db.collection("users").document(userid).getDocument { (document, error) in
@@ -121,6 +97,9 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
                     //print (DocumentData!)
                     username = DocumentData!["Username"] as! String
                     medicationName = DocumentData!["MedicationName"] as! String
+                    maxScoreToday = DocumentData!["Game_One_lastMaxScore"] as! Int
+                    
+                    
                     let lasttimeLogin = DocumentData!["login_time"] as! Timestamp // get the last time login time for temp in Timestamp type
                     //print(lasttimeLogin.dateValue())
                     let lasttimeLogindate = lasttimeLogin.dateValue() // get the current login time
@@ -130,14 +109,50 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
                     thisTimeLoginDateStr = dateFormatter.string(from: Date()) // format the timestamp type to string
                     //print(thistimeLogindatestr)
                     
+                    self.setUpDailyDatainit(currentDate: thisTimeLoginDateStr)
+                    
+//                    //============================================================
+//                    //Create the scroll view of the user's daily data
+//                    //The first page will be the trendline of the last seven days (image for now)
+//                    //the second page will be the daily data read from Firebase (text for now)
+//                    let imagesArray = ["AppIcon", "personalimage"] //load the image for page control view setup
+//                    // create the page for the page control
+//                    self.PageControl.numberOfPages = imagesArray.count
+//
+//                    //First page modified by create imageView
+//                    let imageView = UIImageView()
+//                    imageView.contentMode = .scaleToFill //set the imageViec's contentMode
+//                    imageView.image = UIImage(named: imagesArray[0]) //read the image from the imageArray and
+//                    let x1Pos = CGFloat(0)*self.view.bounds.size.width //get the x position of the view that for the first page content
+//                    imageView.frame = CGRect(x: x1Pos, y: 0, width: self.view.frame.size.width, height: self.DataScrollView.frame.size.height) //set up the imageView's frame
+//
+//                    self.DataScrollView.addSubview(imageView) //put the imageView into scrollView
+//
+//                    //Daily date page scroll view
+//                    let x2Pos = CGFloat(1)*self.view.bounds.size.width //get the x position of the view that for the second page content
+//                    let Datalabeltext1 = UILabel(frame: CGRect(x: x2Pos, y: 20, width: self.view.frame.size.width/2, height: self.DataScrollView.frame.size.height/4)) //set up the label frame
+//                    Datalabeltext1.textAlignment = .center //place the label text in the center of the second page
+//                    Datalabeltext1.text = "Medication Name:  " + medicationName
+//                    self.DataScrollView.contentSize.width = self.view.frame.size.width*CGFloat(1+1) //set up the Scroll view content size
+//                    self.DataScrollView.addSubview(Datalabeltext1) //put the label text into scrollView
+//                    self.DataScrollView.delegate = self
+//
+//                    //===========================================================
+                    
                     //Check if the user is the first time login, if so, the pops up will be activated
                     if lastTimeLoginDateStr != thisTimeLoginDateStr{
                          //print("in popover")
                         self.popover()
+                        
+                        //initialize the game score for first login in everyday
+                        dateFormatter.dateFormat = "yyyy-MM-dd"
+                        let currentTimeDate = dateFormatter.string(from: Date())
+                    self.db.collection("users").document(userid).collection("gaming_score").document(currentTimeDate).setData(["date":thisTimeLoginDateStr, "max_Game_Score":maxScoreToday])
+                        
                      }
+                    
                 }
             }
-
         }
     }
 
@@ -164,7 +179,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
     func popover(){
         let alert = UIAlertController(title: "Reminder", message: "Did you take your medicine today?", preferredStyle: .alert) //set up the alert information
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil)) //set up the OK button to exist
-        db.collection("users").document(userid).setData(["login_time": rightNow, "Username": username, "MedicationName": medicationName, "uid":userid]) //Update the user last login time in Firebase for next time login checking
+        db.collection("users").document(userid).setData(["login_time": rightNow, "Username": username, "MedicationName": medicationName, "uid":userid, "Game_One_lastMaxScore":0]) //Update the user last login time in Firebase for next time login checking
         self.present(alert,animated: true) //active the present of pop up
     }
     
@@ -289,6 +304,42 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         if selectedDate == saturdayDatewithMY{Utilities.styleFilledDateButtonSelected(SaturdayButton)}
     }
     
+    func setUpDailyDatainit(currentDate: String){
+        //============================================================
+        //Create the scroll view of the user's daily data
+        //The first page will be the trendline of the last seven days (image for now)
+        //the second page will be the daily data read from Firebase (text for now)
+        let imagesArray = ["AppIcon", "personalimage"] //load the image for page control view setup
+        // create the page for the page control
+        self.PageControl.numberOfPages = imagesArray.count
+        
+        //First page modified by create imageView
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleToFill //set the imageViec's contentMode
+        imageView.image = UIImage(named: imagesArray[0]) //read the image from the imageArray and
+        let x1Pos = CGFloat(0)*self.view.bounds.size.width //get the x position of the view that for the first page content
+        imageView.frame = CGRect(x: x1Pos, y: 0, width: self.view.frame.size.width, height: self.DataScrollView.frame.size.height) //set up the imageView's frame
+
+        self.DataScrollView.addSubview(imageView) //put the imageView into scrollView
+        
+        //Daily date page scroll view
+        let x2Pos = CGFloat(1)*self.view.bounds.size.width //get the x position of the view that for the second page content
+        Datalabeltext1 = UILabel(frame: CGRect(x: x2Pos, y: 40, width: self.view.frame.size.width/2, height: self.DataScrollView.frame.size.height/4)) //set up the label frame
+        Datalabeltext1.textAlignment = .center //place the label text in the center of the second page
+        Datalabeltext1.text = "Medication Name:  " + medicationName
+        self.DataScrollView.contentSize.width = self.view.frame.size.width*CGFloat(1+1) //set up the Scroll view content size
+        self.DataScrollView.addSubview(Datalabeltext1) //put the label text into scrollView
+        
+        Datalabeltext2 = UILabel(frame: CGRect(x: x2Pos, y: 0, width: self.view.frame.size.width, height: self.DataScrollView.frame.size.height/4)) //set up the label frame
+        Datalabeltext2.textAlignment = .center //place the label text in the center of the second page
+        Datalabeltext2.text = "Date:  " + currentDate
+        self.DataScrollView.contentSize.width = self.view.frame.size.width*CGFloat(1+1) //set up the Scroll view content size
+        self.DataScrollView.addSubview(Datalabeltext2)
+        self.DataScrollView.delegate = self
+        
+        //===========================================================
+    }
+    
     
     @IBAction func SundayDateSelected(_ sender: Any) {
 //        print(SundayButton.titleLabel!)
@@ -297,6 +348,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         print(sundayDatewithMY)
         selectedDate = sundayDatewithMY
         setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
+        //setUpDailyData(currentDate: selectedDate)
+        Datalabeltext2.text = "Date:  \(selectedDate)"
         Utilities.styleFilledDateButtonSelected(SundayButton)
     }
     
@@ -307,6 +360,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         print(mondayDatewithMY)
         selectedDate = mondayDatewithMY
         setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
+        //setUpDailyData(currentDate: selectedDate)
+        Datalabeltext2.text = "Date:  \(selectedDate)"
         Utilities.styleFilledDateButtonSelected(MondayButton)
     }
     
@@ -317,6 +372,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         print(tuesdayDatewithMY)
         selectedDate = tuesdayDatewithMY
         setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
+        //setUpDailyData(currentDate: selectedDate)
+        Datalabeltext2.text = "Date:  \(selectedDate)"
         Utilities.styleFilledDateButtonSelected(TuesdayButton)
     }
     
@@ -327,6 +384,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         print(wednesdayDatewithMY)
         selectedDate = wednesdayDatewithMY
         setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
+        //setUpDailyData(currentDate: selectedDate)
+        Datalabeltext2.text = "Date:  \(selectedDate)"
         Utilities.styleFilledDateButtonSelected(WednesdayButton)
     }
     
@@ -337,6 +396,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         print(thursdayDatewithMY)
         selectedDate = thursdayDatewithMY
         setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
+        //setUpDailyData(currentDate: selectedDate)
+        Datalabeltext2.text = "Date:  \(selectedDate)"
         Utilities.styleFilledDateButtonSelected(ThursdayButton)
     }
     
@@ -347,6 +408,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         print(fridayDatewithMY)
         selectedDate = fridayDatewithMY
         setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
+        //setUpDailyData(currentDate: selectedDate)
+        Datalabeltext2.text = "Date:  \(selectedDate)"
         Utilities.styleFilledDateButtonSelected(FridayButton)
     }
     
@@ -357,7 +420,9 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
 //        print(selectedDate)
         print(saturdayDatewithMY)
         selectedDate = saturdayDatewithMY
-        setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek) 
+        setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
+        //setUpDailyData(currentDate: selectedDate)
+        Datalabeltext2.text = "Date:  \(selectedDate)"
         Utilities.styleFilledDateButtonSelected(SaturdayButton)
     }
     

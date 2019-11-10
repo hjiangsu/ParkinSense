@@ -26,6 +26,7 @@ var dateFormatter = DateFormatter()
 var lastTimeLoginDateStr = ""
 var thisTimeLoginDateStr = ""
 var selectedDate = defaultselecteddate
+var rightNowbeforegameplay = rightNow
 
 
 var sundayDatewithMY = ""
