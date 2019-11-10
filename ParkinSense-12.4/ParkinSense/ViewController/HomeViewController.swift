@@ -105,7 +105,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
                     let lasttimeLogin = DocumentData!["login_time"] as! Timestamp // get the last time login time for temp in Timestamp type
                     //print(lasttimeLogin.dateValue())
                     let lasttimeLogindate = lasttimeLogin.dateValue() // get the current login time
-                    dateFormatter.dateFormat = "yyyy/MM/dd"
+                    dateFormatter.dateFormat = "yyyy-MM-dd"
                     lastTimeLoginDateStr = dateFormatter.string(from: lasttimeLogindate) // format the timestamp type to string
                     //print(lasttimeLogindatestr)
                     thisTimeLoginDateStr = dateFormatter.string(from: Date()) // format the timestamp type to string
@@ -330,7 +330,23 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
         //setUpDailyData(currentDate: selectedDate)
         Datalabeltext2.text = "Date:  \(selectedDate)"
-        Datalabeltext3.text = "Max Score for today:  \(maxScoreToday)"
+        //db.collection("users").document(userid).collection("game_score").document("2019-11-08")
+        
+        //var maxScoreinSelected = 0
+        
+        db.collection("users").document(userid).collection("game_score").document(selectedDate).getDocument { (document, error) in
+            if error == nil{
+                if document != nil && document!.exists{
+                    var maxScoreinSelected = 0
+                    let DocumentData = document!.data()
+                    maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
+                    self.Datalabeltext3.text = "Max Score for today:  \(maxScoreinSelected)"
+                }
+                else{
+                    self.Datalabeltext3.text = "Max Score for today:  0"
+                }
+            }
+        }
         Utilities.styleFilledDateButtonSelected(SundayButton)
     }
     
@@ -343,7 +359,24 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
         //setUpDailyData(currentDate: selectedDate)
         Datalabeltext2.text = "Date:  \(selectedDate)"
-        Datalabeltext3.text = "Max Score for today:  \(maxScoreToday)"
+        
+        //var maxScoreinSelected = 0
+        
+        db.collection("users").document(userid).collection("gaming_score").document(selectedDate).getDocument { (document, error) in
+            if error == nil{
+                if document != nil && document!.exists{
+                    var maxScoreinSelected = 0
+                    let DocumentData = document!.data()
+                    maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
+                    print(maxScoreinSelected)
+                    self.Datalabeltext3.text = "Max Score for today:  \(maxScoreinSelected)"
+                }
+                else{
+                    self.Datalabeltext3.text = "Max Score for today:  0"
+                }
+            }
+        }
+        
         Utilities.styleFilledDateButtonSelected(MondayButton)
     }
     
@@ -356,7 +389,24 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
         //setUpDailyData(currentDate: selectedDate)
         Datalabeltext2.text = "Date:  \(selectedDate)"
-        Datalabeltext3.text = "Max Score for today:  \(maxScoreToday)"
+        
+        //var maxScoreinSelected = 0
+        
+        db.collection("users").document(userid).collection("gaming_score").document(selectedDate).getDocument { (document, error) in
+            if error == nil{
+                if document != nil && document!.exists{
+                    var maxScoreinSelected = 0
+                    let DocumentData = document!.data()
+                    maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
+                    print(maxScoreinSelected)
+                    self.Datalabeltext3.text = "Max Score for today:  \(maxScoreinSelected)"
+                }
+                else{
+                    self.Datalabeltext3.text = "Max Score for today:  0"
+                }
+            }
+        }
+        
         Utilities.styleFilledDateButtonSelected(TuesdayButton)
     }
     
@@ -369,7 +419,24 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
         //setUpDailyData(currentDate: selectedDate)
         Datalabeltext2.text = "Date:  \(selectedDate)"
-        Datalabeltext3.text = "Max Score for today:  \(maxScoreToday)"
+        
+        //var maxScoreinSelected = 0
+        
+        db.collection("users").document(userid).collection("gaming_score").document(selectedDate).getDocument { (document, error) in
+            if error == nil{
+                if document != nil && document!.exists{
+                    var maxScoreinSelected = 0
+                    let DocumentData = document!.data()
+                    maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
+                    print(maxScoreinSelected)
+                    self.Datalabeltext3.text = "Max Score for today:  \(maxScoreinSelected)"
+                }
+                else{
+                    self.Datalabeltext3.text = "Max Score for today:  0"
+                }
+            }
+        }
+        
         Utilities.styleFilledDateButtonSelected(WednesdayButton)
     }
     
@@ -382,7 +449,24 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
         //setUpDailyData(currentDate: selectedDate)
         Datalabeltext2.text = "Date:  \(selectedDate)"
-        Datalabeltext3.text = "Max Score for today:  \(maxScoreToday)"
+        
+        //var maxScoreinSelected = 0
+        
+        db.collection("users").document(userid).collection("gaming_score").document(selectedDate).getDocument { (document, error) in
+            if error == nil{
+                if document != nil && document!.exists{
+                    var maxScoreinSelected = 0
+                    let DocumentData = document!.data()
+                    maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
+                    print(maxScoreinSelected)
+                    self.Datalabeltext3.text = "Max Score for today:  \(maxScoreinSelected)"
+                }
+                else{
+                    self.Datalabeltext3.text = "Max Score for today:  0"
+                }
+            }
+
+        }
         Utilities.styleFilledDateButtonSelected(ThursdayButton)
     }
     
@@ -395,10 +479,33 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
         //setUpDailyData(currentDate: selectedDate)
         Datalabeltext2.text = "Date:  \(selectedDate)"
-        Datalabeltext3.text = "Max Score for today:  \(maxScoreToday)"
+//        db.collection("users").document(userid).getDocument { (document, error) in
+//            if error == nil{
+//                if document != nil && document!.exists{
+//                    let DocumentData = document!.data()
+//                    maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
+//                }
+//            }
+//        }
+        
+        //var maxScoreinSelected = 0
+        
+        db.collection("users").document(userid).collection("gaming_score").document(selectedDate).getDocument { (document, error) in
+            if error == nil{
+                if document != nil && document!.exists{
+                    var maxScoreinSelected = 0
+                    let DocumentData = document!.data()
+                    maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
+                    print(maxScoreinSelected)
+                    self.Datalabeltext3.text = "Max Score for today:  \(maxScoreinSelected)"
+                }
+                else{
+                    self.Datalabeltext3.text = "Max Score for today:  0"
+                }
+            }
+        }
         Utilities.styleFilledDateButtonSelected(FridayButton)
     }
-    
     
     @IBAction func SaturadyDateSelected(_ sender: Any) {
 //        print(SaturdayButton.titleLabel!)
@@ -409,7 +516,24 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
         //setUpDailyData(currentDate: selectedDate)
         Datalabeltext2.text = "Date:  \(selectedDate)"
-        Datalabeltext3.text = "Max Score for today:  \(maxScoreToday)"
+        
+        //var maxScoreinSelected = 0
+        
+        db.collection("users").document(userid).collection("gaming_score").document(selectedDate).getDocument { (document, error) in
+            if error == nil{
+                if document != nil && document!.exists{
+                    var maxScoreinSelected = 0
+                    let DocumentData = document!.data()
+                    maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
+                    print(maxScoreinSelected)
+                    self.Datalabeltext3.text = "Max Score for today:  \(maxScoreinSelected)"
+                }
+                else{
+                    self.Datalabeltext3.text = "Max Score for today:  0"
+                }
+            }
+        }
+        
         Utilities.styleFilledDateButtonSelected(SaturdayButton)
     }
     

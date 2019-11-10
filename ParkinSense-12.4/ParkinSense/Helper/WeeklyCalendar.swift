@@ -60,7 +60,7 @@ var dateRange: DateInterval{
 }
 
 var defaultselecteddate: String{
-    dateFormatter.dateFormat = "yyyy/MM/dd"
+    dateFormatter.dateFormat = "yyyy-MM-dd"
     let selectedDate = dateFormatter.string(from: Date())
     return selectedDate
 }
@@ -115,7 +115,7 @@ func sundayDate (startCurrentWeek: Date) -> String{
     let weekInterval = newCalendar.dateInterval(of: .weekOfYear, for: startCurrentWeek)
     let sundayDate = weekInterval!.start
     let formattedSundayDate = dayFormatter.string(from: sundayDate)
-    dateFormatter.dateFormat = "yyyy/MM/dd"
+    dateFormatter.dateFormat = "yyyy-MM-dd"
     sundayDatewithMY = dateFormatter.string(from: sundayDate)
     return formattedSundayDate
 }
@@ -134,7 +134,7 @@ func mondayDate (startCurrentWeek: Date) -> String{
     let weekInterval = newCalendar.dateInterval(of: .weekOfYear, for: startCurrentWeek)
     let mondayDate = weekInterval!.end - 3600*24*6
     let formattedMondayDate = dayFormatter.string(from: mondayDate)
-    dateFormatter.dateFormat = "yyyy/MM/dd"
+    dateFormatter.dateFormat = "yyyy-MM-dd"
     mondayDatewithMY = dateFormatter.string(from: mondayDate)
     return formattedMondayDate
 }
@@ -155,7 +155,7 @@ func tuesdayDate (startCurrentWeek: Date) -> String{
     let weekInterval = newCalendar.dateInterval(of: .weekOfYear, for: startCurrentWeek)
     let tuesdayDate = weekInterval!.end - 3600*24*5
     let formattedTuesdayDate = dayFormatter.string(from: tuesdayDate)
-    dateFormatter.dateFormat = "yyyy/MM/dd"
+    dateFormatter.dateFormat = "yyyy-MM-dd"
     tuesdayDatewithMY = dateFormatter.string(from: tuesdayDate)
     return formattedTuesdayDate
 }
@@ -174,7 +174,7 @@ func wednesdayDate (startCurrentWeek: Date) -> String{
     let weekInterval = newCalendar.dateInterval(of: .weekOfYear, for: startCurrentWeek)
     let wednesdayDate = weekInterval!.end - 3600*24*4
     let formattedWednesdayDate = dayFormatter.string(from: wednesdayDate)
-    dateFormatter.dateFormat = "yyyy/MM/dd"
+    dateFormatter.dateFormat = "yyyy-MM-dd"
     wednesdayDatewithMY = dateFormatter.string(from: wednesdayDate)
     return formattedWednesdayDate
 }
@@ -193,7 +193,7 @@ func thursdayDate (startCurrentWeek: Date) -> String{
     let weekInterval = newCalendar.dateInterval(of: .weekOfYear, for: startCurrentWeek)
     let thursdayDate = weekInterval!.end - 3600*24*3
     let formattedThursdayDate = dayFormatter.string(from: thursdayDate)
-    dateFormatter.dateFormat = "yyyy/MM/dd"
+    dateFormatter.dateFormat = "yyyy-MM-dd"
     thursdayDatewithMY = dateFormatter.string(from: thursdayDate)
     return formattedThursdayDate
 }
@@ -212,7 +212,7 @@ func fridayDate (startCurrentWeek: Date) -> String{
     let weekInterval = newCalendar.dateInterval(of: .weekOfYear, for: startCurrentWeek)
     let fridayDate = weekInterval!.end - 3600*24*2
     let formattedFridayDate = dayFormatter.string(from: fridayDate)
-    dateFormatter.dateFormat = "yyyy/MM/dd"
+    dateFormatter.dateFormat = "yyyy-MM-dd"
     fridayDatewithMY = dateFormatter.string(from: fridayDate)
     return formattedFridayDate
 }
@@ -231,7 +231,7 @@ func saturdayDate (startCurrentWeek: Date) -> String{
     let weekInterval = newCalendar.dateInterval(of: .weekOfYear, for: startCurrentWeek)
     let saturdayDate = weekInterval!.end - 3600*24
     let formattedSaturdayDate = dayFormatter.string(from: saturdayDate)
-    dateFormatter.dateFormat = "yyyy/MM/dd"
+    dateFormatter.dateFormat = "yyyy-MM-dd"
     saturdayDatewithMY = dateFormatter.string(from: saturdayDate)
     return formattedSaturdayDate
 }
