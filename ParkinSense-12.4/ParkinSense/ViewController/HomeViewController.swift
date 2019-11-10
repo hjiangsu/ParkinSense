@@ -37,6 +37,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
     
     var Datalabeltext2: UILabel!
     
+    var Datalabeltext3: UILabel!
+    
     var ref: DatabaseReference?
     
     
@@ -109,35 +111,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
                     thisTimeLoginDateStr = dateFormatter.string(from: Date()) // format the timestamp type to string
                     //print(thistimeLogindatestr)
                     
-                    self.setUpDailyDatainit(currentDate: thisTimeLoginDateStr)
-                    
-//                    //============================================================
-//                    //Create the scroll view of the user's daily data
-//                    //The first page will be the trendline of the last seven days (image for now)
-//                    //the second page will be the daily data read from Firebase (text for now)
-//                    let imagesArray = ["AppIcon", "personalimage"] //load the image for page control view setup
-//                    // create the page for the page control
-//                    self.PageControl.numberOfPages = imagesArray.count
-//
-//                    //First page modified by create imageView
-//                    let imageView = UIImageView()
-//                    imageView.contentMode = .scaleToFill //set the imageViec's contentMode
-//                    imageView.image = UIImage(named: imagesArray[0]) //read the image from the imageArray and
-//                    let x1Pos = CGFloat(0)*self.view.bounds.size.width //get the x position of the view that for the first page content
-//                    imageView.frame = CGRect(x: x1Pos, y: 0, width: self.view.frame.size.width, height: self.DataScrollView.frame.size.height) //set up the imageView's frame
-//
-//                    self.DataScrollView.addSubview(imageView) //put the imageView into scrollView
-//
-//                    //Daily date page scroll view
-//                    let x2Pos = CGFloat(1)*self.view.bounds.size.width //get the x position of the view that for the second page content
-//                    let Datalabeltext1 = UILabel(frame: CGRect(x: x2Pos, y: 20, width: self.view.frame.size.width/2, height: self.DataScrollView.frame.size.height/4)) //set up the label frame
-//                    Datalabeltext1.textAlignment = .center //place the label text in the center of the second page
-//                    Datalabeltext1.text = "Medication Name:  " + medicationName
-//                    self.DataScrollView.contentSize.width = self.view.frame.size.width*CGFloat(1+1) //set up the Scroll view content size
-//                    self.DataScrollView.addSubview(Datalabeltext1) //put the label text into scrollView
-//                    self.DataScrollView.delegate = self
-//
-//                    //===========================================================
+                    self.setUpDailyDatainit(currentDate: thisTimeLoginDateStr) //set up the page controll view
                     
                     //Check if the user is the first time login, if so, the pops up will be activated
                     if lastTimeLoginDateStr != thisTimeLoginDateStr{
@@ -324,7 +298,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         
         //Daily date page scroll view
         let x2Pos = CGFloat(1)*self.view.bounds.size.width //get the x position of the view that for the second page content
-        Datalabeltext1 = UILabel(frame: CGRect(x: x2Pos, y: 40, width: self.view.frame.size.width/2, height: self.DataScrollView.frame.size.height/4)) //set up the label frame
+        Datalabeltext1 = UILabel(frame: CGRect(x: x2Pos, y: 40, width: self.view.frame.size.width, height: self.DataScrollView.frame.size.height/4)) //set up the label frame
         Datalabeltext1.textAlignment = .center //place the label text in the center of the second page
         Datalabeltext1.text = "Medication Name:  " + medicationName
         self.DataScrollView.contentSize.width = self.view.frame.size.width*CGFloat(1+1) //set up the Scroll view content size
@@ -335,6 +309,12 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         Datalabeltext2.text = "Date:  " + currentDate
         self.DataScrollView.contentSize.width = self.view.frame.size.width*CGFloat(1+1) //set up the Scroll view content size
         self.DataScrollView.addSubview(Datalabeltext2)
+        
+        Datalabeltext3 = UILabel(frame: CGRect(x: x2Pos, y: 80, width: self.view.frame.size.width, height: self.DataScrollView.frame.size.height/4)) //set up the label frame
+        Datalabeltext3.textAlignment = .center //place the label text in the center of the second page
+        Datalabeltext3.text = "Max Score for today:  \(maxScoreToday)"
+        self.DataScrollView.contentSize.width = self.view.frame.size.width*CGFloat(1+1) //set up the Scroll view content size
+        self.DataScrollView.addSubview(Datalabeltext3)
         self.DataScrollView.delegate = self
         
         //===========================================================
@@ -350,6 +330,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
         //setUpDailyData(currentDate: selectedDate)
         Datalabeltext2.text = "Date:  \(selectedDate)"
+        Datalabeltext3.text = "Max Score for today:  \(maxScoreToday)"
         Utilities.styleFilledDateButtonSelected(SundayButton)
     }
     
@@ -362,6 +343,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
         //setUpDailyData(currentDate: selectedDate)
         Datalabeltext2.text = "Date:  \(selectedDate)"
+        Datalabeltext3.text = "Max Score for today:  \(maxScoreToday)"
         Utilities.styleFilledDateButtonSelected(MondayButton)
     }
     
@@ -374,6 +356,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
         //setUpDailyData(currentDate: selectedDate)
         Datalabeltext2.text = "Date:  \(selectedDate)"
+        Datalabeltext3.text = "Max Score for today:  \(maxScoreToday)"
         Utilities.styleFilledDateButtonSelected(TuesdayButton)
     }
     
@@ -386,6 +369,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
         //setUpDailyData(currentDate: selectedDate)
         Datalabeltext2.text = "Date:  \(selectedDate)"
+        Datalabeltext3.text = "Max Score for today:  \(maxScoreToday)"
         Utilities.styleFilledDateButtonSelected(WednesdayButton)
     }
     
@@ -398,6 +382,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
         //setUpDailyData(currentDate: selectedDate)
         Datalabeltext2.text = "Date:  \(selectedDate)"
+        Datalabeltext3.text = "Max Score for today:  \(maxScoreToday)"
         Utilities.styleFilledDateButtonSelected(ThursdayButton)
     }
     
@@ -410,6 +395,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
         //setUpDailyData(currentDate: selectedDate)
         Datalabeltext2.text = "Date:  \(selectedDate)"
+        Datalabeltext3.text = "Max Score for today:  \(maxScoreToday)"
         Utilities.styleFilledDateButtonSelected(FridayButton)
     }
     
@@ -423,6 +409,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
         //setUpDailyData(currentDate: selectedDate)
         Datalabeltext2.text = "Date:  \(selectedDate)"
+        Datalabeltext3.text = "Max Score for today:  \(maxScoreToday)"
         Utilities.styleFilledDateButtonSelected(SaturdayButton)
     }
     
