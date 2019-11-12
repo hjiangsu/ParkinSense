@@ -18,6 +18,7 @@
 //-----------------------------------------------------------------
 
 import UIKit
+import Charts
 import FirebaseDatabase
 import FirebaseAuth
 import Firebase
@@ -38,6 +39,8 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
     var Datalabeltext2: UILabel!
     
     var Datalabeltext3: UILabel!
+    
+    var lineChartView: LineChartView!
     
     var ref: DatabaseReference?
     
@@ -101,7 +104,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
                     medicationName = DocumentData!["MedicationName"] as! String
                     maxScoreToday = DocumentData!["Game_One_lastMaxScore"] as! Int
                     
-                    
                     let lasttimeLogin = DocumentData!["login_time"] as! Timestamp // get the last time login time for temp in Timestamp type
                     //print(lasttimeLogin.dateValue())
                     let lasttimeLogindate = lasttimeLogin.dateValue() // get the current login time
@@ -121,10 +123,9 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
                         //initialize the game score for first login in everyday
                         dateFormatter.dateFormat = "yyyy-MM-dd"
                         let currentTimeDate = dateFormatter.string(from: Date())
-                    self.db.collection("users").document(userid).collection("gaming_score").document(currentTimeDate).setData(["date":thisTimeLoginDateStr, "max_Game_Score":maxScoreToday])
+                    self.db.collection("users").document(userid).collection("gaming_score").document(currentTimeDate).setData(["date":thisTimeLoginDateStr, "Game_One_lastMaxScore":maxScoreToday])
                         
                      }
-                    
                 }
             }
         }
@@ -283,18 +284,49 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         //Create the scroll view of the user's daily data
         //The first page will be the trendline of the last seven days (image for now)
         //the second page will be the daily data read from Firebase (text for now)
+        
+        //============================================================================================
+        
         let imagesArray = ["AppIcon", "personalimage"] //load the image for page control view setup
+        
         // create the page for the page control
-        self.PageControl.numberOfPages = imagesArray.count
+        self.PageControl.numberOfPages = 2
+        
         
         //First page modified by create imageView
+        let x1Pos = CGFloat(0)*self.view.bounds.size.width //get the x position of the view that for the first page content
+        lineChartView = LineChartView(frame: CGRect(x: x1Pos, y: 0, width: self.view.frame.size.width, height: (self.DataScrollView.frame.size.height)))
+        
+        let values = [1, 2, 3, 4, 5, 6, 7]
+        var dataEntries: [ChartDataEntry] = []
+        for i in 0..<7 {
+            let dataEntry = ChartDataEntry(x: Double(values[i]), y: Double(i))
+          dataEntries.append(dataEntry)
+        }
+        let lineChartDataSet = LineChartDataSet(entries: dataEntries, label: "Hello")
+        let lineChartData = LineChartData(dataSet: lineChartDataSet)
+        lineChartView.data = lineChartData
+        self.DataScrollView.addSubview(lineChartView)
+//        let values = [1, 2, 3, 4, 5, 6, 7]
+//        var dataEntries: [ChartDataEntry] = []
+//        for i in 0..<7 {
+//            let dataEntry = ChartDataEntry(x: Double(values[i]), y: Double(i))
+//          dataEntries.append(dataEntry)
+//        }
+//        print(dataEntries)
+//        let lineChartDataSet = LineChartDataSet(entries: dataEntries, label: "Hello")
+//        let lineChartData = LineChartData(dataSet: lineChartDataSet)
+//        lineChartView.data = lineChartData
+        
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill //set the imageViec's contentMode
-        imageView.image = UIImage(named: imagesArray[0]) //read the image from the imageArray and
-        let x1Pos = CGFloat(0)*self.view.bounds.size.width //get the x position of the view that for the first page content
-        imageView.frame = CGRect(x: x1Pos, y: 0, width: self.view.frame.size.width, height: self.DataScrollView.frame.size.height) //set up the imageView's frame
+        //imageView.image = UIImage(named: imagesArray[0]) //read the image from the imageArray and
+        //let x1Pos = CGFloat(0)*self.view.bounds.size.width //get the x position of the view that for the first page content
+        //imageView.frame = CGRect(x: x1Pos, y: 0, width: self.view.frame.size.width, height: self.DataScrollView.frame.size.height) //set up the imageView's frame
 
-        self.DataScrollView.addSubview(imageView) //put the imageView into scrollView
+        //self.DataScrollView.addSubview(imageView) //put the imageView into scrollView
+        //====================================================================================
+        
         
         //Daily date page scroll view
         let x2Pos = CGFloat(1)*self.view.bounds.size.width //get the x position of the view that for the second page content
