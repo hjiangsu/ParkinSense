@@ -48,6 +48,6 @@ var gamedata7 = 0
 
 var values = [gamedata1, gamedata2, gamedata3, gamedata4, gamedata5, gamedata6, gamedata7]
 
-var dataEntries: [ChartDataEntry] = []
-    
-var dataEntry = ChartDataEntry(x: 0, y: 0)
+//var dataEntries: [ChartDataEntry] = []
+//    
+//var dataEntry = ChartDataEntry(x: 0, y: 0)

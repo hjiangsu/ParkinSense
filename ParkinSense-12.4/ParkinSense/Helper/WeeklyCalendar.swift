@@ -242,38 +242,38 @@ func saturdayDate (startCurrentWeek: Date) -> String{
 }
 
 
-//func updategamescore() {
-//     dataEntries = (0..<7).map {(i) -> ChartDataEntry in
-//        //let values = Double(arc4random_uniform(UInt32(7))+3)
-//            let db = Firestore.firestore()
-//        
-//                    dateFormatter.dateFormat = "yyyy-MM-dd"
-//                    let tempselecteddate = dateFormatter.string(from: selectedDateinDatetype!)
-//                    print(tempselecteddate)
-//                db.collection("users").document(userid).collection("gaming_score").document(tempselecteddate).getDocument { (document, error) in
-//                    if error == nil{
-//                        if document != nil && document!.exists{
-//                            var maxScoreinSelected = 0
-//                            let DocumentData = document!.data()
-//                            maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
-//                            print("Max Score for today:  \(maxScoreinSelected)")
-//                            values = maxScoreinSelected
-//                            print(tempselecteddate,values)
-//                            //return ChartDataEntry(x: Double(i), y: Double(values))
-//                         //   selectedDateinDatetype = selectedDateinDatetype! - 3600*24
-//                        }
-//                        else{
-//                            print("Max Score for today:  0")
-//                            values = 0
-//                            print(tempselecteddate,values)
-//                            //return ChartDataEntry(x: Double(i), y: Double(values))
-//                            //selectedDateinDatetype = selectedDateinDatetype! - 3600*24
-//                        }
-//                    }
-//                }
-//
-//        selectedDateinDatetype = selectedDateinDatetype! - 3600*24
-//        return ChartDataEntry(x: Double(i), y: Double(values))
-//
-//    }
-//}
+func updategamescore() {
+    
+    let db = Firestore.firestore()
+             var selectedDateinDatetype = dateFormatter.date(from: selectedDate)
+     
+             for dayi in 0..<7{
+                 dateFormatter.dateFormat = "yyyy-MM-dd"
+                 let tempselecteddate = dateFormatter.string(from: selectedDateinDatetype!)
+                 db.collection("users").document(userid).collection("gaming_score").document(tempselecteddate).getDocument { (document, error) in
+                     if error == nil{
+                         if document != nil && document!.exists{
+                             var maxScoreinSelected = 0
+                             let DocumentData = document!.data()
+                             maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
+                             //print("Max Score for today:  \(maxScoreinSelected)")
+                             values[dayi] = maxScoreinSelected
+                             //print(tempselecteddate,values[dayi])
+                         }
+                         else{
+                             //print("Max Score for today:  0")
+                             values[dayi] = 0
+                             //print(tempselecteddate,values[dayi])
+                         }
+                     }
+                 }
+     
+                 selectedDateinDatetype = selectedDateinDatetype! - 3600*24
+             }
+             //print("Helloooooooooo: \(values)")
+//             for i in 0..<7 {
+//                 dataEntry = ChartDataEntry(x: Double(i), y: Double(values[i]))
+//                 dataEntries.append(dataEntry)
+//                //print("dataEntry: \(dataEntry)")
+//             }
+}

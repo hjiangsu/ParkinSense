@@ -47,7 +47,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
     //var values = [gamedata1, gamedata2, gamedata3, gamedata4, gamedata5, gamedata6, gamedata7]
     
 //    var dataEntries: [ChartDataEntry] = []
-//    
+//
 //    var dataEntry = ChartDataEntry(x: 0, y: 0)
     
     
@@ -332,117 +332,20 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         let x1Pos = CGFloat(0)*self.view.bounds.size.width //get the x position of the view that for the first page content
         lineChartView = LineChartView(frame: CGRect(x: x1Pos, y: 0, width: self.view.frame.size.width, height: (self.DataScrollView.frame.size.height)))
         
-//        for dayi in 0..<7{
-//            db.collection("users").document(userid).collection("gaming_score").document(selectedDate).getDocument { (document, error) in
-//                if error == nil{
-//                    if document != nil && document!.exists{
-//                        var maxScoreinSelected = 0
-//                        let DocumentData = document!.data()
-//                        maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
-//                        print(maxScoreinSelected)
-//                        self.Datalabeltext3.text = "Max Score for today:  \(maxScoreinSelected)"
-//                    }
-//                    else{
-//                        self.Datalabeltext3.text = "Max Score for today:  0"
-//                    }
-//                }
-//            }
-//        }
-        
-        
-        print(selectedDate)
-        var selectedDateinDatetype = dateFormatter.date(from: selectedDate)
-        print(selectedDateinDatetype)
-
-        for dayi in 0..<7{
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            let tempselecteddate = dateFormatter.string(from: selectedDateinDatetype!)
-            print(tempselecteddate)
-            db.collection("users").document(userid).collection("gaming_score").document(tempselecteddate).getDocument { (document, error) in
-                if error == nil{
-                    if document != nil && document!.exists{
-                        var maxScoreinSelected = 0
-                        let DocumentData = document!.data()
-                        maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
-                        print("Max Score for today:  \(maxScoreinSelected)")
-                        values[dayi] = maxScoreinSelected
-                        print(tempselecteddate,values[dayi])
-                    }
-                    else{
-                        print("Max Score for today:  0")
-                        values[dayi] = 0
-                        print(tempselecteddate,values[dayi])
-                    }
-                }
-            }
-
-            selectedDateinDatetype = selectedDateinDatetype! - 3600*24
-        }
-        print("Helloooooooooo: \(values)")
+        updategamescore()
+        var dataEntries: [ChartDataEntry] = []
         for i in 0..<7 {
-            dataEntry = ChartDataEntry(x: Double(i), y: Double(values[i]))
+            let dataEntry = ChartDataEntry(x: Double(i), y: Double(values[6-i]))
             dataEntries.append(dataEntry)
+           //print("dataEntry: \(dataEntry)")
         }
-        
-        
-//         dataEntries = (0..<7).map {(i) -> ChartDataEntry in
-//            //let values = Double(arc4random_uniform(UInt32(7))+3)
-//
-//                        dateFormatter.dateFormat = "yyyy-MM-dd"
-//                        let tempselecteddate = dateFormatter.string(from: selectedDateinDatetype!)
-//                        print(tempselecteddate)
-//                    db.collection("users").document(userid).collection("gaming_score").document(tempselecteddate).getDocument { (document, error) in
-//                        if error == nil{
-//                            if document != nil && document!.exists{
-//                                var maxScoreinSelected = 0
-//                                let DocumentData = document!.data()
-//                                maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
-//                                print("Max Score for today:  \(maxScoreinSelected)")
-//                                values = maxScoreinSelected
-//                                print(tempselecteddate,values)
-//                                //return ChartDataEntry(x: Double(i), y: Double(values))
-//                             //   selectedDateinDatetype = selectedDateinDatetype! - 3600*24
-//                            }
-//                            else{
-//                                print("Max Score for today:  0")
-//                                values = 0
-//                                print(tempselecteddate,values)
-//                                //return ChartDataEntry(x: Double(i), y: Double(values))
-//                                //selectedDateinDatetype = selectedDateinDatetype! - 3600*24
-//                            }
-//                        }
-//                    }
-//
-//            selectedDateinDatetype = selectedDateinDatetype! - 3600*24
-//            return ChartDataEntry(x: Double(i), y: Double(values))
-//
-//        }
-        
-        //updategamescore()
         print("dataEntries: \(dataEntries)")
         print("values: \(values)")
+        
         let lineChartDataSet = LineChartDataSet(entries: dataEntries, label: "Hello")
         let lineChartData = LineChartData(dataSet: lineChartDataSet)
         lineChartView.data = lineChartData
         self.DataScrollView.addSubview(lineChartView)
-//        let values = [1, 2, 3, 4, 5, 6, 7]
-//        var dataEntries: [ChartDataEntry] = []
-//        for i in 0..<7 {
-//            let dataEntry = ChartDataEntry(x: Double(values[i]), y: Double(i))
-//          dataEntries.append(dataEntry)
-//        }
-//        print(dataEntries)
-//        let lineChartDataSet = LineChartDataSet(entries: dataEntries, label: "Hello")
-//        let lineChartData = LineChartData(dataSet: lineChartDataSet)
-//        lineChartView.data = lineChartData
-        
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill //set the imageViec's contentMode
-        //imageView.image = UIImage(named: imagesArray[0]) //read the image from the imageArray and
-        //let x1Pos = CGFloat(0)*self.view.bounds.size.width //get the x position of the view that for the first page content
-        //imageView.frame = CGRect(x: x1Pos, y: 0, width: self.view.frame.size.width, height: self.DataScrollView.frame.size.height) //set up the imageView's frame
-
-        //self.DataScrollView.addSubview(imageView) //put the imageView into scrollView
         //====================================================================================
         
         
@@ -475,10 +378,25 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
 //        print(SundayButton.titleLabel!)
 //        selectedDate = SundayButton.titleLabel!.text!
 //        print(selectedDate)
-        print(values)
+
         print(sundayDatewithMY)
         selectedDate = sundayDatewithMY
+        
+        //========================================================================
+        updategamescore()
+        var dataEntries: [ChartDataEntry] = []
+        for i in 0..<7 {
+            let dataEntry = ChartDataEntry(x: Double(i), y: Double(values[6-i]))
+            dataEntries.append(dataEntry)
+           //print("dataEntry: \(dataEntry)")
+        }
+        print("values: \(values)")
+        print(dataEntries)
+        let lineChartDataSet = LineChartDataSet(entries: dataEntries)
+        let lineChartData = LineChartData(dataSet: lineChartDataSet)
+        lineChartView.data = lineChartData
 
+        //=========================================================================
         let newformattedtartcurrentweek = newStartCurrentWeek(updateNow: rightNow) //get the first date of the choosen week
         let newformattedendcurrentweek = newEndCurrentWeek(updateNow: rightNow) //get the end date of the choosen week
         setUp(newformattedtartcurrentweek: newformattedtartcurrentweek, newformattedendcurrentweek: newformattedendcurrentweek)
@@ -511,6 +429,21 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
          print(values)
         print(mondayDatewithMY)
         selectedDate = mondayDatewithMY
+        //========================================================================
+        updategamescore()
+        var dataEntries: [ChartDataEntry] = []
+        for i in 0..<7 {
+            let dataEntry = ChartDataEntry(x: Double(i), y: Double(values[6-i]))
+            dataEntries.append(dataEntry)
+           //print("dataEntry: \(dataEntry)")
+        }
+        print("values: \(values)")
+        print(dataEntries)
+        let lineChartDataSet = LineChartDataSet(entries: dataEntries)
+        let lineChartData = LineChartData(dataSet: lineChartDataSet)
+        lineChartView.data = lineChartData
+
+        //=========================================================================
 
         let newformattedtartcurrentweek = newStartCurrentWeek(updateNow: rightNow) //get the first date of the choosen week
         let newformattedendcurrentweek = newEndCurrentWeek(updateNow: rightNow) //get the end date of the choosen week
@@ -544,6 +477,21 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
          print(values)
         print(tuesdayDatewithMY)
         selectedDate = tuesdayDatewithMY
+        //========================================================================
+        updategamescore()
+        var dataEntries: [ChartDataEntry] = []
+        for i in 0..<7 {
+            let dataEntry = ChartDataEntry(x: Double(i), y: Double(values[6-i]))
+            dataEntries.append(dataEntry)
+           //print("dataEntry: \(dataEntry)")
+        }
+        print("values: \(values)")
+        print(dataEntries)
+        let lineChartDataSet = LineChartDataSet(entries: dataEntries)
+        let lineChartData = LineChartData(dataSet: lineChartDataSet)
+        lineChartView.data = lineChartData
+
+        //=========================================================================
 
         let newformattedtartcurrentweek = newStartCurrentWeek(updateNow: rightNow) //get the first date of the choosen week
         let newformattedendcurrentweek = newEndCurrentWeek(updateNow: rightNow) //get the end date of the choosen week
@@ -578,6 +526,21 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
          print(values)
         print(wednesdayDatewithMY)
         selectedDate = wednesdayDatewithMY
+        //========================================================================
+        updategamescore()
+        var dataEntries: [ChartDataEntry] = []
+        for i in 0..<7 {
+            let dataEntry = ChartDataEntry(x: Double(i), y: Double(values[6-i]))
+            dataEntries.append(dataEntry)
+           //print("dataEntry: \(dataEntry)")
+        }
+        print("values: \(values)")
+        print(dataEntries)
+        let lineChartDataSet = LineChartDataSet(entries: dataEntries)
+        let lineChartData = LineChartData(dataSet: lineChartDataSet)
+        lineChartView.data = lineChartData
+
+        //=========================================================================
 
         let newformattedtartcurrentweek = newStartCurrentWeek(updateNow: rightNow) //get the first date of the choosen week
         let newformattedendcurrentweek = newEndCurrentWeek(updateNow: rightNow) //get the end date of the choosen week
@@ -612,6 +575,21 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
          print(values)
         print(thursdayDatewithMY)
         selectedDate = thursdayDatewithMY
+        //========================================================================
+        updategamescore()
+        var dataEntries: [ChartDataEntry] = []
+        for i in 0..<7 {
+            let dataEntry = ChartDataEntry(x: Double(i), y: Double(values[6-i]))
+            dataEntries.append(dataEntry)
+           //print("dataEntry: \(dataEntry)")
+        }
+        print("values: \(values)")
+        print(dataEntries)
+        let lineChartDataSet = LineChartDataSet(entries: dataEntries)
+        let lineChartData = LineChartData(dataSet: lineChartDataSet)
+        lineChartView.data = lineChartData
+
+        //=========================================================================
 
         let newformattedtartcurrentweek = newStartCurrentWeek(updateNow: rightNow) //get the first date of the choosen week
         let newformattedendcurrentweek = newEndCurrentWeek(updateNow: rightNow) //get the end date of the choosen week
@@ -646,6 +624,21 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
          print(values)
         print(fridayDatewithMY)
         selectedDate = fridayDatewithMY
+        //========================================================================
+        updategamescore()
+        var dataEntries: [ChartDataEntry] = []
+        for i in 0..<7 {
+            let dataEntry = ChartDataEntry(x: Double(i), y: Double(values[6-i]))
+            dataEntries.append(dataEntry)
+           //print("dataEntry: \(dataEntry)")
+        }
+        print("values: \(values)")
+        print(dataEntries)
+        let lineChartDataSet = LineChartDataSet(entries: dataEntries)
+        let lineChartData = LineChartData(dataSet: lineChartDataSet)
+        lineChartView.data = lineChartData
+
+        //=========================================================================
 
         let newformattedtartcurrentweek = newStartCurrentWeek(updateNow: rightNow) //get the first date of the choosen week
         let newformattedendcurrentweek = newEndCurrentWeek(updateNow: rightNow) //get the end date of the choosen week
@@ -687,6 +680,21 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
          print(values)
         print(saturdayDatewithMY)
         selectedDate = saturdayDatewithMY
+        //========================================================================
+        updategamescore()
+        var dataEntries: [ChartDataEntry] = []
+        for i in 0..<7 {
+            let dataEntry = ChartDataEntry(x: Double(i), y: Double(values[6-i]))
+            dataEntries.append(dataEntry)
+           //print("dataEntry: \(dataEntry)")
+        }
+        print("values: \(values)")
+        print(dataEntries)
+        let lineChartDataSet = LineChartDataSet(entries: dataEntries)
+        let lineChartData = LineChartData(dataSet: lineChartDataSet)
+        lineChartView.data = lineChartData
+
+        //=========================================================================
 
         let newformattedtartcurrentweek = newStartCurrentWeek(updateNow: rightNow) //get the first date of the choosen week
         let newformattedendcurrentweek = newEndCurrentWeek(updateNow: rightNow) //get the end date of the choosen week
