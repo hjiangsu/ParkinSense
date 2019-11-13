@@ -342,7 +342,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         print("dataEntries: \(dataEntries)")
         print("values: \(values)")
         
-        let lineChartDataSet = LineChartDataSet(entries: dataEntries, label: "Hello")
+        let lineChartDataSet = LineChartDataSet(entries: dataEntries, label: "Click the date twice to see last seven days data")
         let lineChartData = LineChartData(dataSet: lineChartDataSet)
         lineChartView.data = lineChartData
         self.DataScrollView.addSubview(lineChartView)
@@ -392,7 +392,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         }
         print("values: \(values)")
         print(dataEntries)
-        let lineChartDataSet = LineChartDataSet(entries: dataEntries)
+        let lineChartDataSet = LineChartDataSet(entries: dataEntries, label: "Click the date twice to see last seven days data")
         let lineChartData = LineChartData(dataSet: lineChartDataSet)
         lineChartView.data = lineChartData
 
@@ -439,7 +439,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         }
         print("values: \(values)")
         print(dataEntries)
-        let lineChartDataSet = LineChartDataSet(entries: dataEntries)
+        let lineChartDataSet = LineChartDataSet(entries: dataEntries, label: "Click the date twice to see last seven days data")
         let lineChartData = LineChartData(dataSet: lineChartDataSet)
         lineChartView.data = lineChartData
 
@@ -487,7 +487,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         }
         print("values: \(values)")
         print(dataEntries)
-        let lineChartDataSet = LineChartDataSet(entries: dataEntries)
+        let lineChartDataSet = LineChartDataSet(entries: dataEntries, label: "Click the date twice to see last seven days data")
         let lineChartData = LineChartData(dataSet: lineChartDataSet)
         lineChartView.data = lineChartData
 
@@ -536,7 +536,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         }
         print("values: \(values)")
         print(dataEntries)
-        let lineChartDataSet = LineChartDataSet(entries: dataEntries)
+        let lineChartDataSet = LineChartDataSet(entries: dataEntries, label: "Click the date twice to see last seven days data")
         let lineChartData = LineChartData(dataSet: lineChartDataSet)
         lineChartView.data = lineChartData
 
@@ -585,7 +585,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         }
         print("values: \(values)")
         print(dataEntries)
-        let lineChartDataSet = LineChartDataSet(entries: dataEntries)
+        let lineChartDataSet = LineChartDataSet(entries: dataEntries, label: "Click the date twice to see last seven days data")
         let lineChartData = LineChartData(dataSet: lineChartDataSet)
         lineChartView.data = lineChartData
 
@@ -634,7 +634,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         }
         print("values: \(values)")
         print(dataEntries)
-        let lineChartDataSet = LineChartDataSet(entries: dataEntries)
+        let lineChartDataSet = LineChartDataSet(entries: dataEntries, label: "Click the date twice to see last seven days data")
         let lineChartData = LineChartData(dataSet: lineChartDataSet)
         lineChartView.data = lineChartData
 
@@ -690,7 +690,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         }
         print("values: \(values)")
         print(dataEntries)
-        let lineChartDataSet = LineChartDataSet(entries: dataEntries)
+        let lineChartDataSet = LineChartDataSet(entries: dataEntries, label: "Click the date twice to see last seven days data")
         let lineChartData = LineChartData(dataSet: lineChartDataSet)
         lineChartView.data = lineChartData
 
