@@ -44,6 +44,12 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
     
     var ref: DatabaseReference?
     
+    //var values = [gamedata1, gamedata2, gamedata3, gamedata4, gamedata5, gamedata6, gamedata7]
+    
+//    var dataEntries: [ChartDataEntry] = []
+//    
+//    var dataEntry = ChartDataEntry(x: 0, y: 0)
+    
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -112,7 +118,36 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
                     //print(lasttimeLogindatestr)
                     thisTimeLoginDateStr = dateFormatter.string(from: Date()) // format the timestamp type to string
                     //print(thistimeLogindatestr)
-                    
+//                    //==================================================================
+//                    print(selectedDate)
+//                    var selectedDateinDatetype = dateFormatter.date(from: selectedDate)
+//                    print(selectedDateinDatetype)
+//
+//                    for dayi in 0..<7{
+//                        dateFormatter.dateFormat = "yyyy-MM-dd"
+//                        let tempselecteddate = dateFormatter.string(from: selectedDateinDatetype!)
+//                        print(tempselecteddate)
+//                        self.db.collection("users").document(userid).collection("gaming_score").document(tempselecteddate).getDocument { (document, error) in
+//                            if error == nil{
+//                                if document != nil && document!.exists{
+//                                    var maxScoreinSelected = 0
+//                                    let DocumentData = document!.data()
+//                                    maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
+//                                    print("Max Score for today:  \(maxScoreinSelected)")
+//                                    values[dayi] = maxScoreinSelected
+//                                    print(values[dayi])
+//                                }
+//                                else{
+//                                    print("Max Score for today:  0")
+//                                    values[dayi] = 0
+//                                    print(values[dayi])
+//                                }
+//                            }
+//                        }
+//
+//                        selectedDateinDatetype = selectedDateinDatetype! - 3600*24
+//                    }
+//                    //====================================================================
                     self.setUpDailyDatainit(currentDate: thisTimeLoginDateStr) //set up the page controll view
                     
                     //Check if the user is the first time login, if so, the pops up will be activated
@@ -287,7 +322,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         
         //============================================================================================
         
-        let imagesArray = ["AppIcon", "personalimage"] //load the image for page control view setup
+        //let imagesArray = ["AppIcon", "personalimage"] //load the image for page control view setup
         
         // create the page for the page control
         self.PageControl.numberOfPages = 2
@@ -297,12 +332,95 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         let x1Pos = CGFloat(0)*self.view.bounds.size.width //get the x position of the view that for the first page content
         lineChartView = LineChartView(frame: CGRect(x: x1Pos, y: 0, width: self.view.frame.size.width, height: (self.DataScrollView.frame.size.height)))
         
-        let values = [1, 2, 3, 4, 5, 6, 7]
-        var dataEntries: [ChartDataEntry] = []
-        for i in 0..<7 {
-            let dataEntry = ChartDataEntry(x: Double(values[i]), y: Double(i))
-          dataEntries.append(dataEntry)
+//        for dayi in 0..<7{
+//            db.collection("users").document(userid).collection("gaming_score").document(selectedDate).getDocument { (document, error) in
+//                if error == nil{
+//                    if document != nil && document!.exists{
+//                        var maxScoreinSelected = 0
+//                        let DocumentData = document!.data()
+//                        maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
+//                        print(maxScoreinSelected)
+//                        self.Datalabeltext3.text = "Max Score for today:  \(maxScoreinSelected)"
+//                    }
+//                    else{
+//                        self.Datalabeltext3.text = "Max Score for today:  0"
+//                    }
+//                }
+//            }
+//        }
+        
+        
+        print(selectedDate)
+        var selectedDateinDatetype = dateFormatter.date(from: selectedDate)
+        print(selectedDateinDatetype)
+
+        for dayi in 0..<7{
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let tempselecteddate = dateFormatter.string(from: selectedDateinDatetype!)
+            print(tempselecteddate)
+            db.collection("users").document(userid).collection("gaming_score").document(tempselecteddate).getDocument { (document, error) in
+                if error == nil{
+                    if document != nil && document!.exists{
+                        var maxScoreinSelected = 0
+                        let DocumentData = document!.data()
+                        maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
+                        print("Max Score for today:  \(maxScoreinSelected)")
+                        values[dayi] = maxScoreinSelected
+                        print(tempselecteddate,values[dayi])
+                    }
+                    else{
+                        print("Max Score for today:  0")
+                        values[dayi] = 0
+                        print(tempselecteddate,values[dayi])
+                    }
+                }
+            }
+
+            selectedDateinDatetype = selectedDateinDatetype! - 3600*24
         }
+        print("Helloooooooooo: \(values)")
+        for i in 0..<7 {
+            dataEntry = ChartDataEntry(x: Double(i), y: Double(values[i]))
+            dataEntries.append(dataEntry)
+        }
+        
+        
+//         dataEntries = (0..<7).map {(i) -> ChartDataEntry in
+//            //let values = Double(arc4random_uniform(UInt32(7))+3)
+//
+//                        dateFormatter.dateFormat = "yyyy-MM-dd"
+//                        let tempselecteddate = dateFormatter.string(from: selectedDateinDatetype!)
+//                        print(tempselecteddate)
+//                    db.collection("users").document(userid).collection("gaming_score").document(tempselecteddate).getDocument { (document, error) in
+//                        if error == nil{
+//                            if document != nil && document!.exists{
+//                                var maxScoreinSelected = 0
+//                                let DocumentData = document!.data()
+//                                maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
+//                                print("Max Score for today:  \(maxScoreinSelected)")
+//                                values = maxScoreinSelected
+//                                print(tempselecteddate,values)
+//                                //return ChartDataEntry(x: Double(i), y: Double(values))
+//                             //   selectedDateinDatetype = selectedDateinDatetype! - 3600*24
+//                            }
+//                            else{
+//                                print("Max Score for today:  0")
+//                                values = 0
+//                                print(tempselecteddate,values)
+//                                //return ChartDataEntry(x: Double(i), y: Double(values))
+//                                //selectedDateinDatetype = selectedDateinDatetype! - 3600*24
+//                            }
+//                        }
+//                    }
+//
+//            selectedDateinDatetype = selectedDateinDatetype! - 3600*24
+//            return ChartDataEntry(x: Double(i), y: Double(values))
+//
+//        }
+        
+        //updategamescore()
+        print("dataEntries: \(dataEntries)")
+        print("values: \(values)")
         let lineChartDataSet = LineChartDataSet(entries: dataEntries, label: "Hello")
         let lineChartData = LineChartData(dataSet: lineChartDataSet)
         lineChartView.data = lineChartData
@@ -357,9 +475,13 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
 //        print(SundayButton.titleLabel!)
 //        selectedDate = SundayButton.titleLabel!.text!
 //        print(selectedDate)
+        print(values)
         print(sundayDatewithMY)
         selectedDate = sundayDatewithMY
-        setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
+
+        let newformattedtartcurrentweek = newStartCurrentWeek(updateNow: rightNow) //get the first date of the choosen week
+        let newformattedendcurrentweek = newEndCurrentWeek(updateNow: rightNow) //get the end date of the choosen week
+        setUp(newformattedtartcurrentweek: newformattedtartcurrentweek, newformattedendcurrentweek: newformattedendcurrentweek)
         //setUpDailyData(currentDate: selectedDate)
         Datalabeltext2.text = "Date:  \(selectedDate)"
         //db.collection("users").document(userid).collection("game_score").document("2019-11-08")
@@ -386,12 +508,15 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         //print(MondayButton.titleLabel!)
         //selectedDate = MondayButton.titleLabel!.text!
         //print(selectedDate)
+         print(values)
         print(mondayDatewithMY)
         selectedDate = mondayDatewithMY
-        setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
+
+        let newformattedtartcurrentweek = newStartCurrentWeek(updateNow: rightNow) //get the first date of the choosen week
+        let newformattedendcurrentweek = newEndCurrentWeek(updateNow: rightNow) //get the end date of the choosen week
+        setUp(newformattedtartcurrentweek: newformattedtartcurrentweek, newformattedendcurrentweek: newformattedendcurrentweek)
         //setUpDailyData(currentDate: selectedDate)
         Datalabeltext2.text = "Date:  \(selectedDate)"
-        
         //var maxScoreinSelected = 0
         
         db.collection("users").document(userid).collection("gaming_score").document(selectedDate).getDocument { (document, error) in
@@ -416,9 +541,13 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
 //        print(TuesdayButton.titleLabel!)
 //        selectedDate = TuesdayButton.titleLabel!.text!
 //        print(selectedDate)
+         print(values)
         print(tuesdayDatewithMY)
         selectedDate = tuesdayDatewithMY
-        setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
+
+        let newformattedtartcurrentweek = newStartCurrentWeek(updateNow: rightNow) //get the first date of the choosen week
+        let newformattedendcurrentweek = newEndCurrentWeek(updateNow: rightNow) //get the end date of the choosen week
+        setUp(newformattedtartcurrentweek: newformattedtartcurrentweek, newformattedendcurrentweek: newformattedendcurrentweek)
         //setUpDailyData(currentDate: selectedDate)
         Datalabeltext2.text = "Date:  \(selectedDate)"
         
@@ -446,9 +575,13 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
 //        print(WednesdayButton.titleLabel!)
 //        selectedDate = WednesdayButton.titleLabel!.text!
 //        print(selectedDate)
+         print(values)
         print(wednesdayDatewithMY)
         selectedDate = wednesdayDatewithMY
-        setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
+
+        let newformattedtartcurrentweek = newStartCurrentWeek(updateNow: rightNow) //get the first date of the choosen week
+        let newformattedendcurrentweek = newEndCurrentWeek(updateNow: rightNow) //get the end date of the choosen week
+        setUp(newformattedtartcurrentweek: newformattedtartcurrentweek, newformattedendcurrentweek: newformattedendcurrentweek)
         //setUpDailyData(currentDate: selectedDate)
         Datalabeltext2.text = "Date:  \(selectedDate)"
         
@@ -476,9 +609,13 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
 //        print(ThursdayButton.titleLabel!)
 //        selectedDate = ThursdayButton.titleLabel!.text!
 //        print(selectedDate)
+         print(values)
         print(thursdayDatewithMY)
         selectedDate = thursdayDatewithMY
-        setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
+
+        let newformattedtartcurrentweek = newStartCurrentWeek(updateNow: rightNow) //get the first date of the choosen week
+        let newformattedendcurrentweek = newEndCurrentWeek(updateNow: rightNow) //get the end date of the choosen week
+        setUp(newformattedtartcurrentweek: newformattedtartcurrentweek, newformattedendcurrentweek: newformattedendcurrentweek)
         //setUpDailyData(currentDate: selectedDate)
         Datalabeltext2.text = "Date:  \(selectedDate)"
         
@@ -506,9 +643,13 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
 //        print(FridayButton.titleLabel!)
 //        selectedDate = FridayButton.titleLabel!.text!
 //        print(selectedDate)
+         print(values)
         print(fridayDatewithMY)
         selectedDate = fridayDatewithMY
-        setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
+
+        let newformattedtartcurrentweek = newStartCurrentWeek(updateNow: rightNow) //get the first date of the choosen week
+        let newformattedendcurrentweek = newEndCurrentWeek(updateNow: rightNow) //get the end date of the choosen week
+        setUp(newformattedtartcurrentweek: newformattedtartcurrentweek, newformattedendcurrentweek: newformattedendcurrentweek)
         //setUpDailyData(currentDate: selectedDate)
         Datalabeltext2.text = "Date:  \(selectedDate)"
 //        db.collection("users").document(userid).getDocument { (document, error) in
@@ -543,9 +684,13 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
 //        print(SaturdayButton.titleLabel!)
 //        selectedDate = SaturdayButton.titleLabel!.text!
 //        print(selectedDate)
+         print(values)
         print(saturdayDatewithMY)
         selectedDate = saturdayDatewithMY
-        setUp(newformattedtartcurrentweek: formattedStartCurrentWeek, newformattedendcurrentweek: formattedEndCurrentWeek)
+
+        let newformattedtartcurrentweek = newStartCurrentWeek(updateNow: rightNow) //get the first date of the choosen week
+        let newformattedendcurrentweek = newEndCurrentWeek(updateNow: rightNow) //get the end date of the choosen week
+        setUp(newformattedtartcurrentweek: newformattedtartcurrentweek, newformattedendcurrentweek: newformattedendcurrentweek)
         //setUpDailyData(currentDate: selectedDate)
         Datalabeltext2.text = "Date:  \(selectedDate)"
         
