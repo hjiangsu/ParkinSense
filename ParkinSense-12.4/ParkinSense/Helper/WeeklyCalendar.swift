@@ -255,7 +255,7 @@ func updategamescore() {
                          if document != nil && document!.exists{
                              var maxScoreinSelected = 0
                              let DocumentData = document!.data()
-                             maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
+                             maxScoreinSelected = DocumentData!["Game_One_lastMaxScore"] as! Int
                              //print("Max Score for today:  \(maxScoreinSelected)")
                              values[dayi] = maxScoreinSelected
                              //print(tempselecteddate,values[dayi])

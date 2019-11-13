@@ -411,7 +411,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
                 if document != nil && document!.exists{
                     var maxScoreinSelected = 0
                     let DocumentData = document!.data()
-                    maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
+                    maxScoreinSelected = DocumentData!["Game_One_lastMaxScore"] as! Int
                     self.Datalabeltext3.text = "Max Score for today:  \(maxScoreinSelected)"
                 }
                 else{
@@ -457,7 +457,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
                 if document != nil && document!.exists{
                     var maxScoreinSelected = 0
                     let DocumentData = document!.data()
-                    maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
+                    maxScoreinSelected = DocumentData!["Game_One_lastMaxScore"] as! Int
                     print(maxScoreinSelected)
                     self.Datalabeltext3.text = "Max Score for today:  \(maxScoreinSelected)"
                 }
@@ -506,7 +506,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
                 if document != nil && document!.exists{
                     var maxScoreinSelected = 0
                     let DocumentData = document!.data()
-                    maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
+                    maxScoreinSelected = DocumentData!["Game_One_lastMaxScore"] as! Int
                     print(maxScoreinSelected)
                     self.Datalabeltext3.text = "Max Score for today:  \(maxScoreinSelected)"
                 }
@@ -555,7 +555,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
                 if document != nil && document!.exists{
                     var maxScoreinSelected = 0
                     let DocumentData = document!.data()
-                    maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
+                    maxScoreinSelected = DocumentData!["Game_One_lastMaxScore"] as! Int
                     print(maxScoreinSelected)
                     self.Datalabeltext3.text = "Max Score for today:  \(maxScoreinSelected)"
                 }
@@ -604,7 +604,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
                 if document != nil && document!.exists{
                     var maxScoreinSelected = 0
                     let DocumentData = document!.data()
-                    maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
+                    maxScoreinSelected = DocumentData!["Game_One_lastMaxScore"] as! Int
                     print(maxScoreinSelected)
                     self.Datalabeltext3.text = "Max Score for today:  \(maxScoreinSelected)"
                 }
@@ -661,7 +661,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
                 if document != nil && document!.exists{
                     var maxScoreinSelected = 0
                     let DocumentData = document!.data()
-                    maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
+                    maxScoreinSelected = DocumentData!["Game_One_lastMaxScore"] as! Int
                     print(maxScoreinSelected)
                     self.Datalabeltext3.text = "Max Score for today:  \(maxScoreinSelected)"
                 }
@@ -709,7 +709,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
                 if document != nil && document!.exists{
                     var maxScoreinSelected = 0
                     let DocumentData = document!.data()
-                    maxScoreinSelected = DocumentData!["max_Game_Score"] as! Int
+                    maxScoreinSelected = DocumentData!["Game_One_lastMaxScore"] as! Int
                     print(maxScoreinSelected)
                     self.Datalabeltext3.text = "Max Score for today:  \(maxScoreinSelected)"
                 }
