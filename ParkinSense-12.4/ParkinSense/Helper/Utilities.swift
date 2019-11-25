@@ -69,27 +69,7 @@ class Utilities {
         button.backgroundColor = UIColor.white
         button.layer.cornerRadius = 25.0
         button.tintColor = UIColor.gray
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
     }
-    
-    /**
-         Button style
-      
-          - Parameter sender: Button itself
-      
-          - Returns: None
-             
-     **/
-     static func styleFilledDateButtonSelected(_ button:UIButton) {
-         
-         // Filled rounded corner style
-         button.layer.borderWidth = 5
-         button.layer.borderColor = UIColor.gray.cgColor
-         button.backgroundColor = UIColor.white
-         button.layer.cornerRadius = 25.0
-         button.tintColor = UIColor.gray
-         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
-     }
     
     /**
         Button style

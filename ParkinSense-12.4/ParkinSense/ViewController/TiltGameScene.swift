@@ -8,6 +8,7 @@
 //  Description: Main TILT class that handles generation of ball/hole, timer, score, and movement of game items
 //
 //  Changes:
+//      - Refactored code to programmatically code UI elements
 //      - Added comments to clarify code
 //      - Added transition to Score Scene when count reaches 0
 //      - Added movement of ball using the accelerometer
@@ -16,7 +17,7 @@
 //      - Added the game scene
 //
 //  Known Bugs:
-//      - Scene does not immediately generate ball/hole when replaying the game
+//      - Scene does not immediately generate ball/hole when replaying the game (lags for 5 seconds)
 //      - Score counts up when half the ball is within the hole - whole ball should be in the hole
 //          to have score count up
 //
@@ -85,6 +86,7 @@ class TiltGameScene: SKScene {
      - Returns: None.
      */
     override func didMove(to view: SKView) {
+        self.scene!.backgroundColor = tiltGameBackgroundColour
         motionManager.startAccelerometerUpdates()
         
         physicsWorld.gravity = .zero
@@ -101,7 +103,7 @@ class TiltGameScene: SKScene {
      - Returns: None.
      */
     func showGameUI() {
-        viewController.timeScoreUI.isHidden = false
+        viewController.HUDView.isHidden = false
     }
     
     
@@ -146,11 +148,11 @@ class TiltGameScene: SKScene {
         hole.removeFromParent()
         ball.removeFromParent()
         
-        removeAllChildren()
-        removeAllActions()
-        removeFromParent()
+        tiltFinalScore = viewController.currentScore
+        viewController.HUDView.isHidden = true
         
-        viewController.performSegue(withIdentifier: "tiltScore", sender: self)
+        let tiltScoreViewController:TiltScoreViewController = TiltScoreViewController()
+        viewController.present(tiltScoreViewController, animated: true, completion: nil)
     }
     
     
@@ -176,12 +178,12 @@ class TiltGameScene: SKScene {
         
         xRange = SKRange(lowerLimit:CGFloat(ballRadius),upperLimit:size.width - CGFloat(ballRadius))
         yRange = SKRange(lowerLimit:CGFloat(ballRadius),upperLimit:size.height - CGFloat(ballRadius))
-          
         
         ball.constraints = [SKConstraint.positionX(xRange!,y:yRange!)]
         
         ball.position = CGPoint(x: frame.size.width/2, y: frame.size.height/2)
-        ball.fillColor = SKColor.white
+        ball.fillColor = tiltBallColour
+        ball.strokeColor = tiltBallColour
         
         self.addChild(ball)
     }
@@ -196,7 +198,8 @@ class TiltGameScene: SKScene {
         hole.removeFromParent()
         
         hole.position = randomHolePosition()
-        hole.strokeColor = SKColor.red
+        hole.strokeColor = tiltHoleColour
+        hole.lineWidth = 5
         
         self.addChild(hole)
     }

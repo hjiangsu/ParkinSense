@@ -8,6 +8,7 @@
 //  Description: Creates the countdown that happens before a game begins (TILT/Bubble Pop)
 //
 //  Changes:
+//      - Refactored code to programmatically code UI elements
 //      - Added more comments to make the code more clear
 //      - Added deinit() function to check whether or not the scene has been deinitialized
 //      - Added transition to the TiltGameScene
@@ -22,7 +23,6 @@ import SpriteKit
 
 class CountdownGameScene: SKScene {
     
-    var countdownLabel: SKLabelNode = SKLabelNode()
     var count: Int = 5
     
     var viewController: TiltViewController
@@ -55,6 +55,7 @@ class CountdownGameScene: SKScene {
      - Returns: None.
      */
     override func didMove(to view: SKView) {
+        self.scene?.backgroundColor = countdownBackgroundColour
         countdown()
     }
     
@@ -65,11 +66,7 @@ class CountdownGameScene: SKScene {
      - Returns: None.
     */
     func countdown() {
-        countdownLabel.fontColor = SKColor.white
-        countdownLabel.fontSize = 90
-        countdownLabel.text = String(count)
-        
-        addChild(countdownLabel)
+        viewController.countdownLabel.text = String(count)
         
         let counterDecrement = SKAction.sequence([SKAction.wait(forDuration: 1.0),
                                                   SKAction.run(countdownAction)])
@@ -86,7 +83,7 @@ class CountdownGameScene: SKScene {
     */
     func countdownAction(){
         count -= 1
-        countdownLabel.text = String(count)
+        viewController.countdownLabel.text = String(count)
     }
     
     
@@ -96,7 +93,8 @@ class CountdownGameScene: SKScene {
      - Returns: None.
     */
     func endCountdown() {
-        countdownLabel.removeFromParent()
+        viewController.countdownView.isHidden = true
+        viewController.setupGameUI()
         transitionToGame()
     }
     
@@ -113,8 +111,6 @@ class CountdownGameScene: SKScene {
     
     /**
      Performs transition to a new scene for the main game.
-     
-     - TODO: Check to see which game we want to transition to - Tilt/Bubble Pop
      
      - Returns: None.
     */

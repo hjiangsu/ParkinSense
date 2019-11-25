@@ -37,6 +37,40 @@ class LoginPageUITest: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func testLoginPageUIDisplay(){
+        let app = XCUIApplication()
+        let createAnAccount = app.buttons["Create an Account"]
+        XCTAssertTrue(createAnAccount.exists)
+        
+        
+        let ParkinSense = app.staticTexts["PARKINSENSE"]
+        XCTAssertTrue(ParkinSense.exists)
+        
+        let email = app.textFields["Email"]
+        XCTAssertTrue(email.exists)
+        let password = app.secureTextFields["Password"]
+        XCTAssertTrue(password.exists)
+        
+        
+       
+        let SparkYourSense = app.staticTexts["SPARK YOUR SENSES"]
+        XCTAssertTrue(SparkYourSense.exists)
+        
+        let remeberPassword = app.staticTexts["Remember Password"]
+        XCTAssertTrue(remeberPassword.exists)
+        
+       // let uncheckboxButton = app.buttons["uncheckbox"]
+        //XCTAssertTrue(uncheckboxButton.exists)
+        
+        //let orButton = app.staticTexts["OR"]
+        //XCTAssertTrue(orButton.exists)
+        let signinButton = app.buttons["Sign In"]
+        XCTAssertTrue(signinButton.exists)
+        
+        
+        
+    }
 
     func testLoginSuccess(){
         
@@ -50,7 +84,7 @@ class LoginPageUITest: XCTestCase {
         usernameTextField.tap()
         usernameTextField.typeText(userName)
         
-        let passwordTextField = app.textFields["Password"]
+        let passwordTextField = app.secureTextFields["Password"]
         XCTAssertTrue(passwordTextField.exists)
         passwordTextField.tap()
         passwordTextField.typeText(password)
@@ -72,7 +106,7 @@ class LoginPageUITest: XCTestCase {
         
         
         
-        let passwordTextField = app.textFields["Password"]
+        let passwordTextField = app.secureTextFields["Password"]
         XCTAssertTrue(passwordTextField.exists)
         passwordTextField.tap()
         passwordTextField.typeText(password)
@@ -108,7 +142,7 @@ class LoginPageUITest: XCTestCase {
         //        passwordTextField.tap()
         
         
-        let signIn = app.buttons["Sign in"]
+        let signIn = app.buttons["Sign In"]
         XCTAssertTrue(signIn.exists)
         signIn.tap()
         
@@ -133,10 +167,10 @@ class LoginPageUITest: XCTestCase {
         //usertext.typeText("sfgdfr")
         
         
-        let passwordTextField = app.textFields["Password"]
+        let passwordTextField = app.secureTextFields["Password"]
         XCTAssertTrue(passwordTextField.exists)
         passwordTextField.tap()
-        let signIn = app.buttons["Sign in"]
+        let signIn = app.buttons["Sign In"]
         XCTAssertTrue(signIn.exists)
         signIn.tap()
         
@@ -163,7 +197,7 @@ class LoginPageUITest: XCTestCase {
         usernameTextField.tap()
         usernameTextField.typeText(userName)
         
-        let passwordTextField = app.textFields["Password"]
+        let passwordTextField = app.secureTextFields["Password"]
         XCTAssertTrue(passwordTextField.exists)
         passwordTextField.tap()
         passwordTextField.typeText(password)
@@ -193,16 +227,16 @@ class LoginPageUITest: XCTestCase {
         usernameTextField.tap()
         usernameTextField.typeText(userName)
         
-        let passwordTextField = app.textFields["Password"]
+        let passwordTextField = app.secureTextFields["Password"]
         XCTAssertTrue(passwordTextField.exists)
         passwordTextField.tap()
         passwordTextField.typeText(password)
         
-        app.buttons["uncheckbox"].tap()
-        let signIn = app.buttons["Sign in"]
+        //app.buttons["uncheckbox"].tap()
+        let signIn = app.buttons["Sign In"]
         XCTAssertTrue(signIn.exists)
         signIn.tap()
-        
+        sleep(3)
         XCTAssertTrue(app.staticTexts[error].exists)
         //Not pass
         // Too much time for responsing

@@ -1,4 +1,5 @@
 PODS:
+  - BEMCheckBox (1.4.1)
   - BoringSSL-GRPC (0.0.3):
     - BoringSSL-GRPC/Implementation (= 0.0.3)
     - BoringSSL-GRPC/Interface (= 0.0.3)
@@ -127,11 +128,12 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Protobuf (3.10.0)
-  - Realm (4.0.0):
-    - Realm/Headers (= 4.0.0)
-  - Realm/Headers (4.0.0)
+  - Realm (4.1.0):
+    - Realm/Headers (= 4.1.0)
+  - Realm/Headers (4.1.0)
 
 DEPENDENCIES:
+  - BEMCheckBox
   - Charts
   - Firebase/Analytics
   - Firebase/Auth
@@ -142,6 +144,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - BEMCheckBox
     - BoringSSL-GRPC
     - Charts
     - Firebase
@@ -167,6 +170,7 @@ SPEC REPOS:
     - Realm
 
 SPEC CHECKSUMS:
+  BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
   Firebase: bc9cfc7a96c73268656d5aaab453ff1b4b530e0e
@@ -189,8 +193,8 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
-  Realm: 0c5b8f398daeec5b29824e41c453ff9e126e31d8
+  Realm: 5d1453468eca02c901c50b8a356f4a98a15b57aa
 
-PODFILE CHECKSUM: 34b6806b46814d8e9788a0612de747281ca34f33
+PODFILE CHECKSUM: 49d99f73ef0f9f65f2a455215c346c866916d63c
 
 COCOAPODS: 1.8.4
