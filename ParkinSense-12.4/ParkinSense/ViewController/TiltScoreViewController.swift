@@ -119,11 +119,11 @@ class TiltScoreViewController: UIViewController {
         let currentTimeDate = dateFormatter.string(from: Date())
         
         //Updates score on database
-        if  tiltFinalScore > maxScoreToday {
-            maxScoreToday = tiltFinalScore
-        db.collection("users").document(userid).collection("gaming_score").document(currentTimeDate).setData(["date":thisTimeLoginDateStr, "Game_One_lastMaxScore":maxScoreToday])
+        if  tiltFinalScore > maxScoreTodayOne {
+            maxScoreTodayOne = tiltFinalScore
+        db.collection("users").document(userid).collection("gaming_score").document(currentTimeDate).setData(["date":thisTimeLoginDateStr, "Game_One_lastMaxScore":maxScoreTodayOne, "Game_Two_lastMaxScore":maxScoreTodayTwo])
             
-            db.collection("users").document(userid).setData(["login_time": rightNow, "Username": username, "MedicationName": medicationName, "uid":userid, "Game_One_lastMaxScore":maxScoreToday])
+            db.collection("users").document(userid).setData(["login_time": rightNow, "Username": username, "MedicationName": medicationName, "uid":userid, "Game_One_lastMaxScore":maxScoreTodayOne, "Game_Two_lastMaxScore":maxScoreTodayTwo])
             
         }
     }

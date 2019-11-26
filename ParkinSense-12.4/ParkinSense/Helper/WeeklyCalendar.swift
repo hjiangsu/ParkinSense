@@ -284,15 +284,19 @@ func updategamescore() {
                      if error == nil{
                          if document != nil && document!.exists{
                              var maxScoreinSelected = 0
+                             var maxScoreinSelectedTwo = 0
                              let DocumentData = document!.data()
                              maxScoreinSelected = DocumentData!["Game_One_lastMaxScore"] as! Int
+                             maxScoreinSelectedTwo = DocumentData!["Game_Two_lastMaxScore"] as! Int
                              //print("Max Score for today:  \(maxScoreinSelected)")
                              values[dayi] = maxScoreinSelected
+                             values1[dayi] = maxScoreinSelectedTwo
                              //print(tempselecteddate,values[dayi])
                          }
                          else{
                              //print("Max Score for today:  0")
                              values[dayi] = 0
+                             values1[dayi] = 0
                              //print(tempselecteddate,values[dayi])
                          }
                      }

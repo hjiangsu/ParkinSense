@@ -357,7 +357,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                     //User was created successfully, now store the username
                     let db = Firestore.firestore()
                     
-                    db.collection("users").document(result!.user.uid).setData(["Username": username, "uid": result!.user.uid, "MedicationName": medicationName, "login_time":rightNow - 3600*24, "Game_One_lastMaxScore":0]) { (error) in
+                    db.collection("users").document(result!.user.uid).setData(["Username": username, "uid": result!.user.uid, "MedicationName": medicationName, "login_time":rightNow - 3600*24, "Game_One_lastMaxScore":0, "Game_Two_lastMaxScore":0]) { (error) in
                         
                         if error != nil {
                             //Show error message
