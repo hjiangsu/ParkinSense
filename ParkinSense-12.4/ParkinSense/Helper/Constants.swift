@@ -22,6 +22,24 @@ var medicationName = "None"
 
 var medicationLabelAlpha = 0
 
+var medicationName1 = "None"
+
+var medicationLabel1Alpha = 0
+
+var medicationName2 = "None"
+
+var medicationLabel2Alpha = 0
+
+var medicationName3 = "None"
+
+var medicationLabel3Alpha = 0
+
+var medicationName4 = "None"
+
+var medicationLabel4Alpha = 0
+
+var medicationcount = 0
+
 var username = ""
 
 var password = ""

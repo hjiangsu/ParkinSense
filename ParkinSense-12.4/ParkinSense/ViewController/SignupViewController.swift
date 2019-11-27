@@ -29,6 +29,10 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     let errorLabel = UILabel()
     let medicationLabel = UILabel()
+    let medicationLabel1 = UILabel()
+    let medicationLabel2 = UILabel()
+    let medicationLabel3 = UILabel()
+    let medicationLabel4 = UILabel()
     
     let createAnAccountButton = UIButton()
     let addNewMedicationDetailButton = UIButton()
@@ -172,6 +176,78 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             medicationLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0)
         ])
         
+        // Medication1 UI Label
+        let medicationLabel1Height: CGFloat = 20
+        medicationLabel1.textColor = UIColor(red:0.97, green:0.22, blue:0.35, alpha:1.0)
+        medicationLabel1.textAlignment = .center
+        medicationLabel1.text = "Medication"
+        medicationLabel1.numberOfLines = 1
+        medicationLabel1.font = UIFont.systemFont(ofSize: medicationLabel1Height, weight: .light)
+        medicationLabel1.adjustsFontSizeToFitWidth = true
+        medicationLabel1.minimumScaleFactor = 0.5
+        medicationLabel1.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(medicationLabel1)
+
+        NSLayoutConstraint.activate([
+            medicationLabel1.topAnchor.constraint(equalTo: medicationLabel.topAnchor, constant: medicationLabelHeight + 16.0),
+            medicationLabel1.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0),
+            medicationLabel1.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0)
+        ])
+        
+        // Medication2 UI Label
+        let medicationLabel2Height: CGFloat = 20
+        medicationLabel2.textColor = UIColor(red:0.97, green:0.22, blue:0.35, alpha:1.0)
+        medicationLabel2.textAlignment = .center
+        medicationLabel2.text = "Medication"
+        medicationLabel2.numberOfLines = 1
+        medicationLabel2.font = UIFont.systemFont(ofSize: medicationLabel2Height, weight: .light)
+        medicationLabel2.adjustsFontSizeToFitWidth = true
+        medicationLabel2.minimumScaleFactor = 0.5
+        medicationLabel2.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(medicationLabel2)
+
+        NSLayoutConstraint.activate([
+            medicationLabel2.topAnchor.constraint(equalTo: medicationLabel1.topAnchor, constant: medicationLabel1Height + 16.0),
+            medicationLabel2.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0),
+            medicationLabel2.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0)
+        ])
+        
+        // Medication3 UI Label
+        let medicationLabel3Height: CGFloat = 20
+        medicationLabel3.textColor = UIColor(red:0.97, green:0.22, blue:0.35, alpha:1.0)
+        medicationLabel3.textAlignment = .center
+        medicationLabel3.text = "Medication"
+        medicationLabel3.numberOfLines = 1
+        medicationLabel3.font = UIFont.systemFont(ofSize: medicationLabel3Height, weight: .light)
+        medicationLabel3.adjustsFontSizeToFitWidth = true
+        medicationLabel3.minimumScaleFactor = 0.5
+        medicationLabel3.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(medicationLabel3)
+
+        NSLayoutConstraint.activate([
+            medicationLabel3.topAnchor.constraint(equalTo: medicationLabel2.topAnchor, constant: medicationLabel2Height + 16.0),
+            medicationLabel3.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0),
+            medicationLabel3.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0)
+        ])
+        
+        // Medication4 UI Label
+        let medicationLabel4Height: CGFloat = 20
+        medicationLabel4.textColor = UIColor(red:0.97, green:0.22, blue:0.35, alpha:1.0)
+        medicationLabel4.textAlignment = .center
+        medicationLabel4.text = "Medication"
+        medicationLabel4.numberOfLines = 1
+        medicationLabel4.font = UIFont.systemFont(ofSize: medicationLabel4Height, weight: .light)
+        medicationLabel4.adjustsFontSizeToFitWidth = true
+        medicationLabel4.minimumScaleFactor = 0.5
+        medicationLabel4.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(medicationLabel4)
+
+        NSLayoutConstraint.activate([
+            medicationLabel4.topAnchor.constraint(equalTo: medicationLabel3.topAnchor, constant: medicationLabel3Height + 16.0),
+            medicationLabel4.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0),
+            medicationLabel4.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0)
+        ])
+        
         // Error UI Label
         let errorLabelHeight: CGFloat = 20
         errorLabel.textColor = UIColor(red:0.97, green:0.22, blue:0.35, alpha:1.0)
@@ -185,7 +261,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         self.view.addSubview(errorLabel)
 
         NSLayoutConstraint.activate([
-            errorLabel.topAnchor.constraint(equalTo: medicationLabel.topAnchor, constant: medicationLabelHeight + 16.0),
+            errorLabel.topAnchor.constraint(equalTo: medicationLabel4.topAnchor, constant: medicationLabel4Height + 16.0),
             errorLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16.0),
             errorLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16.0)
         ])
@@ -288,6 +364,18 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         medicationLabel.alpha = CGFloat(medicationLabelAlpha)
         medicationLabel.text = medicationName
         
+        medicationLabel1.alpha = CGFloat(medicationLabel1Alpha)
+        medicationLabel1.text = medicationName1
+        
+        medicationLabel2.alpha = CGFloat(medicationLabel2Alpha)
+        medicationLabel2.text = medicationName2
+        
+        medicationLabel3.alpha = CGFloat(medicationLabel3Alpha)
+        medicationLabel3.text = medicationName3
+        
+        medicationLabel4.alpha = CGFloat(medicationLabel4Alpha)
+        medicationLabel4.text = medicationName4
+        
         emailTextField.text = username
         passwordTextField.text = password
         
@@ -339,6 +427,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             username = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
+            print(medicationName1)
             //Create the user
             Auth.auth().createUser(withEmail: username, password: password) { (result, err) in
                 
@@ -357,7 +446,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                     //User was created successfully, now store the username
                     let db = Firestore.firestore()
                     
-                    db.collection("users").document(result!.user.uid).setData(["Username": username, "uid": result!.user.uid, "MedicationName": medicationName, "login_time":rightNow - 3600*24, "Game_One_lastMaxScore":0, "Game_Two_lastMaxScore":0]) { (error) in
+                    db.collection("users").document(result!.user.uid).setData(["Username": username, "uid": result!.user.uid, "MedicationName": medicationName, "MedicationName1": medicationName1, "MedicationName2": medicationName2, "MedicationName3": medicationName3, "MedicationName4": medicationName4, "login_time":rightNow - 3600*24, "Game_One_lastMaxScore":0, "Game_Two_lastMaxScore":0]) { (error) in
                         
                         if error != nil {
                             //Show error message
