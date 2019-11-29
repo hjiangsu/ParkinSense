@@ -30,6 +30,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
     var currentWeek = Calendar.current.component(.weekOfYear, from: Date()) //get the current week of the year
     var rightNow = Date() //get the current date and time
     let db = Firestore.firestore() //use for data read and write in database for later function
+
     
     //Scroll view to allow scrolling of content
     let scrollView: UIScrollView = {
@@ -431,12 +432,16 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
                     //Check if the user is the first time login, if so, the pops up will be activated
                     if lastTimeLoginDateStr != thisTimeLoginDateStr{
                         //print("in popover")
-                        self.popover()
+                        if medicationName != "None"
+                        {
+                            self.popover()
+                        }
+                        self.popover2()
 
                         //initialize the game score for first login in everyday
                         dateFormatter.dateFormat = "yyyy-MM-dd"
                         let currentTimeDate = dateFormatter.string(from: Date())
-                        self.db.collection("users").document(userid).collection("gaming_score").document(currentTimeDate).setData(["date":thisTimeLoginDateStr, "Game_One_lastMaxScore":0,"Game_Two_lastMaxScore":0])
+                        self.db.collection("users").document(userid).collection("gaming_score").document(currentTimeDate).setData(["date":thisTimeLoginDateStr, "Game_One_lastMaxScore":0,"Game_Two_lastMaxScore":0, "feeling": feeling])
                     }
                 }
             }
@@ -450,16 +455,35 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
      - Parameters: No
      - Returns: No
 
-     - TODO: Set the mood, not display for medicine
 
      **/
     func popover(){
-        let alert = UIAlertController(title: "Reminder", message: "Did you take your medicine today?", preferredStyle: .alert) //set up the alert information
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil)) //set up the OK button to exist
-        db.collection("users").document(userid).setData(["login_time": rightNow, "Username": username, "MedicationName": medicationName, "MedicationName1": medicationName1, "MedicationName2": medicationName2, "MedicationName3": medicationName3, "MedicationName4": medicationName4, "uid":userid, "Game_One_lastMaxScore":0, "Game_Two_lastMaxScore":0]) //Update the user last login time in Firebase for next time login checking
+        let alert = UIAlertController(title: "Reminder", message: "Did you take your medicine today?\n\n How do you feel today?", preferredStyle: .alert) //set up the alert information
+        alert.addAction(UIAlertAction(title: "Happy", style: .default, handler:{(action:UIAlertAction!) in         self.db.collection("users").document(userid).setData(["login_time": self.rightNow, "Username": username, "MedicationName": medicationName, "MedicationName1": medicationName1, "MedicationName2": medicationName2, "MedicationName3": medicationName3, "MedicationName4": medicationName4, "uid":userid, "Game_One_lastMaxScore":0, "Game_Two_lastMaxScore":0, "feeling": "Happy"])} )) //set up the OK button to exist
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(action:UIAlertAction!) in self.db.collection("users").document(userid).setData(["login_time": self.rightNow, "Username": username, "MedicationName": medicationName, "MedicationName1": medicationName1, "MedicationName2": medicationName2, "MedicationName3": medicationName3, "MedicationName4": medicationName4, "uid":userid, "Game_One_lastMaxScore":0, "Game_Two_lastMaxScore":0, "feeling": "OK"])})) //set up the OK button to exist
+        alert.addAction(UIAlertAction(title: "Sad", style: .default, handler: {(action:UIAlertAction!) in self.db.collection("users").document(userid).setData(["login_time": self.rightNow, "Username": username, "MedicationName": medicationName, "MedicationName1": medicationName1, "MedicationName2": medicationName2, "MedicationName3": medicationName3, "MedicationName4": medicationName4, "uid":userid, "Game_One_lastMaxScore":0, "Game_Two_lastMaxScore":0, "feeling": "Sad"])} )) //set up the OK button to exist
+        
+//        print("feeling is: \(feeling)")
+//        db.collection("users").document(userid).setData(["login_time": rightNow, "Username": username, "MedicationName": medicationName, "MedicationName1": medicationName1, "MedicationName2": medicationName2, "MedicationName3": medicationName3, "MedicationName4": medicationName4, "uid":userid, "Game_One_lastMaxScore":0, "Game_Two_lastMaxScore":0, "feeling": feeling])
+ //Update the user last login time in Firebase for next time login checking
         self.present(alert,animated: true) //active the present of pop up
+        
+
     }
 
+    
+    func popover2(){
+        let alert = UIAlertController(title: "Reminder", message: "How do you feel today?", preferredStyle: .alert) //set up the alert information
+        alert.addAction(UIAlertAction(title: "Happy", style: .default, handler: {(action:UIAlertAction!) in self.db.collection("users").document(userid).setData(["login_time": self.rightNow, "Username": username, "MedicationName": medicationName, "MedicationName1": medicationName1, "MedicationName2": medicationName2, "MedicationName3": medicationName3, "MedicationName4": medicationName4, "uid":userid, "Game_One_lastMaxScore":0, "Game_Two_lastMaxScore":0, "feeling": "Happy"])})) //set up the OK button to exist
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(action:UIAlertAction!) in self.db.collection("users").document(userid).setData(["login_time": self.rightNow, "Username": username, "MedicationName": medicationName, "MedicationName1": medicationName1, "MedicationName2": medicationName2, "MedicationName3": medicationName3, "MedicationName4": medicationName4, "uid":userid, "Game_One_lastMaxScore":0, "Game_Two_lastMaxScore":0, "feeling": "OK"])})) //set up the OK button to exist
+        alert.addAction(UIAlertAction(title: "Sad", style: .default, handler: {(action:UIAlertAction!) in self.db.collection("users").document(userid).setData(["login_time": self.rightNow, "Username": username, "MedicationName": medicationName, "MedicationName1": medicationName1, "MedicationName2": medicationName2, "MedicationName3": medicationName3, "MedicationName4": medicationName4, "uid":userid, "Game_One_lastMaxScore":0, "Game_Two_lastMaxScore":0, "feeling": "Sad"])})) //set up the OK button to exist
+//        print("feeling is: \(feeling)")
+//        db.collection("users").document(userid).setData(["login_time": rightNow, "Username": username, "MedicationName": medicationName, "MedicationName1": medicationName1, "MedicationName2": medicationName2, "MedicationName3": medicationName3, "MedicationName4": medicationName4, "uid":userid, "Game_One_lastMaxScore":0, "Game_Two_lastMaxScore":0, "feeling": feeling])
+
+ //Update the user last login time in Firebase for next time login checking
+        self.present(alert,animated: true) //active the present of pop up
+        
+    }
     
     /**
      Function for displaying next week date by clicking the next week button
@@ -481,7 +505,6 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
             currentYear += 1
         }
         setUp(newformattedtartcurrentweek: newformattedtartcurrentweek, newformattedendcurrentweek: newformattedendcurrentweek) // redraw the current week's appearance buttons
-
         highlightSelectedDate()
     }
 

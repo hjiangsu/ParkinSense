@@ -66,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		00B5474BFBD87956D8128115 /* Pods_ParkinSenseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkinSenseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		031B04002391017E0050FB31 /* ParkinSense.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ParkinSense.entitlements; sourceTree = "<group>"; };
 		0333C3CB23656A5700031C26 /* WeeklyCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyCalendar.swift; sourceTree = "<group>"; };
 		038D56C02362C6AD00FFB3DD /* TiltUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiltUIViewController.swift; sourceTree = "<group>"; };
 		038D56C22362C6BC00FFB3DD /* BubbleUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleUIViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +199,7 @@
 		A61328BC23627A0700C7066C /* ParkinSense */ = {
 			isa = PBXGroup;
 			children = (
+				031B04002391017E0050FB31 /* ParkinSense.entitlements */,
 				A61328BD23627A0700C7066C /* AppDelegate.swift */,
 				A61328EB23627A5F00C7066C /* Helper */,
 				A61328F423627A6900C7066C /* ViewController */,
@@ -707,16 +709,19 @@
 			baseConfigurationReference = DAAD47E763797519E6A741B4 /* Pods-ParkinSense.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ParkinSense/ParkinSense.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L7P596HY6P;
+				DEVELOPMENT_TEAM = XXCBML2D6Y;
 				INFOPLIST_FILE = ParkinSense/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = PDD.ParkinSense;
+				PRODUCT_BUNDLE_IDENTIFIER = ParkinSense;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -727,16 +732,19 @@
 			baseConfigurationReference = 80488E395B128294ECE36291 /* Pods-ParkinSense.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ParkinSense/ParkinSense.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L7P596HY6P;
+				DEVELOPMENT_TEAM = XXCBML2D6Y;
 				INFOPLIST_FILE = ParkinSense/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = PDD.ParkinSense;
+				PRODUCT_BUNDLE_IDENTIFIER = ParkinSense;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

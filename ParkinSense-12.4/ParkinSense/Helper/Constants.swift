@@ -44,6 +44,8 @@ var username = ""
 
 var password = ""
 
+var feeling = ""
+
 var timePickerTime = ""
 
 var userid = ""
