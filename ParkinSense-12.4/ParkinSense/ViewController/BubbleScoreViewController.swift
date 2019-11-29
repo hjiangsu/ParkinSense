@@ -121,9 +121,9 @@ class BubbleScoreViewController: UIViewController {
         //Updates score on database
         if  bubbleFinalScore > maxScoreTodayTwo {
             maxScoreTodayTwo = bubbleFinalScore
-        db.collection("users").document(userid).collection("gaming_score").document(currentTimeDate).setData(["date":thisTimeLoginDateStr, "Game_One_lastMaxScore":maxScoreTodayOne, "Game_Two_lastMaxScore":maxScoreTodayTwo])
+            db.collection("users").document(userid).collection("gaming_score").document(currentTimeDate).setData(["date":thisTimeLoginDateStr, "Game_One_lastMaxScore":maxScoreTodayOne, "Game_Two_lastMaxScore":maxScoreTodayTwo, "feeling": feeling])
             
-            db.collection("users").document(userid).setData(["login_time": rightNow, "Username": username, "MedicationName": medicationName, "uid":userid, "Game_One_lastMaxScore":maxScoreTodayOne, "Game_Two_lastMaxScore":maxScoreTodayTwo])
+            db.collection("users").document(userid).setData(["login_time": rightNow, "Username": username, "MedicationName": medicationName, "uid":userid, "Game_One_lastMaxScore":maxScoreTodayOne, "Game_Two_lastMaxScore":maxScoreTodayTwo, "feeling": feeling])
             
         }
     }
