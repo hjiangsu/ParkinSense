@@ -78,6 +78,7 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
     var Datalabeltext2: UILabel!
     var Datalabeltext3: UILabel!
     var Datalabeltext4: UILabel!
+    var Datalabeltext5: UILabel!
     var lineChartView: LineChartView!
     var lineChartView1: LineChartView!
     
@@ -753,6 +754,13 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
         self.dataScrollView.contentSize.width = self.view.frame.size.width*CGFloat(1+2) //set up the Scroll view content size
         self.dataScrollView.addSubview(Datalabeltext4)
         self.dataScrollView.delegate = self
+        
+        Datalabeltext5 = UILabel(frame: CGRect(x: x2Pos, y: 160, width: self.view.frame.size.width, height: self.dataScrollView.frame.size.height/4)) //set up the label frame
+        Datalabeltext5.textAlignment = .center //place the label text in the center of the second page
+        Datalabeltext5.text = "feeling today:  \(feeling)"
+        self.dataScrollView.contentSize.width = self.view.frame.size.width*CGFloat(1+2) //set up the Scroll view content size
+        self.dataScrollView.addSubview(Datalabeltext5)
+        self.dataScrollView.delegate = self
 
         //===========================================================
     }
@@ -809,11 +817,12 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
                     var maxScoreinSelectedTwo = 0
                     maxScoreinSelectedTwo = DocumentData!["Game_Two_lastMaxScore"] as! Int
                     self.Datalabeltext4.text = "Max Score for Bubble Pop today:  \(maxScoreinSelectedTwo)"
-                    
+                    self.Datalabeltext5.text = "feeling today:  \(feeling)"
                 }
                 else{
                     self.Datalabeltext3.text = "Max Score for TILT today:  0"
                     self.Datalabeltext4.text = "Max Score for Bubble Pop today:  0"
+                    self.Datalabeltext5.text = "feeling today: None"
                 }
             }
         }
@@ -867,10 +876,12 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
                     var maxScoreinSelectedTwo = 0
                     maxScoreinSelectedTwo = DocumentData!["Game_Two_lastMaxScore"] as! Int
                     self.Datalabeltext4.text = "Max Score for Bubble Pop today:  \(maxScoreinSelectedTwo)"
+                    self.Datalabeltext5.text = "feeling today:  \(feeling)"
                 }
                 else{
                     self.Datalabeltext3.text = "Max Score for TILT today:  0"
                     self.Datalabeltext4.text = "Max Score for Bubble Pop today:  0"
+                    self.Datalabeltext5.text = "feeling today: None"
                 }
             }
         }
@@ -933,10 +944,12 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
                     var maxScoreinSelectedTwo = 0
                     maxScoreinSelectedTwo = DocumentData!["Game_Two_lastMaxScore"] as! Int
                     self.Datalabeltext4.text = "Max Score for Bubble Pop today:  \(maxScoreinSelectedTwo)"
+                    self.Datalabeltext5.text = "feeling today:  \(feeling)"
                 }
                 else{
                     self.Datalabeltext3.text = "Max Score for TILT today:  0"
                     self.Datalabeltext4.text = "Max Score for Bubble Pop today:  0"
+                    self.Datalabeltext5.text = "feeling today: None"
                 }
             }
         }
@@ -997,10 +1010,12 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
                     var maxScoreinSelectedTwo = 0
                     maxScoreinSelectedTwo = DocumentData!["Game_Two_lastMaxScore"] as! Int
                     self.Datalabeltext4.text = "Max Score for Bubble Pop today:  \(maxScoreinSelectedTwo)"
+                    self.Datalabeltext5.text = "feeling today:  \(feeling)"
                 }
                 else{
                     self.Datalabeltext3.text = "Max Score for TILT today:  0"
                     self.Datalabeltext4.text = "Max Score for Bubble Pop today:  0"
+                    self.Datalabeltext5.text = "feeling today: None"
                 }
             }
         }
@@ -1062,10 +1077,12 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
                     var maxScoreinSelectedTwo = 0
                     maxScoreinSelectedTwo = DocumentData!["Game_Two_lastMaxScore"] as! Int
                     self.Datalabeltext4.text = "Max Score for Bubble Pop today:  \(maxScoreinSelectedTwo)"
+                    self.Datalabeltext5.text = "feeling today:  \(feeling)"
                 }
                 else{
                     self.Datalabeltext3.text = "Max Score for TILT today:  0"
                     self.Datalabeltext4.text = "Max Score for Bubble Pop today:  0"
+                    self.Datalabeltext5.text = "feeling today: None"
                 }
             }
 
@@ -1126,10 +1143,12 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
                     var maxScoreinSelectedTwo = 0
                     maxScoreinSelectedTwo = DocumentData!["Game_Two_lastMaxScore"] as! Int
                     self.Datalabeltext4.text = "Max Score for Bubble Pop today:  \(maxScoreinSelectedTwo)"
+                    self.Datalabeltext5.text = "feeling today:  \(feeling)"
                 }
                 else{
                     self.Datalabeltext3.text = "Max Score for TILT today:  0"
                     self.Datalabeltext4.text = "Max Score for Bubble Pop today:  0"
+                    self.Datalabeltext5.text = "feeling today: None"
                 }
             }
         }
@@ -1189,10 +1208,12 @@ class HomeViewController: UIViewController, UIScrollViewDelegate{
                     var maxScoreinSelectedTwo = 0
                     maxScoreinSelectedTwo = DocumentData!["Game_Two_lastMaxScore"] as! Int
                     self.Datalabeltext4.text = "Max Score for Bubble Pop today:  \(maxScoreinSelectedTwo)"
+                    self.Datalabeltext5.text = "feeling today:  \(feeling)"
                 }
                 else{
                     self.Datalabeltext3.text = "Max Score for TILT today:  0"
                     self.Datalabeltext4.text = "Max Score for Bubble Pop today:  0"
+                    self.Datalabeltext5.text = "feeling today: None"
                 }
             }
         }
